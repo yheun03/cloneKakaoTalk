@@ -18,4 +18,14 @@
         color: #808080;
         border: 1px solid #383838;
     }
+
+    &--round {
+        font: {
+            size: 11px;
+        }   
+        line-height: 100%;
+        height: 23px;
+        border-radius: 12px;
+        padding: 6px 7px;
+    }
 }

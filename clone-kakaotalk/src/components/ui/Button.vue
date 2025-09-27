@@ -16,12 +16,13 @@
         props: {
             color: {
                 type: String,
+                default: '',
                 validator: value => ['primary'].includes(value)
             },
-            size: {
+            type: {
                 type: String,
-                default: 'medium',
-                validator: value => ['small', 'medium', 'large'].includes(value)
+                default: '',
+                validator: value => ['round'].includes(value)
             },
             disabled: {
                 type: Boolean,
@@ -38,7 +39,7 @@
         computed: {
             buttonClasses() {
                 return [
-                    `k-button--${this.size}`,
+                    this.type && `k-button--${this.type}`,
                     this.color && `k-button--${this.color}`,
                     { 
                         'k-button--disabled': this.disabled,
