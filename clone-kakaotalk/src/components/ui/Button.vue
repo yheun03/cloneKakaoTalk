@@ -17,12 +17,12 @@
             color: {
                 type: String,
                 default: '',
-                validator: value => ['primary'].includes(value)
+                validator: value => ['', 'primary', 'secondary', 'danger', 'ghost'].includes(value)
             },
             type: {
                 type: String,
                 default: '',
-                validator: value => ['round'].includes(value)
+                validator: value => ['', 'round', 'block'].includes(value)
             },
             disabled: {
                 type: Boolean,

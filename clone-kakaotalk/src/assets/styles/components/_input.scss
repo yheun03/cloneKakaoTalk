@@ -1,0 +1,29 @@
+.k-input {
+    border-bottom: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font: 500 14px/32px "Pretendard";
+
+
+    input {
+        background-color: unset;
+        border: none;
+        outline: unset;
+        color: inherit;
+        font: inherit;
+        flex: 1;
+        text-indent: 6px;
+        padding-right: 6px;
+
+        &::placeholder {
+            color: #838383;
+        }
+    }
+
+    .k--input-count{
+        font: 500 11px/normal "Pretendard";
+        color: #747474;
+        margin-top: 4px;
+    }
+}
