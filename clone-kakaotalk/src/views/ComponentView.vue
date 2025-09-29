@@ -19,9 +19,8 @@
         <KButton>버튼</KButton>
         <KButton color="primary">버튼</KButton>
         <KButton disabled>버튼</KButton>
-        <KButton type="round">버튼</KButton>
-        <KButton color="primary" type="round">버튼</KButton>
-        <KButton disabled type="round">버튼</KButton>
+        <KButton type="round">선물하기</KButton>
+        <KButton type="toggle">이름</KButton>
 
         <h3>Input</h3>
         <KInput />

@@ -22,7 +22,7 @@
             type: {
                 type: String,
                 default: '',
-                validator: value => ['', 'round', 'block'].includes(value)
+                validator: value => ['', 'round', 'toggle'].includes(value)
             },
             disabled: {
                 type: Boolean,
