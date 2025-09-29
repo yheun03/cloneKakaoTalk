@@ -1,14 +1,16 @@
 <template>
     <div class="k-input">
-        <div v-if="showSelect" @click="handleSelect">showSelect</div>
-    
-        <input 
-            type="text"
-            name="input"
-            :value="localValue"
-            v-bind="inputAttrs"
-            @input="handleInput"
-        />
+        <KSelect v-model="selectedValue" :options="selectOptions" v-if="showSelect" @select="handleSelect"></KSelect>
+        
+        <div>
+            <input 
+                type="text"
+                name="input"
+                :value="localValue"
+                v-bind="inputAttrs"
+                @input="handleInput"
+            />
+        </div>
     
         <div 
             v-if="maxlength"
@@ -18,11 +20,15 @@
         </div>
     </div>
 </template>
-  
+    
 <script>
+    import KSelect from '@/components/ui/Select.vue'
+
     export default {
         name: 'KInput',
-    
+        components: {
+            KSelect
+        },
         props: {
             maxlength: {
                 type: Number

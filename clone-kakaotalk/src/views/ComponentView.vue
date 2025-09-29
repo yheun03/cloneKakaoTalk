@@ -24,12 +24,12 @@
 
         <h3>Select</h3>
         <div class="wrap">
-            <KSelect>선택</KSelect>
-            <KSelect color="primary">선택</KSelect>
-            <KSelect disabled>선택</KSelect>
-            <KSelect type="round">선택</KSelect>
-            <KSelect color="primary" type="round">선택</KSelect>
-            <KSelect disabled type="round">선택</KSelect>
+            <KSelect />
+            <KSelect color="primary" />
+            <KSelect disabled />
+            <KSelect type="round" />
+            <KSelect color="primary" type="round" />
+            <KSelect disabled type="round" />
         </div>
 
         <h3>Avatar</h3>
@@ -53,15 +53,15 @@
     import KButton from '@/components/ui/Button.vue'
     import KInput from '@/components/ui/Input.vue'
     import KAvatar from '@/components/ui/Avatar.vue'
-    // import KSelect from '@/components/ui/Select.vue'
+    import KSelect from '@/components/ui/Select.vue'
     export default {
         name: 'ComponentView',
         components: {
             KButton,
             KInput,
             KAvatar,
-            // KSelect
-        }
+            KSelect
+        },
     }
 </script>
 

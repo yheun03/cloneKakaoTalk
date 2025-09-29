@@ -1,31 +1,24 @@
 .k-select {
-    background-color: #222;
-    color: #fff;
-    border: 1px solid #424242;
-    border-radius: 6px;
-    padding: 7px 40px;
-    font: 500 13px/normal "Pretendard";
-    cursor: pointer;
-
-    &--primary {
-        background-color: #FFE707;
-        color: #111;
-        border: 1px solid #FFE707;
-    }
-
-    &--disabled {
-        background-color: #383838;
-        color: #808080;
-        border: 1px solid #383838;
-    }
-
-    &--round {
-        font: {
-            size: 11px;
-        }   
-        line-height: 100%;
-        height: 23px;
-        border-radius: 12px;
-        padding: 6px 7px;
+    select {
+        appearance: none;
+        background-color: unset;
+        border-radius: 6px;
+        border: 1px solid #4e4e4e;
+        color: #EDEDED;
+        font: 500 13px/normal "Pretendard";
+        padding-inline: 12px 32px;
+        height: 30px;
+        cursor: pointer;
+        outline: unset;
+        background: url('@/assets/icons/12/ic-polygon-bottom.svg') no-repeat right 12px center;
+        .k-input &{
+            padding-inline: 0 30px;
+            border: unset;
+            border-radius: unset;
+            background: {
+                image: url('@/assets/icons/12/ic-arrow-bottom.svg');
+                position-x: right;
+            }
+        }
     }
 }

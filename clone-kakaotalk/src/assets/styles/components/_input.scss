@@ -5,6 +5,21 @@
     color: #fff;
     font: 500 14px/32px "Pretendard";
 
+    & > div + div:not([class="k--input-count"]){
+        position: relative;
+        padding-left: 13px;
+        &::before{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 6px;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 10px;
+            background-color: #434343;
+        }
+    }
+
 
     input {
         background-color: unset;
