@@ -2,6 +2,19 @@
     <div class="component-view">
         <h1>컴포넌트 모음</h1>
         <h2>UI 컴포넌트</h2>
+
+        <h3>Avatar</h3>
+        <KAvatar size="90" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."/>
+        <KAvatar size="84" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."/>
+        <KAvatar size="54" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."/>
+        <KAvatar size="44" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."/>
+        <KAvatar size="40" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."/>
+        <KAvatar size="40" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." type="new"/>
+        <KAvatar size="36" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."/>
+        <KAvatar size="28" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."/>
+        <KAvatar size="24" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."/>
+        <KAvatar size="22" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."/>
+
         <h3>Button</h3>
         <KButton>버튼</KButton>
         <KButton color="primary">버튼</KButton>
@@ -18,25 +31,27 @@
         <KInput showSelect />
         <KInput showSelect placeholder="placeholder" />
 
-        <!-- <h3>Select</h3>
+        <h3>Select</h3>
         <KSelect>선택</KSelect>
         <KSelect color="primary">선택</KSelect>
         <KSelect disabled>선택</KSelect>
         <KSelect type="round">선택</KSelect>
         <KSelect color="primary" type="round">선택</KSelect>
-        <KSelect disabled type="round">선택</KSelect> -->
+        <KSelect disabled type="round">선택</KSelect>
     </div>
 </template>
 
 <script>
     import KButton from '@/components/ui/Button.vue'
     import KInput from '@/components/ui/Input.vue'
+    import KAvatar from '@/components/ui/Avatar.vue'
     // import KSelect from '@/components/ui/Select.vue'
     export default {
         name: 'ComponentView',
         components: {
             KButton,
             KInput,
+            KAvatar,
             // KSelect
         }
     }
