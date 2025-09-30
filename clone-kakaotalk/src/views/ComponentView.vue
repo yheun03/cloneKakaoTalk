@@ -20,6 +20,7 @@
             <KInput placeholder="placeholder" />
             <KInput showSelect />
             <KInput showSelect placeholder="placeholder" />
+            <KInput type="textarea" placeholder="placeholder" />
         </div>
 
         <h3>Select</h3>

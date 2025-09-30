@@ -41,4 +41,27 @@
         color: #747474;
         margin-top: 4px;
     }
+
+    &:has(.k--textarea){
+        padding: unset;
+        border: unset;
+        textarea{
+            height: 133px;
+            padding: 6px;
+            font: 500 13px/normal "Pretendard";
+            color: #fff;
+            appearance: unset;
+            background-color: transparent;
+            border: 1px solid #4e4e4e;
+            border-radius: 6px;
+            outline: unset;
+            resize: none;
+            &:focus{
+                border-color: #fff;
+            }
+            &::placeholder{
+                color: #838383;
+            }
+        }
+    }
 }

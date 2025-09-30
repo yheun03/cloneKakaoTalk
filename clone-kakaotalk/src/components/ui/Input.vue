@@ -2,7 +2,7 @@
     <div class="k-input">
         <KSelect v-model="selectedValue" :options="selectOptions" v-if="showSelect" @select="handleSelect"></KSelect>
         
-        <div>
+        <div v-if="type!='textarea'">
             <input 
                 type="text"
                 name="input"
@@ -18,6 +18,10 @@
         >
             {{ localValue.length }}/{{ maxlength }}
         </div>
+
+        <div v-if="type=='textarea'" class="k--textarea">
+            <textarea name="textarea" v-bind="textareaAttrs" />
+        </div>
     </div>
 </template>
     
@@ -32,6 +36,11 @@
         props: {
             maxlength: {
                 type: Number
+            },
+            type: {
+                type: String,
+                default: '',
+                validator: value => ['', 'textarea'].includes(value)
             },
             showSelect: {
                 type: Boolean,
@@ -71,6 +80,15 @@
         
                 if (this.maxlength) {
                 attrs.maxlength = this.maxlength
+                }
+        
+                return attrs
+            },
+            textareaAttrs() {
+                const attrs = {}
+        
+                if (this.placeholder) {
+                attrs.placeholder = this.placeholder
                 }
         
                 return attrs
