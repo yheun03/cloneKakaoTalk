@@ -1,3 +1,36 @@
+.dp__theme_light,
+.dp__theme_dark {
+    // 피커 오프너 기본 스타일
+    --dp-background-color: #2D2D2D;
+    --dp-border-radius: 6px;
+    --dp-border-color: #4e4e4e;
+    --dp-border-color-hover: #4e4e4e;
+    --dp-border-color-focus: #4e4e4e;
+    --dp-menu-border-color: #4e4e4e;
+    --dp-font-family: "Pretendard";
+    --dp-font-size: 13px;
+    --dp-input-padding: 0 32px 0 12px;
+    --dp-input-height: 12px;
+    --dp-text-color: #EDEDED;
+
+    --dp-month-year-row-button-size: 16px;
+    --dp-icon-color: #e9e9e9;
+    --dp-month-year-row-height: 18px;
+
+    // 셀 기본 스타일
+    --dp-cell-size: 26px;
+    --dp-cell-border-radius: 50%;
+    --dp-hover-color: rgba(238, 238, 238, 0.11);
+    --dp-hover-text-color: #EEEEEE;
+
+    --dp-primary-color: #EEEEEE;
+    --dp-primary-text-color: #222222;
+    --dp-secondary-color: rgba(238, 238, 238, 0.11);
+
+    --dp-menu-min-width: 236px;
+    --dp-menu-width: 236px;
+}
+
 .k-select {
     select {
         appearance: none;
@@ -23,36 +56,81 @@
     }
     &--date{
         width: 131px;
+        .dp__menu{
+            border-radius: 10px;
+            &_inner{
+                // 캘린더 영역
+                padding: 18px 21px;
+            }
+        }
+        .dp__month_year_wrap{
+            justify-content: center;
+            & > div{
+                // header 정렬 역으로
+                flex-direction: row-reverse;
+            }
+        }
+        
+        .dp__calendar_header,
+        .dp__calendar_row{
+            font-weight: 500;
+            & > div:nth-child(n+7){
+                color: #FF754B;
+            }
+        }
+        .dp--header-wrap{
+            padding: 0 4px;
+            .dp__btn{
+                padding: unset;
+            }
+        }
+        .dp__month_year_select{
+            justify-content: flex-start;
+            flex: 0;
+            &[aria-label*="year"]{
+                justify-content: flex-end;
+                margin-right: 4px;
+                &::after{
+                    content: "년";
+                }
+            }
+        }
+        .dp__calendar_header_separator{
+            display: none;
+        }
+        .dp__calendar_row{
+            margin: 2px 0;
+        }
         .dp__input{
-            background-color: unset;
-            border-radius: 6px;
-            border: 1px solid #4e4e4e;
-            color: #EDEDED;
-            font: 500 13px/normal "Pretendard";
-            padding-inline: 12px 32px;
+            // 오프너
             height: 30px;
-            cursor: pointer;
-            outline: unset;
-            &_icon{
-                display: none;
+            font-weight: 500;
+        }
+        .dp__cell_offset{
+            // 이전달, 다음달의 일수 디자인
+            opacity: .4;
+        }
+        .dp__cell_disabled{
+            &:hover{
+                background: var(--dp-hover-color);
             }
         }
     }
     &--time{
         width: 104px;
         .dp__input{
-            background-color: unset;
-            border-radius: 6px;
-            border: 1px solid #4e4e4e;
-            color: #EDEDED;
-            font: 500 13px/normal "Pretendard";
-            padding-inline: 12px 32px;
             height: 30px;
-            cursor: pointer;
-            outline: unset;
-            &_icon{
-                display: none;
-            }
+            font-weight: 500;
         }
     }
+    .k-select--date {
+        .holiday-red {
+          color: red !important;
+          font-weight: 600;
+        }
+        .saturday-blue {
+          color: #1e90ff !important;
+          font-weight: 600;
+        }
+      }
 }

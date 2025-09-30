@@ -1,13 +1,20 @@
 <template>
     <div class="k-select" :class="selectClasses">
         <div v-if="type=='date'">
-            <VueDatePicker v-model="date" locale="ko" :format="formatWithDay" enable-time-picker="false"/>
+            <VueDatePicker
+                v-model="date"
+                locale="ko"
+                enable-time-picker="false"
+                hide-input-icon
+                :format="formatWithDay"
+            />
         </div>
         <div v-else-if="type=='time'">
             <VueDatePicker 
                 v-model="time" 
                 locale="ko" 
-                time-picker 
+                time-picker
+                hide-input-icon
                 :format="formatKoreanTime"
             />
         </div>
