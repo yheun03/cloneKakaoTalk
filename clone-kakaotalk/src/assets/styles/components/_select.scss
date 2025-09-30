@@ -21,4 +21,38 @@
             }
         }
     }
+    &--date{
+        width: 131px;
+        .dp__input{
+            background-color: unset;
+            border-radius: 6px;
+            border: 1px solid #4e4e4e;
+            color: #EDEDED;
+            font: 500 13px/normal "Pretendard";
+            padding-inline: 12px 32px;
+            height: 30px;
+            cursor: pointer;
+            outline: unset;
+            &_icon{
+                display: none;
+            }
+        }
+    }
+    &--time{
+        width: 104px;
+        .dp__input{
+            background-color: unset;
+            border-radius: 6px;
+            border: 1px solid #4e4e4e;
+            color: #EDEDED;
+            font: 500 13px/normal "Pretendard";
+            padding-inline: 12px 32px;
+            height: 30px;
+            cursor: pointer;
+            outline: unset;
+            &_icon{
+                display: none;
+            }
+        }
+    }
 }

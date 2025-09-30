@@ -25,11 +25,8 @@
         <h3>Select</h3>
         <div class="wrap">
             <KSelect />
-            <KSelect color="primary" />
-            <KSelect disabled />
-            <KSelect type="round" />
-            <KSelect color="primary" type="round" />
-            <KSelect disabled type="round" />
+            <KSelect type="date" />
+            <KSelect type="time" />
         </div>
 
         <h3>Avatar</h3>
