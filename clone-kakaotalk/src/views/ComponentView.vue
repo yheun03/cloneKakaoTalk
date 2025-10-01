@@ -3,6 +3,27 @@
         <h1>컴포넌트 모음</h1>
         <h2>UI 컴포넌트</h2>
 
+        <h3>Checkbox</h3>
+        <div class="wrap">
+            <KCheckbox name="checkbox">기본 체크박스</KCheckbox>
+        </div>
+
+        <h3>Selector</h3>
+        <div class="wrap">
+            <KRadio type="image" />
+            <KRadio type="image" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." />
+            <KRadio type="illustration" src="https://cdn.pixabay.com/photo/2025/08/13/18/49/mountains-9772732_1280.png" alt="채팅 화면의 배경화면 입니다." />
+            <KRadio type="illustration" src="https://cdn.pixabay.com/photo/2025/04/05/06/58/flower-9514615_640.png" alt="채팅 화면의 배경화면 입니다." />
+            <KRadio type="illustration" src="https://cdn.pixabay.com/photo/2025/03/16/19/25/flowers-9474432_640.jpg" alt="채팅 화면의 배경화면 입니다." />
+        </div>
+
+        <h3>Select</h3>
+        <div class="wrap">
+            <KSelect />
+            <KSelect type="date" />
+            <KSelect type="time" />
+        </div>
+
         <h3>Button</h3>
         <div class="wrap">
             <KButton>버튼</KButton>
@@ -21,13 +42,6 @@
             <KInput showSelect />
             <KInput showSelect placeholder="placeholder" />
             <KInput type="textarea" placeholder="placeholder" />
-        </div>
-
-        <h3>Select</h3>
-        <div class="wrap">
-            <KSelect />
-            <KSelect type="date" />
-            <KSelect type="time" />
         </div>
 
         <h3>Avatar</h3>
@@ -52,13 +66,18 @@
     import KInput from '@/components/ui/Input.vue'
     import KAvatar from '@/components/ui/Avatar.vue'
     import KSelect from '@/components/ui/Select.vue'
+    import KRadio from '@/components/ui/Radio.vue'
+    import KCheckbox from '@/components/ui/Checkbox.vue'
+
     export default {
         name: 'ComponentView',
         components: {
             KButton,
             KInput,
             KAvatar,
-            KSelect
+            KSelect,
+            KRadio,
+            KCheckbox
         },
     }
 </script>

@@ -1,0 +1,32 @@
+.k-checkbox{
+    label{
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font: 700 13px/120% "Pretendard";
+        color: #fff;
+        cursor: pointer;
+        &::before{
+            content: "";
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 1px solid #838383;
+            transition: 0.2s;
+        }
+        & + label{
+            margin-left: 16px;
+        }
+
+        &:has(:checked){
+            &::before{
+                background: url('@/assets/icons/18/ic-checkbox.svg') #FFE707 center / cover no-repeat;
+                border-color: #FFE707;
+            }
+        }
+    }
+    span:empty{
+        display: none;
+    }
+}
