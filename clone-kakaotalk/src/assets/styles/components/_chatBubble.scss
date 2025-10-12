@@ -25,31 +25,41 @@
                 color: #D0D1D0;
             }
         }
-         .content{
-             position: relative;
-             border-radius: 2px;
-             background-color: map-get(map-get($chat-colors, me), bg);
-             color: map-get(map-get($chat-colors, me), text);
-             font: 500 13px/125% "Pretendard";
-             letter-spacing: 0.01em;
-             padding: 7px 10px 8px;
-             max-width: 265px;
-             
-             .message-link {
-                color: inherit;
-                text-decoration: underline;
-             }
-            .icon{
-                position: absolute;
-                top: 6px;
-                right: -8px;
-                width: 10px;
-                height: 9px;
-                svg{
-                    display: block;
+        .content{
+            position: relative;
+            max-width: 265px;
+            &.type{
+                &-text{
+                    border-radius: 2px;
+                    background-color: map-get(map-get($chat-colors, me), bg);
+                    color: map-get(map-get($chat-colors, me), text);
+                    font: 500 13px/125% "Pretendard";
+                    letter-spacing: 0.01em;
+                    padding: 7px 10px 8px;
+                    
+                    .message-link {
+                        color: inherit;
+                        text-decoration: underline;
+                    }
+                    .icon{
+                        position: absolute;
+                        top: 6px;
+                        right: -8px;
+                        width: 10px;
+                        height: 9px;
+                        svg{
+                            display: block;
+                        }
+                        path{
+                            fill: map-get(map-get($chat-colors, me), bg);
+                        }
+                    }
                 }
-                path{
-                    fill: map-get(map-get($chat-colors, me), bg);
+                &-image{
+                    img{
+                        width: 100%;
+                        object-fit: cover;
+                    }
                 }
             }
         }
@@ -60,14 +70,18 @@
                 align-items: flex-start;
             }
             .content{
-                background-color: map-get(map-get($chat-colors, other), bg);
-                color: map-get(map-get($chat-colors, other), text);
-                .icon{
-                    left: -8px;
-                    right: unset;
-                    transform: rotateY(180deg);
-                    path{
-                        fill: map-get(map-get($chat-colors, other), bg);
+                &.type{
+                    &-text{
+                        background-color: map-get(map-get($chat-colors, other), bg);
+                        color: map-get(map-get($chat-colors, other), text);
+                        .icon{
+                            left: -8px;
+                            right: unset;
+                            transform: rotateY(180deg);
+                            path{
+                                fill: map-get(map-get($chat-colors, other), bg);
+                            }
+                        }
                     }
                 }
             }

@@ -5,19 +5,21 @@
                 <div class="check">1</div>
                 <div class="timestamp">{{ time }}</div>
             </div>
-            <div class="content">
-                <div v-if="type === 'text'">
+            <div v-if="type === 'text'">
+                <div class="content type-text">
                     <i class="icon ic-chat">
                         <svg viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.063 1.743L1.669 7.498C1.025 8.077 0 7.62 0 6.755V1C0 .448.448 0 1 0h6.394c.916 0 1.35 1.13.669 1.743z" fill="black"/></svg>
                     </i>
                     <p v-html="formattedMessage"></p>
                 </div>
-
-                <div v-else-if="type === 'image'">
-                    <img :src="image" :alt="imageAlt">
+            </div>
+            <div v-else-if="type === 'image'">
+                <div class="content type-image">
+                    <img :src="src" :alt="alt">
                 </div>
-
-                <div v-else-if="type === 'file'">
+            </div>
+            <div v-else-if="type === 'file'">
+                <div class="content type-file">
                 </div>
             </div>
         </div>
@@ -43,6 +45,14 @@
                 default: ''
             },
             timestamp: {
+                type: String,
+                default: ''
+            },
+            src: {
+                type: String,
+                default: ''
+            },
+            alt: {
                 type: String,
                 default: ''
             }
