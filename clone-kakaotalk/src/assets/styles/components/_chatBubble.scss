@@ -1,0 +1,71 @@
+.chat-bubble{
+    $chat-colors: (
+        me: (
+            bg: #ffe608,
+            text: #010100
+        ),
+        other: (
+            bg: #353535,
+            text: #ffffff
+        )
+    );
+    .send{
+        display: flex;
+        gap: 5px;
+        align-items: flex-end;
+        justify-content: flex-end;
+        .info{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 2px;
+            font: 500 11px/110% "Pretendard";
+            color: #ffe608;
+            .timestamp{
+                color: #D0D1D0;
+            }
+        }
+        .content{
+            position: relative;
+            border-radius: 2px;
+            background-color: map-get(map-get($chat-colors, me), bg);
+            color: map-get(map-get($chat-colors, me), text);
+            font: 500 13px/125% "Pretendard";
+            letter-spacing: 0.01em;
+            padding: 7px 10px 8px;
+            max-width: 265px;
+            .icon{
+                position: absolute;
+                top: 6px;
+                right: -8px;
+                width: 10px;
+                height: 9px;
+                svg{
+                    display: block;
+                }
+                path{
+                    fill: map-get(map-get($chat-colors, me), bg);
+                }
+            }
+        }
+
+        &.send-other{
+            flex-direction: row-reverse;
+            .info{
+                align-items: flex-start;
+            }
+            .content{
+                background-color: map-get(map-get($chat-colors, other), bg);
+                color: map-get(map-get($chat-colors, other), text);
+                .icon{
+                    left: -8px;
+                    right: unset;
+                    transform: rotateY(180deg);
+                    path{
+                        fill: map-get(map-get($chat-colors, other), bg);
+                    }
+                }
+            }
+        }
+    }
+}

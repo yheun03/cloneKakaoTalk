@@ -3,6 +3,12 @@
         <h1>컴포넌트 모음</h1>
         <h2>UI 컴포넌트</h2>
 
+        <h3>ChatBubble</h3>
+        <div class="wrap">
+            <ChatBubble type="text" sender="me" message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
+            <ChatBubble type="text" sender="other" message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
+        </div>
+
         <h3>Checkbox</h3>
         <div class="wrap">
             <KCheckbox name="checkbox" />
@@ -74,7 +80,7 @@
     import KSelect from '@/components/ui/Select.vue'
     import KRadio from '@/components/ui/Radio.vue'
     import KCheckbox from '@/components/ui/Checkbox.vue'
-
+    import ChatBubble from '@/components/chat/ChatBubble.vue'
     export default {
         name: 'ComponentView',
         components: {
@@ -83,7 +89,8 @@
             KAvatar,
             KSelect,
             KRadio,
-            KCheckbox
+            KCheckbox,
+            ChatBubble
         },
     }
 </script>
