@@ -8,6 +8,18 @@
             <ChatBubble type="text" sender="me" message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
             <ChatBubble type="text" sender="other" message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
         </div>
+        <div class="wrap">
+            <ChatBubble type="text" sender="me" message="불고기는 괜찮을 거 같아!!. naver.com" timestamp="2025.01.01 12:00" />
+            <ChatBubble type="text" sender="other" message="불고기는 괜찮을 거 같아!!. https://naver.com" timestamp="2025.01.01 12:00" />
+        </div>
+        <div class="wrap">
+            <ChatBubble type="image" sender="me" message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
+            <ChatBubble type="image" sender="other" message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
+        </div>
+        <div class="wrap">
+            <ChatBubble type="file" sender="me" message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
+            <ChatBubble type="file" sender="other" message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
+        </div>
 
         <h3>Checkbox</h3>
         <div class="wrap">
