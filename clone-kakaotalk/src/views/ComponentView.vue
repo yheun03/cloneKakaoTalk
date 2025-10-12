@@ -3,6 +3,14 @@
         <h1>컴포넌트 모음</h1>
         <h2>UI 컴포넌트</h2>
 
+        <h3>ProfileCard</h3>
+        <div class="wrap" style="flex-direction: column; align-items: flex-start;">
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" :birthday=true statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" :birthday=false statusMessage="🇯🇵🇩🇪🇨🇭🇫🇷🇨🇳🇺🇸🇹🇼🇸🇬🇫🇮🇳🇴🇸🇪🇩🇰" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" :birthday=true statusMessage="" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" :birthday=false statusMessage="" />
+        </div>
+
         <h3>ChatBubble</h3>
         <div class="wrap">
             <ChatBubble type="text" sender="other" message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
@@ -93,6 +101,7 @@
     import KRadio from '@/components/ui/Radio.vue'
     import KCheckbox from '@/components/ui/Checkbox.vue'
     import ChatBubble from '@/components/chat/ChatBubble.vue'
+    import ProfileCard from '@/components/profile/ProfileCard.vue'
     export default {
         name: 'ComponentView',
         components: {
@@ -102,7 +111,8 @@
             KSelect,
             KRadio,
             KCheckbox,
-            ChatBubble
+            ChatBubble,
+            ProfileCard
         },
     }
 </script>

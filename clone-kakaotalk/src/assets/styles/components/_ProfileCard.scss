@@ -1,0 +1,29 @@
+.profile-card {
+    width: 260px;
+    padding: 8px 20px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font: 700 14px/130% "Pretendard";
+    color: #fff;
+
+    overflow: hidden;
+    .info{
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        flex: 1;
+        .status-message {
+            font: {
+                weight: 500;
+                size: 13px;
+            }
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            word-break: break-all;
+            max-width: 100%;
+        }
+    }
+}
