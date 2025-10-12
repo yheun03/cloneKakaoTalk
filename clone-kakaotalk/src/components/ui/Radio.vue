@@ -14,10 +14,26 @@
             </div>
         </div>
         <div class="k-radio-illustration" v-else-if="type == 'illustration'">
-            <div class="item" :class="`custom-style-${customStyle}`">
+            <div class="item">
                 <label>
                     <input type="radio" name="k-radio-illustration" hidden>
                     <img :src="src" :alt="alt">
+                </label>
+            </div>
+        </div>
+        <div class="k-radio-palette" v-else-if="type == 'palette'">
+            <div class="item">
+                <label>
+                    <input type="radio" name="k-radio-palette-sm" hidden>
+                    <div class="color-wrap" :style="`background-color: ${color}`"/>
+                </label>
+            </div>
+        </div>
+        <div class="k-radio-palette size-sm" v-else-if="type == 'palette-sm'">
+            <div class="item">
+                <label>
+                    <input type="radio" name="k-radio-palette-sm" hidden>
+                    <div class="color-wrap" :style="`background-color: ${color}`"/>
                 </label>
             </div>
         </div>
@@ -31,7 +47,7 @@
             type: {
                 type: String,
                 default: 'image',
-                validator: value => ['image', 'illustration'].includes(value)
+                validator: value => ['image', 'illustration', 'palette', 'palette-sm'].includes(value)
             },
             src: {
                 type: String,
@@ -41,7 +57,7 @@
                 type: String,
                 default: ''
             },
-            customStyle: {
+            color: {
                 type: String,
                 default: ''
             }

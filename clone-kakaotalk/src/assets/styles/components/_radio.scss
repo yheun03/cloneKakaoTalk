@@ -47,4 +47,39 @@
             object-fit: cover;
         }
     }
+    &-palette{
+        label{
+            display: block;
+            width: 46px;
+            aspect-ratio: 1/1;
+            padding: 5px;
+            border-radius: 50%;
+            cursor: pointer;
+            .color-wrap{
+                display: block;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+            &:hover{
+                background-color: rgba(255, 255, 255, 0.10);
+            }
+            &:has(:checked){
+                border: 2px solid rgba(255, 255, 255, 0.8);
+                padding: 3px;
+            }
+        }
+        &.size-sm{
+            label{
+                width: 20px;
+                padding: unset;
+                &:has(:checked){
+                    border: unset;
+                    .color-wrap{
+                        background: url('@/assets/icons/20/ic-check.svg') no-repeat center/20px;
+                    }
+                }
+            }
+        }
+    }
 }

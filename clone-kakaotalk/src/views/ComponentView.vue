@@ -5,6 +5,7 @@
 
         <h3>Checkbox</h3>
         <div class="wrap">
+            <KCheckbox name="checkbox" />
             <KCheckbox name="checkbox">기본 체크박스</KCheckbox>
             <KCheckbox type="image" name="checkbox-image" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." />
             <KCheckbox type="file" name="checkbox-file" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" filename="졸업예정증명서_은영환" filetype="pdf" period="2025.03.10" filesize="89.3KB" />
@@ -18,6 +19,8 @@
             <KRadio type="illustration" src="https://cdn.pixabay.com/photo/2025/08/13/18/49/mountains-9772732_1280.png" alt="채팅 화면의 배경화면 입니다." />
             <KRadio type="illustration" src="https://cdn.pixabay.com/photo/2025/04/05/06/58/flower-9514615_640.png" alt="채팅 화면의 배경화면 입니다." />
             <KRadio type="illustration" src="https://cdn.pixabay.com/photo/2025/03/16/19/25/flowers-9474432_640.jpg" alt="채팅 화면의 배경화면 입니다." />
+            <KRadio type="palette" color="#44f"/>
+            <KRadio type="palette-sm" color="#f44"/>
         </div>
 
         <h3>Select</h3>
