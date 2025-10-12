@@ -6,6 +6,9 @@
         <h3>Checkbox</h3>
         <div class="wrap">
             <KCheckbox name="checkbox">기본 체크박스</KCheckbox>
+            <KCheckbox type="image" name="checkbox-image" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." />
+            <KCheckbox type="file" name="checkbox-file" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" filename="졸업예정증명서_은영환" filetype="pdf" period="2025.03.10" filesize="89.3KB" />
+            <KCheckbox type="link" name="checkbox-link" linkThumbnail="https://yheun03.github.io/portfolio/src/assets/images/og-image.png" linkTitle="IA 정보구조도 설계 첫번째단계" linkDescription="IA는 Information Architech" linkUrl="brunch.co.lr" />
         </div>
 
         <h3>Selector</h3>

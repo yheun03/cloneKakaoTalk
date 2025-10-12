@@ -19,8 +19,10 @@
             />
         </div>
         <div v-else>
-            <select name="select" id="">
-                <option value="선택">선택</option>
+            <select name="select" id="" v-model="selectedOption">
+                <option value="선택1">선택1</option>
+                <option value="선택2">선택2</option>
+                <option value="선택3">선택3</option>
             </select>
         </div>
     </div>
@@ -69,6 +71,10 @@
                 type: String,
                 default: '',
                 validator: value => ['', 'date', 'time'].includes(value)
+            },
+            options: {
+                type: Array,
+                default: () => []
             }
         },
         data() {
