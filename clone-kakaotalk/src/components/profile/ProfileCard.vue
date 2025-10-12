@@ -1,6 +1,6 @@
 <template>
     <div class="profile-card">
-        <KAvatar :src="src" :alt="alt" size="40" />
+        <KAvatar :src="src" :alt="alt" :type="type" size="40" />
         <div class="info">
             <p class="name">{{ name }} <i class="icon ic-birthday" v-if="birthday"/></p>
             <p class="status-message">{{ statusMessage }}</p>
@@ -32,6 +32,11 @@
             name: {
                 type: String,
                 default: ''
+            },
+            type: {
+                type: String,
+                default: '',
+                validator: value => ['', 'new'].includes(value)
             },
             statusMessage: {
                 type: String,
