@@ -22,6 +22,18 @@
                 <div class="content type-file">
                 </div>
             </div>
+            <div v-else-if="type === 'emoji'">
+                <div class="content type-emoji">
+                    <img :src="src" :alt="alt">
+                </div>
+
+                <div class="content type-text" v-if="message">
+                    <i class="icon ic-chat">
+                        <svg viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.063 1.743L1.669 7.498C1.025 8.077 0 7.62 0 6.755V1C0 .448.448 0 1 0h6.394c.916 0 1.35 1.13.669 1.743z" fill="black"/></svg>
+                    </i>
+                    <p v-html="formattedMessage"></p>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -33,7 +45,7 @@
             type: {
                 type: String,
                 default: 'text',
-                validator: value => ['text', 'image', 'file'].includes(value)
+                validator: value => ['text', 'image', 'file', 'emoji'].includes(value)
             },
             sender: {
                 type: String,

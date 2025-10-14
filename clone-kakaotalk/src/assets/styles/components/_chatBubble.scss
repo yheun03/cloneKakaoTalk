@@ -9,6 +9,8 @@
             text: #ffffff
         )
     );
+    margin-bottom: 6px;
+
     .send{
         display: flex;
         gap: 5px;
@@ -61,6 +63,16 @@
                         object-fit: cover;
                     }
                 }
+                &-emoji{
+                    margin-bottom: 4px;
+                    img{
+                        display: block;
+                        max-width: 120px;
+                        width: 100%;
+                        object-fit: cover;
+                        margin-left: auto;
+                    }
+                }
             }
         }
 
@@ -81,6 +93,11 @@
                             path{
                                 fill: map-get(map-get($chat-colors, other), bg);
                             }
+                        }
+                    }
+                    &-emoji{
+                        img{
+                            margin-left: unset;
                         }
                     }
                 }

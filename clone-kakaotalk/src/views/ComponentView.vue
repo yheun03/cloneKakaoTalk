@@ -20,6 +20,18 @@
 
         <h3>ChatBubble</h3>
         <div class="wrap">
+            <ChatBubble type="emoji" sender="other" src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다." timestamp="2025.01.01 12:00" />
+            <ChatBubble type="emoji" sender="me" src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다." timestamp="2025.01.01 12:00" />
+        </div>
+        <div class="wrap">
+            <ChatBubble type="emoji" sender="other" src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다." message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
+            <ChatBubble type="emoji" sender="me" src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다." message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
+        </div>
+        <div class="wrap">
+            <ChatBubble type="file" sender="other" message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
+            <ChatBubble type="file" sender="me" message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
+        </div>
+        <div class="wrap">
             <ChatBubble type="text" sender="other" message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
             <ChatBubble type="text" sender="me" message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
         </div>
