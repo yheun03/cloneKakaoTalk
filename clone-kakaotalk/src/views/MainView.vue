@@ -1,11 +1,20 @@
 <template>
     <div>
-        <h1>Main</h1>
+        <KButton @click="goTo('Component')">커스텀 페이지로 이동</KButton>
     </div>
 </template>
   
 <script>
+    import KButton from '@/components/ui/Button.vue'
     export default {
-        name: 'MainView'
+        name: 'MainView',
+        components: {
+            KButton
+        },
+        methods: {
+            goTo(name) {
+                this.$router.push(`/${name}`)
+            }
+        }
     }
 </script>

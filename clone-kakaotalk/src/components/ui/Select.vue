@@ -4,7 +4,7 @@
             <VueDatePicker
                 v-model="date"
                 locale="ko"
-                enable-time-picker="false"
+                :enable-time-picker="false"
                 hide-input-icon
                 :format="formatWithDay"
             />

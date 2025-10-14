@@ -3,6 +3,7 @@
         class="k-button"
         :class="buttonClasses"
         :disabled="disabled || loading"
+        :style="{ color: customColor ? `#${customColor}` : '' }"
         @click="handleClick"
     >
         <slot />
@@ -19,10 +20,14 @@
                 default: '',
                 validator: value => ['', 'primary', 'secondary', 'danger', 'ghost'].includes(value)
             },
+            customColor: {
+                type: String,
+                default: '',
+            },
             type: {
                 type: String,
                 default: '',
-                validator: value => ['', 'round', 'toggle'].includes(value)
+                validator: value => ['', 'round', 'toggle', 'text'].includes(value)
             },
             disabled: {
                 type: Boolean,

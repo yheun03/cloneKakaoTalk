@@ -8,6 +8,17 @@
     font: 500 13px/normal "Pretendard";
     cursor: pointer;
 
+    &--text {
+        background-color: unset;
+        color: #111;
+        border: none;
+        padding: unset;
+        font: 500 12px/125% "Pretendard";
+        letter-spacing: -0.01em;
+        height: unset;
+        display: inline;
+    }
+
     &--primary {
         background-color: #FFE707;
         color: #111;
