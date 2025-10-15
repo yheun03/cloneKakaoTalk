@@ -3,6 +3,13 @@
         <h1>컴포넌트 모음</h1>
         <h2>UI 컴포넌트</h2>
 
+        <h3>emoticon</h3>
+        <div class="wrap">
+            <KEmoticon src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다." type="default" />
+            <KEmoticon src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다." type="mini" />
+            <KEmoticon src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다." type="kakao" />
+        </div>
+
         <h3>ProgressBar</h3>
         <div class="wrap" style="flex-direction: column; align-items: flex-start; width: 275px;">
             <KProgressBar min="0" max="100" value="32" type="default" :isActive="true"/>
@@ -119,6 +126,8 @@
     import ChatBubble from '@/components/chat/ChatBubble.vue'
     import ProfileCard from '@/components/profile/ProfileCard.vue'
     import KProgressBar from '@/components/ui/ProgressBar.vue'
+    import KEmoticon from '@/components/chat/Emoticon.vue'
+
     export default {
         name: 'ComponentView',
         components: {
@@ -130,7 +139,8 @@
             KCheckbox,
             ChatBubble,
             ProfileCard,
-            KProgressBar
+            KProgressBar,
+            KEmoticon
         },
     }
 </script>
