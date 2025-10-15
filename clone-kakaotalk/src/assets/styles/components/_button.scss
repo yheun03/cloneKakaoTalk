@@ -4,7 +4,7 @@
     border: 1px solid #424242;
     height: 30px;
     border-radius: 6px;
-    padding-inline: 40px;
+    min-width: 60px;
     font: 500 13px/normal "Pretendard";
     cursor: pointer;
 
@@ -17,6 +17,8 @@
         letter-spacing: -0.01em;
         height: unset;
         display: inline;
+
+        min-width: unset;
     }
 
     &--primary {
@@ -39,6 +41,7 @@
         height: 23px;
         border-radius: 12px;
         padding-inline: 7px;
+        min-width: unset;
     }
 
     &--toggle {
@@ -48,5 +51,6 @@
         border-radius: 12px;
         padding-inline: 9px 28px;
         background: url('@/assets/icons/12/ic-xmark.svg') no-repeat right 9px center;
+        min-width: unset;
     }
 }

@@ -3,6 +3,11 @@
         <h1>컴포넌트 모음</h1>
         <h2>UI 컴포넌트</h2>
 
+        <h3>Modal</h3>
+        <div class="wrap">
+            <ConfirmModal type="confirm" content="확인하시겠습니까?" cancelButton="취소" confirmButton="확인" @clickCancel="handleClickCancel" @clickConfirm="handleClickConfirm" />
+        </div>
+
         <h3>ProfileCard</h3>
         <div class="wrap" style="flex-direction: column; align-items: flex-start; width: 275px;">
             <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" type="my" :isBirthday=true statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
@@ -140,6 +145,7 @@
     import KProgressBar from '@/components/ui/ProgressBar.vue'
     import KEmoticon from '@/components/chat/Emoticon.vue'
     import KTable from '@/components/ui/Table.vue'
+    import ConfirmModal from '@/components/modal/Modal.vue'
     export default {
         name: 'ComponentView',
         components: {
@@ -153,11 +159,18 @@
             ProfileCard,
             KProgressBar,
             KEmoticon,
-            KTable
+            KTable,
+            ConfirmModal
         },
         methods: {
             handleBackupDelete() {
                 alert('백업 삭제');
+            },
+            handleClickCancel() {
+                alert('취소');
+            },
+            handleClickConfirm() {
+                alert('확인');
             }
         }
     }

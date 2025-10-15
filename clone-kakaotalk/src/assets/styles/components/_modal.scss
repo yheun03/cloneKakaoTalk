@@ -1,0 +1,27 @@
+.modal{
+    &-content{ 
+        width: 260px;
+        background-color: #191919;
+        border-radius: 9px;
+        border: 1px solid #474747;
+        padding: 10px 24px 24px;
+    }
+
+    &-body{
+        font: 900 13px/normal "Pretendard";
+        color: #fff;
+        p{
+            min-height: 50px;
+            align-content: center;
+        }
+    }
+
+    &-footer{
+        display: flex;
+        gap: 7px;
+        margin-top: 8px;
+        .k-button{
+            flex: 1;
+        }
+    }
+}
