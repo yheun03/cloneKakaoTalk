@@ -1,0 +1,36 @@
+.k-table {
+    background-color: rgb(255, 255, 255, .05);
+    padding: 15px 20px 16px;
+    width: 260px;
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font: 500 13px/120% "Pretendard";
+        letter-spacing: 0.01em;
+        text-align: left;
+        color: #fff;
+        tr:not(:last-child) > *{
+            padding-bottom: 10px;
+        }
+        th{
+            color: #A7A7A7;
+            width: fit-content;
+            white-space: nowrap;
+        }
+        td{
+            width: 100%;
+            &:not(:first-child){
+                padding-left: 8px;
+            }
+        }
+
+    }
+    .k-table-footer{
+        margin-top: 16px;
+        border-top: 1px solid #4E4E4E;
+        tr > *{
+            padding-top: 16px;
+        }
+    }
+}

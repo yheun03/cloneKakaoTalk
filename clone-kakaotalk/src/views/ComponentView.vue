@@ -3,6 +3,12 @@
         <h1>컴포넌트 모음</h1>
         <h2>UI 컴포넌트</h2>
 
+        <h3>Table</h3>
+        <div class="wrap">
+            <KTable :headers="['백업 일시', '복원 기한', '백업 기기', '채팅방 개수']" :rows="['없음', '-', 'mac', '164개']" hasButton="백업 삭제" @click="handleBackupDelete"/>
+            <KTable :headers="['백업 일시', '복원 기한', '백업 기기', '채팅방 개수']" :rows="['없음', '-', 'mac', '164개']" />
+        </div>
+
         <h3>emoticon</h3>
         <div class="wrap">
             <KEmoticon src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다." type="default" />
@@ -127,7 +133,7 @@
     import ProfileCard from '@/components/profile/ProfileCard.vue'
     import KProgressBar from '@/components/ui/ProgressBar.vue'
     import KEmoticon from '@/components/chat/Emoticon.vue'
-
+    import KTable from '@/components/ui/Table.vue'
     export default {
         name: 'ComponentView',
         components: {
@@ -140,8 +146,14 @@
             ChatBubble,
             ProfileCard,
             KProgressBar,
-            KEmoticon
+            KEmoticon,
+            KTable
         },
+        methods: {
+            handleBackupDelete() {
+                alert('백업 삭제');
+            }
+        }
     }
 </script>
 
