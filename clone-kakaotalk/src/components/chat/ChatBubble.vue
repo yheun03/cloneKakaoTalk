@@ -157,7 +157,7 @@
                 if (lower === 'xls' || lower === 'xlsx' || lower === 'csv' || lower === 'excel') return 'excel';
 
                 // 존재하지 않는 아이콘 타입은 일반 pdf 아이콘으로 대체
-                return 'pdf';
+                return 'download';
             }
         }
     }

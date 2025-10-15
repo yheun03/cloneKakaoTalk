@@ -30,6 +30,8 @@
         <div class="wrap">
             <ChatBubble type="file" sender="other" filename="스크린샷 2025-08-19 11.48.46" filetype="jpg" period="2025.03.10" filesize="89.3KB" timestamp="2025.01.01 12:00" />
             <ChatBubble type="file" sender="me" filename="졸업예정증명서_은영환" filetype="pdf" period="2025.03.10" filesize="89.3KB" timestamp="2025.01.01 12:00" />
+            <ChatBubble type="file" sender="me" filename="졸업예정증명서_은영환" filetype="mp4" period="2025.03.10" filesize="89.3KB" timestamp="2025.01.01 12:00" />
+            <ChatBubble type="file" sender="me" filename="졸업예정증명서_은영환" filetype="" period="2025.03.10" filesize="89.3KB" timestamp="2025.01.01 12:00" />
         </div>
         <div class="wrap">
             <ChatBubble type="text" sender="other" message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
