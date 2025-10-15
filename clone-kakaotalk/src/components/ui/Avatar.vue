@@ -21,15 +21,14 @@
                 type: String,
                 default: ''
             },
-            type: {
-                type: String,
-                default: '',
-                validator: value => ['', 'new'].includes(value)
+            isNew: {
+                type: Boolean,
+                default: false
             }
         },
         computed: {
             avatarClasses() {
-                if (this.type === 'new') {
+                if (this.isNew == true) {
                     return `k-avatar--size-${this.size} k-avatar--type-new`
                 }
                 return `k-avatar--size-${this.size}`

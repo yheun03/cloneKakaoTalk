@@ -3,6 +3,20 @@
         <h1>컴포넌트 모음</h1>
         <h2>UI 컴포넌트</h2>
 
+        <h3>ProfileCard</h3>
+        <div class="wrap" style="flex-direction: column; align-items: flex-start; width: 275px;">
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" type="my" :isBirthday=true statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" :isBirthday=true statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" :isNew=true :isBirthday=false statusMessage="🇯🇵🇩🇪🇨🇭🇫🇷🇨🇳🇺🇸🇹🇼🇸🇬🇫🇮🇳🇴🇸🇪🇩🇰" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" :isBirthday=true statusMessage="" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" :isNew=true :isBirthday=false statusMessage="" />
+
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isBirthday=true statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isNew=true :isBirthday=false statusMessage="🇯🇵🇩🇪🇨🇭🇫🇷🇨🇳🇺🇸🇹🇼🇸🇬🇫🇮🇳🇴🇸🇪🇩🇰" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isBirthday=true statusMessage="" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isNew=true :isBirthday=false statusMessage="" />
+        </div>
+
         <h3>Table</h3>
         <div class="wrap">
             <KTable :headers="['백업 일시', '복원 기한', '백업 기기', '채팅방 개수']" :rows="['없음', '-', 'mac', '164개']" hasButton="백업 삭제" @click="handleBackupDelete"/>
@@ -21,14 +35,6 @@
             <KProgressBar min="0" max="100" value="32" type="default" :isActive="true"/>
             <KProgressBar min="0" max="100" value="74" type="default" :isActive="false"/>
             <KProgressBar min="0" max="100" value="23" type="round"/>
-        </div>
-
-        <h3>ProfileCard</h3>
-        <div class="wrap" style="flex-direction: column; align-items: flex-start; width: 275px;">
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" type="" :birthday=true statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" type="new" :birthday=false statusMessage="🇯🇵🇩🇪🇨🇭🇫🇷🇨🇳🇺🇸🇹🇼🇸🇬🇫🇮🇳🇴🇸🇪🇩🇰" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" type="" :birthday=true statusMessage="" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" type="new" :birthday=false statusMessage="" />
         </div>
 
         <h3>ChatBubble</h3>
