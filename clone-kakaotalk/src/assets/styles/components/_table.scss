@@ -23,6 +23,9 @@
             &:not(:first-child){
                 padding-left: 8px;
             }
+            .expired-text {
+                color: #EE855A;
+            }
         }
 
     }

@@ -6,7 +6,7 @@
         <h3>Table</h3>
         <div class="wrap">
             <KTable :headers="['백업 일시', '복원 기한', '백업 기기', '채팅방 개수']" :rows="['없음', '-', 'mac', '164개']" hasButton="백업 삭제" @click="handleBackupDelete"/>
-            <KTable :headers="['백업 일시', '복원 기한', '백업 기기', '채팅방 개수']" :rows="['없음', '-', 'mac', '164개']" />
+            <KTable :headers="['백업 일시', '복원 기한', '백업 기기', '채팅방 개수']" :rows="['없음', '기한 만료', 'mac', '164개']" />
         </div>
 
         <h3>emoticon</h3>

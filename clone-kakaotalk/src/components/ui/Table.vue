@@ -3,13 +3,13 @@
         <table>
             <tr v-for="(header, index) in headers" :key="header">
                 <th>{{ header }}</th>
-                <td>{{ rows[index] }}</td>
+                <td v-html="getFormattedCellValue(rows[index])"></td>
             </tr>
         </table>
         <table v-if="hasButton" class="k-table-footer">
             <tr>
                 <td>
-                    <KButton type="text" customColor="fff" v-bind="$attrs">{{ hasButton }}</KButton>
+                    <KButton type="text" customColor="fff" @click="handleClick">{{ hasButton }}</KButton>
                 </td>
             </tr>
         </table>
@@ -24,6 +24,7 @@
             KButton
         },
         inheritAttrs: false,
+        emits: ['click'],
         props: {
             headers: {
                 type: Array,
@@ -36,6 +37,17 @@
             hasButton: {
                 type: String,
                 default: ''
+            }
+        },
+        methods: {
+            getFormattedCellValue(value) {
+                if (value == '기한 만료') {
+                    return `<span class="expired-text">${value}</span>`;
+                }
+                return value;
+            },
+            handleClick() {
+                this.$emit('click');
             }
         }
     }
