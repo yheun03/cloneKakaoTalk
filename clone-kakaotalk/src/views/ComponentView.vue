@@ -3,6 +3,25 @@
         <h1>컴포넌트 모음</h1>
         <h2>UI 컴포넌트</h2>
 
+        <h3>Select</h3>
+        <div class="wrap">
+            <KSelect :options="selectOptions" placeholder="옵션을 선택하세요" />
+            <KSelect :options="selectOptions" />
+            <KSelect type="date" />
+            <KSelect type="time" />
+        </div>
+
+        <h3>Input</h3>
+        <div class="wrap">
+            <KInput />
+            <KInput value="test" />
+            <KInput :maxlength="10" />
+            <KInput placeholder="placeholder" />
+            <KInput showSelect />
+            <KInput showSelect placeholder="placeholder" />
+            <KInput type="textarea" placeholder="placeholder" />
+        </div>
+
         <h3>Modal</h3>
         <div class="wrap">
             <ConfirmModal type="confirm" content="확인하시겠습니까?" cancelButton="취소" confirmButton="확인" @clickCancel="handleClickCancel" @clickConfirm="handleClickConfirm" />
@@ -89,13 +108,6 @@
             <KRadio type="palette-sm" color="#f44"/>
         </div>
 
-        <h3>Select</h3>
-        <div class="wrap">
-            <KSelect />
-            <KSelect type="date" />
-            <KSelect type="time" />
-        </div>
-
         <h3>Button</h3>
         <div class="wrap">
             <KButton>버튼</KButton>
@@ -103,17 +115,6 @@
             <KButton disabled>버튼</KButton>
             <KButton type="round">선물하기</KButton>
             <KButton type="toggle">이름</KButton>
-        </div>
-
-        <h3>Input</h3>
-        <div class="wrap">
-            <KInput />
-            <KInput value="test" />
-            <KInput :maxlength="10" />
-            <KInput placeholder="placeholder" />
-            <KInput showSelect />
-            <KInput showSelect placeholder="placeholder" />
-            <KInput type="textarea" placeholder="placeholder" />
         </div>
 
         <h3>Avatar</h3>
@@ -171,6 +172,37 @@
             },
             handleClickConfirm() {
                 alert('확인');
+            }
+        },
+        data() {
+            return {
+                selectOptions: [
+                    {
+                        optionTitle: '선택1',
+                        optionValue: 'value1',
+                        optionChecked: false
+                    },
+                    {
+                        optionTitle: '엄청나게 긴 옵션 명일때 이렇게 길어질 수 있습니다.',
+                        optionValue: 'value2',
+                        optionChecked: false
+                    },
+                    {
+                        optionTitle: '선택3',
+                        optionValue: 'value3',
+                        optionChecked: false
+                    },
+                    {
+                        optionTitle: '선택4',
+                        optionValue: 'value4',
+                        optionChecked: false
+                    },
+                    {
+                        optionTitle: '선택5',
+                        optionValue: 'value5',
+                        optionChecked: false
+                    }
+                ]
             }
         }
     }

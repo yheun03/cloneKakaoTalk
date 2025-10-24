@@ -32,28 +32,6 @@
 }
 
 .k-select {
-    select {
-        appearance: none;
-        background-color: unset;
-        border-radius: 6px;
-        border: 1px solid #4e4e4e;
-        color: #EDEDED;
-        font: 500 13px/normal "Pretendard";
-        padding-inline: 12px 32px;
-        height: 30px;
-        cursor: pointer;
-        outline: unset;
-        background: url('@/assets/icons/12/ic-polygon-bottom.svg') no-repeat right 12px center;
-        .k-input &{
-            padding-inline: 0 30px;
-            border: unset;
-            border-radius: unset;
-            background: {
-                image: url('@/assets/icons/12/ic-arrow-bottom.svg');
-                position-x: right;
-            }
-        }
-    }
     &--date{
         width: 131px;
         .dp__menu{
@@ -132,5 +110,60 @@
           color: #1e90ff !important;
           font-weight: 600;
         }
-      }
+    }
+    &-wrapper{
+        position: relative;
+    }
+    &-opener{
+        background-color: unset;
+        border-radius: 6px;
+        border: 1px solid #4e4e4e;
+        color: #EDEDED;
+        font: 500 13px/30px "Pretendard";
+        padding-inline: 12px 32px;
+        height: 30px;
+        cursor: pointer;
+        outline: unset;
+        background: url('@/assets/icons/12/ic-polygon-bottom.svg') no-repeat right 12px center;
+        &--placeholder{
+            color: #595959;
+        }
+        .k-input &{
+            padding-inline: 0 30px;
+            border: unset;
+            border-radius: unset;
+            background: {
+                image: url('@/assets/icons/12/ic-arrow-bottom.svg');
+                position-x: right;
+            }
+            &--placeholder{
+                color: #838383;
+            }
+        }
+    }
+    &-option{
+        &-list{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 260px;
+            border: 1px solid #434343;
+            z-index: 10;
+        }
+        &-item{
+            width: 100%;
+            font: 500 14px/normal "Pretendard";
+            color: #fff;
+            letter-spacing: -0.05em;
+            padding: 7px 12px 6px;
+            background-color: #222222;
+            cursor: pointer;
+            &:hover{
+                background: #2C2D2D;
+            }
+            &.checked{
+                background: #383838;
+            }
+        }
+    }
 }

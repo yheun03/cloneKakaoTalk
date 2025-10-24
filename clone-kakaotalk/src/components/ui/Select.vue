@@ -18,12 +18,18 @@
                 :format="formatKoreanTime"
             />
         </div>
-        <div v-else>
-            <select name="select" id="" v-model="selectedOption">
-                <option value="선택1">선택1</option>
-                <option value="선택2">선택2</option>
-                <option value="선택3">선택3</option>
-            </select>
+        <div v-else class="k-select-wrapper" ref="selectWrapper">
+            <div class="k-select-opener" :class="openerClasses" @click="toggleOptions">
+                {{ displayText }}
+            </div>
+            <div class="k-select-option-list" v-show="isOpen">
+                <selectOption v-for="option in options"
+                    :key="option.optionValue"
+                    :optionTitle="option.optionTitle"
+                    :optionValue="option.optionValue"
+                    :optionChecked="option.optionChecked"
+                    @click="handleOptionClick(option)" />
+            </div>
         </div>
     </div>
 </template>
@@ -60,11 +66,13 @@
   
 <script>
     import VueDatePicker from '@vuepic/vue-datepicker';
+    import selectOption from '@/components/ui/Option.vue';
 
     export default {
         name: 'KSelect',
         components: {
-            VueDatePicker
+            VueDatePicker,
+            selectOption,
         },
         props: {
             type: {
@@ -75,12 +83,17 @@
             options: {
                 type: Array,
                 default: () => []
+            },
+            placeholder: {
+                type: String,
+                default: '옵션을 선택하세요'
             }
         },
         data() {
             return {
                 date: null,
-                time: null
+                time: null,
+                isOpen: false
             }
         },
         computed: {
@@ -88,6 +101,45 @@
                 return [
                     this.type && `k-select--${this.type}`
                 ]
+            },
+            displayText() {
+                const selectedOption = this.options.find(option => option.optionChecked);
+                if (selectedOption) {
+                    return selectedOption.optionTitle;
+                }
+                return this.placeholder || '';
+            },
+            openerClasses() {
+                const selectedOption = this.options.find(option => option.optionChecked);
+                return {
+                    'k-select-opener--placeholder': !selectedOption
+                };
+            }
+        },
+        mounted() {
+            document.addEventListener('click', this.handleOutsideClick);
+        },
+        beforeUnmount() {
+            document.removeEventListener('click', this.handleOutsideClick);
+        },
+        methods: {
+            toggleOptions() {
+                this.isOpen = !this.isOpen;
+            },
+            handleOptionClick(clickedOption) {
+                // 모든 옵션의 checked 상태를 false로 설정
+                this.options.forEach(option => {
+                    option.optionChecked = false;
+                });
+                // 클릭된 옵션만 checked 상태를 true로 설정
+                clickedOption.optionChecked = true;
+                // 옵션 선택 후 리스트 닫기
+                this.isOpen = false;
+            },
+            handleOutsideClick(event) {
+                if (this.$refs.selectWrapper && !this.$refs.selectWrapper.contains(event.target)) {
+                    this.isOpen = false;
+                }
             }
         }
     }
