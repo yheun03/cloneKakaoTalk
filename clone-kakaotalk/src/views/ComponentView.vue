@@ -3,6 +3,13 @@
         <h1>컴포넌트 모음</h1>
         <h2>UI 컴포넌트</h2>
 
+        <h3>Tab</h3>
+        <div class="wrap">
+            <KTabs v-model="active" :items="tabs" :panels="panels" />
+            <KTabs v-model="active" :items="tabs" :panels="panels" variant="filled" />
+            <KTabs v-model="active" :items="tabs" :panels="panels" variant="text" />
+        </div>
+
         <h3>Select</h3>
         <div class="wrap">
             <KSelect :options="selectOptions" placeholder="옵션을 선택하세요" />
@@ -24,88 +31,126 @@
 
         <h3>Modal</h3>
         <div class="wrap">
-            <ConfirmModal type="confirm" content="확인하시겠습니까?" cancelButton="취소" confirmButton="확인" @clickCancel="handleClickCancel" @clickConfirm="handleClickConfirm" />
+            <ConfirmModal type="confirm" content="확인하시겠습니까?" cancelButton="취소" confirmButton="확인"
+                @clickCancel="handleClickCancel" @clickConfirm="handleClickConfirm" />
         </div>
 
         <h3>ProfileCard</h3>
         <div class="wrap" style="flex-direction: column; align-items: flex-start; width: 275px;">
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" type="my" :isBirthday=true statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" :isBirthday=true statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" :isNew=true :isBirthday=false statusMessage="🇯🇵🇩🇪🇨🇭🇫🇷🇨🇳🇺🇸🇹🇼🇸🇬🇫🇮🇳🇴🇸🇪🇩🇰" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" :isBirthday=true statusMessage="" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" :isNew=true :isBirthday=false statusMessage="" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." name="홍길동" type="my" :isBirthday=true
+                statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." name="홍길동" :isBirthday=true statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." name="홍길동" :isNew=true :isBirthday=false
+                statusMessage="🇯🇵🇩🇪🇨🇭🇫🇷🇨🇳🇺🇸🇹🇼🇸🇬🇫🇮🇳🇴🇸🇪🇩🇰" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." name="홍길동" :isBirthday=true statusMessage="" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." name="홍길동" :isNew=true :isBirthday=false statusMessage="" />
 
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isBirthday=true statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isNew=true :isBirthday=false statusMessage="🇯🇵🇩🇪🇨🇭🇫🇷🇨🇳🇺🇸🇹🇼🇸🇬🇫🇮🇳🇴🇸🇪🇩🇰" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isBirthday=true statusMessage="" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isNew=true :isBirthday=false statusMessage="" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isBirthday=true
+                statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isNew=true :isBirthday=false
+                statusMessage="🇯🇵🇩🇪🇨🇭🇫🇷🇨🇳🇺🇸🇹🇼🇸🇬🇫🇮🇳🇴🇸🇪🇩🇰" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isBirthday=true statusMessage="" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isNew=true :isBirthday=false statusMessage="" />
         </div>
 
         <h3>Table</h3>
         <div class="wrap">
-            <KTable :headers="['백업 일시', '복원 기한', '백업 기기', '채팅방 개수']" :rows="['없음', '-', 'mac', '164개']" hasButton="백업 삭제" @click="handleBackupDelete"/>
+            <KTable :headers="['백업 일시', '복원 기한', '백업 기기', '채팅방 개수']" :rows="['없음', '-', 'mac', '164개']"
+                hasButton="백업 삭제" @click="handleBackupDelete" />
             <KTable :headers="['백업 일시', '복원 기한', '백업 기기', '채팅방 개수']" :rows="['없음', '기한 만료', 'mac', '164개']" />
         </div>
 
         <h3>emoticon</h3>
         <div class="wrap">
-            <KEmoticon src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다." type="default" />
+            <KEmoticon src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다."
+                type="default" />
             <KEmoticon src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다." type="mini" />
             <KEmoticon src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다." type="kakao" />
         </div>
 
         <h3>ProgressBar</h3>
         <div class="wrap" style="flex-direction: column; align-items: flex-start; width: 275px;">
-            <KProgressBar min="0" max="100" value="32" type="default" :isActive="true"/>
-            <KProgressBar min="0" max="100" value="74" type="default" :isActive="false"/>
-            <KProgressBar min="0" max="100" value="23" type="round"/>
+            <KProgressBar min="0" max="100" value="32" type="default" :isActive="true" />
+            <KProgressBar min="0" max="100" value="74" type="default" :isActive="false" />
+            <KProgressBar min="0" max="100" value="23" type="round" />
         </div>
 
         <h3>ChatBubble</h3>
         <div class="wrap">
-            <ChatBubble type="emoji" sender="other" src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다." timestamp="2025.01.01 12:00" />
-            <ChatBubble type="emoji" sender="me" src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다." timestamp="2025.01.01 12:00" />
+            <ChatBubble type="emoji" sender="other" src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif"
+                alt="이모지 이미지입니다." timestamp="2025.01.01 12:00" />
+            <ChatBubble type="emoji" sender="me" src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif"
+                alt="이모지 이미지입니다." timestamp="2025.01.01 12:00" />
         </div>
         <div class="wrap">
-            <ChatBubble type="emoji" sender="other" src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다." message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
-            <ChatBubble type="emoji" sender="me" src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다." message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
+            <ChatBubble type="emoji" sender="other" src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif"
+                alt="이모지 이미지입니다." message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
+            <ChatBubble type="emoji" sender="me" src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif"
+                alt="이모지 이미지입니다." message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
         </div>
         <div class="wrap">
-            <ChatBubble type="file" sender="other" filename="스크린샷 2025-08-19 11.48.46" filetype="jpg" period="2025.03.10" filesize="89.3KB" timestamp="2025.01.01 12:00" />
-            <ChatBubble type="file" sender="me" filename="졸업예정증명서_은영환" filetype="pdf" period="2025.03.10" filesize="89.3KB" timestamp="2025.01.01 12:00" />
-            <ChatBubble type="file" sender="me" filename="졸업예정증명서_은영환" filetype="mp4" period="2025.03.10" filesize="89.3KB" timestamp="2025.01.01 12:00" />
-            <ChatBubble type="file" sender="me" filename="졸업예정증명서_은영환" filetype="" period="2025.03.10" filesize="89.3KB" timestamp="2025.01.01 12:00" />
+            <ChatBubble type="file" sender="other" filename="스크린샷 2025-08-19 11.48.46" filetype="jpg"
+                period="2025.03.10" filesize="89.3KB" timestamp="2025.01.01 12:00" />
+            <ChatBubble type="file" sender="me" filename="졸업예정증명서_은영환" filetype="pdf" period="2025.03.10"
+                filesize="89.3KB" timestamp="2025.01.01 12:00" />
+            <ChatBubble type="file" sender="me" filename="졸업예정증명서_은영환" filetype="mp4" period="2025.03.10"
+                filesize="89.3KB" timestamp="2025.01.01 12:00" />
+            <ChatBubble type="file" sender="me" filename="졸업예정증명서_은영환" filetype="" period="2025.03.10" filesize="89.3KB"
+                timestamp="2025.01.01 12:00" />
         </div>
         <div class="wrap">
             <ChatBubble type="text" sender="other" message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
             <ChatBubble type="text" sender="me" message="불고기는 괜찮을 거 같아!!." timestamp="2025.01.01 12:00" />
         </div>
         <div class="wrap">
-            <ChatBubble type="text" sender="other" message="불고기는 괜찮을 거 같아!!. https://naver.com" timestamp="2025.01.01 12:00" />
+            <ChatBubble type="text" sender="other" message="불고기는 괜찮을 거 같아!!. https://naver.com"
+                timestamp="2025.01.01 12:00" />
             <ChatBubble type="text" sender="me" message="불고기는 괜찮을 거 같아!!. naver.com" timestamp="2025.01.01 12:00" />
         </div>
         <div class="wrap">
-            <ChatBubble type="image" sender="other" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." timestamp="2025.01.01 12:00" />
-            <ChatBubble type="image" sender="me" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." timestamp="2025.01.01 12:00" />
+            <ChatBubble type="image" sender="other"
+                src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."
+                timestamp="2025.01.01 12:00" />
+            <ChatBubble type="image" sender="me"
+                src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."
+                timestamp="2025.01.01 12:00" />
         </div>
         <h3>Checkbox</h3>
         <div class="wrap">
             <KCheckbox name="checkbox" />
             <KCheckbox name="checkbox">기본 체크박스</KCheckbox>
-            <KCheckbox type="image" name="checkbox-image" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." />
-            <KCheckbox type="file" name="checkbox-file" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" filename="졸업예정증명서_은영환" filetype="pdf" period="2025.03.10" filesize="89.3KB" />
-            <KCheckbox type="link" name="checkbox-link" linkThumbnail="https://yheun03.github.io/portfolio/src/assets/images/og-image.png" linkTitle="IA 정보구조도 설계 첫번째단계" linkDescription="IA는 Information Architech" linkUrl="brunch.co.lr" />
+            <KCheckbox type="image" name="checkbox-image"
+                src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." />
+            <KCheckbox type="file" name="checkbox-file"
+                src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" filename="졸업예정증명서_은영환"
+                filetype="pdf" period="2025.03.10" filesize="89.3KB" />
+            <KCheckbox type="link" name="checkbox-link"
+                linkThumbnail="https://yheun03.github.io/portfolio/src/assets/images/og-image.png"
+                linkTitle="IA 정보구조도 설계 첫번째단계" linkDescription="IA는 Information Architech" linkUrl="brunch.co.lr" />
         </div>
 
         <h3>Selector</h3>
         <div class="wrap">
             <KRadio type="image" />
-            <KRadio type="image" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." />
-            <KRadio type="illustration" src="https://cdn.pixabay.com/photo/2025/08/13/18/49/mountains-9772732_1280.png" alt="채팅 화면의 배경화면 입니다." />
-            <KRadio type="illustration" src="https://cdn.pixabay.com/photo/2025/04/05/06/58/flower-9514615_640.png" alt="채팅 화면의 배경화면 입니다." />
-            <KRadio type="illustration" src="https://cdn.pixabay.com/photo/2025/03/16/19/25/flowers-9474432_640.jpg" alt="채팅 화면의 배경화면 입니다." />
-            <KRadio type="palette" color="#44f"/>
-            <KRadio type="palette-sm" color="#f44"/>
+            <KRadio type="image" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." />
+            <KRadio type="illustration" src="https://cdn.pixabay.com/photo/2025/08/13/18/49/mountains-9772732_1280.png"
+                alt="채팅 화면의 배경화면 입니다." />
+            <KRadio type="illustration" src="https://cdn.pixabay.com/photo/2025/04/05/06/58/flower-9514615_640.png"
+                alt="채팅 화면의 배경화면 입니다." />
+            <KRadio type="illustration" src="https://cdn.pixabay.com/photo/2025/03/16/19/25/flowers-9474432_640.jpg"
+                alt="채팅 화면의 배경화면 입니다." />
+            <KRadio type="palette" color="#44f" />
+            <KRadio type="palette-sm" color="#f44" />
         </div>
 
         <h3>Button</h3>
@@ -119,117 +164,122 @@
 
         <h3>Avatar</h3>
         <div class="wrap">
-            <KAvatar size="90" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."/>
-            <KAvatar size="84" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."/>
-            <KAvatar size="54" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."/>
-            <KAvatar size="44" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."/>
-            <KAvatar size="40" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."/>
-            <KAvatar size="40" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." type="new"/>
-            <KAvatar size="36" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."/>
-            <KAvatar size="28" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."/>
-            <KAvatar size="24" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."/>
-            <KAvatar size="22" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다."/>
+            <KAvatar size="90" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." />
+            <KAvatar size="84" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." />
+            <KAvatar size="54" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." />
+            <KAvatar size="44" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." />
+            <KAvatar size="40" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." />
+            <KAvatar size="40" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." type="new" />
+            <KAvatar size="36" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." />
+            <KAvatar size="28" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." />
+            <KAvatar size="24" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." />
+            <KAvatar size="22" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." />
         </div>
-        
+
     </div>
 </template>
 
 <script>
-    import KButton from '@/components/ui/Button.vue'
-    import KInput from '@/components/ui/Input.vue'
-    import KAvatar from '@/components/ui/Avatar.vue'
-    import KSelect from '@/components/ui/Select.vue'
-    import KRadio from '@/components/ui/Radio.vue'
-    import KCheckbox from '@/components/ui/Checkbox.vue'
-    import ChatBubble from '@/components/chat/ChatBubble.vue'
-    import ProfileCard from '@/components/profile/ProfileCard.vue'
-    import KProgressBar from '@/components/ui/ProgressBar.vue'
-    import KEmoticon from '@/components/chat/Emoticon.vue'
-    import KTable from '@/components/ui/Table.vue'
-    import ConfirmModal from '@/components/modal/Modal.vue'
-    export default {
-        name: 'ComponentView',
-        components: {
-            KButton,
-            KInput,
-            KAvatar,
-            KSelect,
-            KRadio,
-            KCheckbox,
-            ChatBubble,
-            ProfileCard,
-            KProgressBar,
-            KEmoticon,
-            KTable,
-            ConfirmModal
-        },
-        methods: {
-            handleBackupDelete() {
-                alert('백업 삭제');
+import KButton from '@/components/ui/Button.vue'
+import KInput from '@/components/ui/Input.vue'
+import KAvatar from '@/components/ui/Avatar.vue'
+import KSelect from '@/components/ui/Select.vue'
+import KRadio from '@/components/ui/Radio.vue'
+import KCheckbox from '@/components/ui/Checkbox.vue'
+import ChatBubble from '@/components/chat/ChatBubble.vue'
+import ProfileCard from '@/components/profile/ProfileCard.vue'
+import KProgressBar from '@/components/ui/ProgressBar.vue'
+import KEmoticon from '@/components/chat/Emoticon.vue'
+import KTable from '@/components/ui/Table.vue'
+import ConfirmModal from '@/components/modal/Modal.vue'
+
+import KTabs from '@/components/ui/Tab.vue'
+
+import OverviewTab from '@/views/tabs/OverviewTab.vue'
+import StatsTab from '@/views/tabs/StatsTab.vue'
+import SettingsTab from '@/views/tabs/SettingsTab.vue'
+
+
+export default {
+    name: 'ComponentView',
+    components: {
+        KButton,
+        KInput,
+        KAvatar,
+        KSelect,
+        KRadio,
+        KCheckbox,
+        ChatBubble,
+        ProfileCard,
+        KProgressBar,
+        KEmoticon,
+        KTable,
+        ConfirmModal,
+        KTabs,
+    },
+    data() {
+        return {
+            active: 'overview',
+            selectOptions: [
+                { optionTitle: '선택1', optionValue: 'value1', optionChecked: false },
+                { optionTitle: '엄청나게 긴 옵션 명일때 이렇게 길어질 수 있습니다.', optionValue: 'value2', optionChecked: false },
+                { optionTitle: '선택3', optionValue: 'value3', optionChecked: false },
+                { optionTitle: '선택4', optionValue: 'value4', optionChecked: false },
+                { optionTitle: '선택5', optionValue: 'value5', optionChecked: false },
+            ],
+            tabs: [
+                { label: '개요', page: 'overview' },
+                { label: '통계', page: 'stats' },
+                { label: '설정', page: 'settings' },
+            ],
+            panels: {
+                overview: OverviewTab,
+                stats: StatsTab,
+                settings: SettingsTab,
             },
-            handleClickCancel() {
-                alert('취소');
-            },
-            handleClickConfirm() {
-                alert('확인');
-            }
-        },
-        data() {
-            return {
-                selectOptions: [
-                    {
-                        optionTitle: '선택1',
-                        optionValue: 'value1',
-                        optionChecked: false
-                    },
-                    {
-                        optionTitle: '엄청나게 긴 옵션 명일때 이렇게 길어질 수 있습니다.',
-                        optionValue: 'value2',
-                        optionChecked: false
-                    },
-                    {
-                        optionTitle: '선택3',
-                        optionValue: 'value3',
-                        optionChecked: false
-                    },
-                    {
-                        optionTitle: '선택4',
-                        optionValue: 'value4',
-                        optionChecked: false
-                    },
-                    {
-                        optionTitle: '선택5',
-                        optionValue: 'value5',
-                        optionChecked: false
-                    }
-                ]
-            }
         }
-    }
+    },
+    methods: {
+        handleBackupDelete() { alert('백업 삭제') },
+        handleClickCancel() { alert('취소') },
+        handleClickConfirm() { alert('확인') },
+    },
+}
 </script>
 
 <style lang="scss" scoped>
-    h1{
-        font: 700 24px/normal "Pretendard";
-        color: #fff;
-    }
+h1 {
+    font: 700 24px/normal "Pretendard";
+    color: #fff;
+}
 
-    h2{
-        font: 700 18px/normal "Pretendard";
-        color: #fff;
-        margin-block: 32px 24px;
-    }
-    h3{
-        font: 700 16px/normal "Pretendard";
-        color: #fff;
-        margin-block: 24px 16px;
-    }
+h2 {
+    font: 700 18px/normal "Pretendard";
+    color: #fff;
+    margin-block: 32px 24px;
+}
 
-    .wrap{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        padding-inline: 20px;
-        align-items: center;
-    }
+h3 {
+    font: 700 16px/normal "Pretendard";
+    color: #fff;
+    margin-block: 24px 16px;
+}
+
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-inline: 20px;
+    align-items: center;
+}
 </style>

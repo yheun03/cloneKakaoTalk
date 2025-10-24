@@ -1,0 +1,44 @@
+.k-tabs{
+    &__list{
+        display: flex;
+        gap: 20px;
+
+        &.type-filled{
+            gap: unset;
+            button{
+                flex: 1;
+                padding: 6px 0;
+                font:500 13px/normal "Pretendard";
+                color: #9E9E9E;
+            }
+        }
+        &.type-text{
+            gap: 14px;
+            button{
+                padding: unset;
+                font: 500 14px/130% "Pretendard";
+                color: #9E9E9E;
+                border: unset;
+                &[aria-selected="true"]{
+                    font-weight: 700;
+                }
+            }
+        }
+        button{
+            appearance: unset;
+            background-color: unset;
+            border: none;
+            padding: 10px 2px;
+            font: 700 16px/130% "Pretendard";
+            color: #838383;
+            cursor: pointer;
+            border-bottom: 1px solid #fff;
+            &[aria-selected="true"]{
+                color: #fff;
+            }
+        }
+    }
+    &__panel{
+        padding-top: 16px;
+    }
+}
