@@ -5,10 +5,10 @@
 
         <h3>Tab</h3>
         <div class="wrap">
-            <KTabs v-model="active" :items="tabsEmoji" type="emoji" />
-            <KTabs v-model="active" :items="tabs" />
-            <KTabs v-model="active" :items="tabs" type="filled" />
-            <KTabs v-model="active" :items="tabs" type="text" />
+            <KTabs :items="tabsEmoji" type="emoji" />
+            <KTabs :items="tabs" />
+            <KTabs :items="tabs" type="filled" />
+            <KTabs :items="tabs" type="text" />
         </div>
 
         <h3>Select</h3>
@@ -239,23 +239,14 @@ export default {
                 { optionTitle: '선택5', optionValue: 'value5', optionChecked: false },
             ],
             tabs: [
-                { label: '개요', page: OverviewTab },
-                { label: '통계', page: StatsTab },
-                { label: '설정', page: SettingsTab },
+                { label: '개요', value: 'overview', component: OverviewTab },
+                { label: '통계', value: 'stats', component: StatsTab },
+                { label: '설정', value: 'settings', component: SettingsTab },
             ],
             tabsEmoji: [
-                { label: 'https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif', page: OverviewTab },
-                { label: '', page: StatsTab },
-                { label: 'https://jonsoft.co.kr/resources/icons/36/ic-download.svg', page: SettingsTab },
-                { label: 'https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif', page: OverviewTab },
-                { label: '', page: StatsTab },
-                { label: 'https://jonsoft.co.kr/resources/icons/36/ic-download.svg', page: SettingsTab },
-                { label: 'https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif', page: OverviewTab },
-                { label: '', page: StatsTab },
-                { label: 'https://jonsoft.co.kr/resources/icons/36/ic-download.svg', page: SettingsTab },
-                { label: 'https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif', page: OverviewTab },
-                { label: '', page: StatsTab },
-                { label: 'https://jonsoft.co.kr/resources/icons/36/ic-download.svg', page: SettingsTab },
+                { label: 'https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif', value: 'e1', component: OverviewTab },
+                { label: 'https://jonsoft.co.kr/resources/icons/36/ic-download.svg', value: 'e2', component: StatsTab },
+                { label: 'https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif', value: 'e3', component: SettingsTab },
             ],
         }
     },
