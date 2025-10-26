@@ -1,0 +1,88 @@
+<template>
+    <div class="chatting-card">
+        <KAvatar :src="src" :alt="alt" size="44" />
+        <div class="chatting-card-info">
+            <p class="c-name">{{ chattingName }} <span class="c-headcount">1</span> <i class="icon ic-pin" v-if="isPin">pin</i> <i class="icon ic-silent" v-if="isSilent">silent</i></p>
+            <p class="c-message" v-text="lastMessage"></p>
+        </div>
+        <div class="chatting-card-info-time">
+            <p class="c-time">{{ formattedLastMessageTime }}</p>
+            <p class="c-unread">{{ unreadCount }}</p>
+        </div>
+    </div>
+</template>
+<script>
+    import KAvatar from '@/components/ui/Avatar.vue';
+
+    export default {
+        name: 'ChattingCard',
+        components: {
+            KAvatar
+        },
+        props: {
+            src: {
+                type: String,
+                default: ''
+            },
+            alt: {
+                type: String,
+                default: ''
+            },
+            chattingName: {
+                type: String,
+                default: ''
+            },
+            lastMessage: {
+                type: String,
+                default: ''
+            },
+            lastMessageTime: {
+                type: [String, Date],
+                default: ''
+            },
+            unreadCount: {
+                type: Number,
+                default: 0
+            },
+            isPin: {
+                type: Boolean,
+                default: false
+            },
+            isSilent: {
+                type: Boolean,
+                default: false
+            }
+        },
+        computed: {
+            formattedLastMessageTime() {
+                if (!this.lastMessageTime) return '';
+                
+                const messageTime = new Date(this.lastMessageTime);
+                const now = new Date();
+                const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+                const messageDate = new Date(messageTime.getFullYear(), messageTime.getMonth(), messageTime.getDate());
+                
+                // 같은 날 (00시가 지나지 않음)
+                if (messageDate.getTime() === today.getTime()) {
+                    return messageTime.toLocaleTimeString('ko-KR', { 
+                        hour: '2-digit', 
+                        minute: '2-digit',
+                        hour12: false 
+                    });
+                }
+                
+                // 같은 해
+                if (messageTime.getFullYear() === now.getFullYear()) {
+                    return `${messageTime.getMonth() + 1}월${messageTime.getDate()}일`;
+                }
+                
+                // 다른 해
+                return messageTime.toLocaleDateString('ko-KR', {
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit'
+                }).replace(/\./g, '. ').replace(/\s/g, '');
+            }
+        }
+    }
+</script>

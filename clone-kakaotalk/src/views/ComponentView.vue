@@ -3,6 +3,74 @@
         <h1>컴포넌트 모음</h1>
         <h2>UI 컴포넌트</h2>
 
+        <h3>ChattingListCard</h3>
+        <div class="wrap" style="flex-direction: column; align-items: flex-start; width: 320px;">
+            <ChattingCard 
+                src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다."
+                chattingName="홍길동"
+                lastMessage="[빗썸] KB 국민은행 계좌 사전등록 종료 임박! 서둘러 사전등록을 하셔야 합니다."
+                lastMessageTime="2025.10.26 12:00"
+                unreadCount="1"
+                :isPin=false
+                :isSilent=false />
+            <ChattingCard 
+                src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다."
+                chattingName="홍길동"
+                lastMessage="안녕하세요."
+                lastMessageTime="2025.10.25 12:00"
+                unreadCount="1"
+                :isPin=false
+                :isSilent=true />
+            <ChattingCard 
+                src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다."
+                chattingName="홍길동"
+                lastMessage="[빗썸]
+                KB 국민은행 계좌 사전등록 종료 임박! 서둘러 사전등록을 하셔야 합니다."
+                lastMessageTime="2025.01.01 12:00"
+                unreadCount="21"
+                :isPin=true
+                :isSilent=false />
+            <ChattingCard 
+                src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다."
+                chattingName="홍길동"
+                lastMessage="안녕하세요."
+                lastMessageTime="2024.12.31 23:59"
+                unreadCount="1"
+                :isPin=true
+                :isSilent=true />
+        </div>
+
+        <h3>ProfileCard</h3>
+        <div class="wrap" style="flex-direction: column; align-items: flex-start; width: 275px;">
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." name="홍길동" type="my" :isBirthday=true
+                statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." name="홍길동" :isBirthday=true statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." name="홍길동" :isNew=true :isBirthday=false
+                statusMessage="🇯🇵🇩🇪🇨🇭🇫🇷🇨🇳🇺🇸🇹🇼🇸🇬🇫🇮🇳🇴🇸🇪🇩🇰" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." name="홍길동" :isBirthday=true statusMessage="" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." name="홍길동" :isNew=true :isBirthday=false statusMessage="" />
+
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isBirthday=true
+                statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isNew=true :isBirthday=false
+                statusMessage="🇯🇵🇩🇪🇨🇭🇫🇷🇨🇳🇺🇸🇹🇼🇸🇬🇫🇮🇳🇴🇸🇪🇩🇰" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isBirthday=true statusMessage="" />
+            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+                alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isNew=true :isBirthday=false statusMessage="" />
+        </div>
+
         <h3>Tab</h3>
         <div class="wrap">
             <KTabs :items="tabsEmoji" type="emoji" />
@@ -34,33 +102,6 @@
         <div class="wrap">
             <ConfirmModal type="confirm" content="확인하시겠습니까?" cancelButton="취소" confirmButton="확인"
                 @clickCancel="handleClickCancel" @clickConfirm="handleClickConfirm" />
-        </div>
-
-        <h3>ProfileCard</h3>
-        <div class="wrap" style="flex-direction: column; align-items: flex-start; width: 275px;">
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
-                alt="사용자의 프로필 이미지입니다." name="홍길동" type="my" :isBirthday=true
-                statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
-                alt="사용자의 프로필 이미지입니다." name="홍길동" :isBirthday=true statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
-                alt="사용자의 프로필 이미지입니다." name="홍길동" :isNew=true :isBirthday=false
-                statusMessage="🇯🇵🇩🇪🇨🇭🇫🇷🇨🇳🇺🇸🇹🇼🇸🇬🇫🇮🇳🇴🇸🇪🇩🇰" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
-                alt="사용자의 프로필 이미지입니다." name="홍길동" :isBirthday=true statusMessage="" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
-                alt="사용자의 프로필 이미지입니다." name="홍길동" :isNew=true :isBirthday=false statusMessage="" />
-
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
-                alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isBirthday=true
-                statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
-                alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isNew=true :isBirthday=false
-                statusMessage="🇯🇵🇩🇪🇨🇭🇫🇷🇨🇳🇺🇸🇹🇼🇸🇬🇫🇮🇳🇴🇸🇪🇩🇰" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
-                alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isBirthday=true statusMessage="" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
-                alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isNew=true :isBirthday=false statusMessage="" />
         </div>
 
         <h3>Table</h3>
@@ -203,7 +244,7 @@ import KProgressBar from '@/components/ui/ProgressBar.vue'
 import KEmoticon from '@/components/chat/Emoticon.vue'
 import KTable from '@/components/ui/Table.vue'
 import ConfirmModal from '@/components/modal/Modal.vue'
-
+import ChattingCard from '@/components/chat/ChattingCard.vue'
 import KTabs from '@/components/ui/Tab.vue'
 
 import OverviewTab from '@/views/tabs/OverviewTab.vue'
@@ -227,6 +268,7 @@ export default {
         KTable,
         ConfirmModal,
         KTabs,
+        ChattingCard,
     },
     data() {
         return {
