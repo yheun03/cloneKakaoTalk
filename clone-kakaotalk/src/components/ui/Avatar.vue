@@ -9,9 +9,12 @@
         name: 'KAvatar',
         props: {
             size: {
-                type: String,
+                type: [String, Number],
                 default: '24',
-                validator: value => ['22', '24', '28', '36', '40', '44', '54', '84', '90'].includes(value)
+                validator: value => {
+                    const sizeStr = String(value);
+                    return ['22', '24', '28', '36', '40', '44', '54', '84', '90'].includes(sizeStr);
+                }
             },
             src: {
                 type: String,
@@ -28,10 +31,11 @@
         },
         computed: {
             avatarClasses() {
+                const sizeStr = String(this.size);
                 if (this.isNew == true) {
-                    return `k-avatar--size-${this.size} k-avatar--type-new`
+                    return `k-avatar--size-${sizeStr} k-avatar--type-new`
                 }
-                return `k-avatar--size-${this.size}`
+                return `k-avatar--size-${sizeStr}`
             }
         }
     }

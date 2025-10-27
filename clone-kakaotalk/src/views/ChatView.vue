@@ -255,6 +255,10 @@ export default {
                     chatBody.scrollTop = chatBody.scrollHeight;
                 }
             });
+        },
+        handleSend() {
+            // 메시지 전송 로직
+            console.log('메시지 전송');
         }
     },
     updated() {
