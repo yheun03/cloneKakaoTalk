@@ -49,7 +49,7 @@
             type: {
                 type: String,
                 default: '',
-                validator: value => ['', 'birthday'].includes(value)
+                validator: value => ['', 'my', 'birthday'].includes(value)
             },
             isNew: {
                 type: Boolean,

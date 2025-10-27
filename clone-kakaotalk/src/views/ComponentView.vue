@@ -11,7 +11,7 @@
                 chattingName="홍길동"
                 lastMessage="[빗썸] KB 국민은행 계좌 사전등록 종료 임박! 서둘러 사전등록을 하셔야 합니다."
                 lastMessageTime="2025.10.26 12:00"
-                unreadCount="1"
+                :unreadCount="1"
                 :isPin=false
                 :isSilent=false />
             <ChattingCard 
@@ -20,7 +20,7 @@
                 chattingName="홍길동"
                 lastMessage="안녕하세요."
                 lastMessageTime="2025.10.25 12:00"
-                unreadCount="1"
+                :unreadCount="1"
                 :isPin=false
                 :isSilent=true />
             <ChattingCard 
@@ -30,7 +30,7 @@
                 lastMessage="[빗썸]
                 KB 국민은행 계좌 사전등록 종료 임박! 서둘러 사전등록을 하셔야 합니다."
                 lastMessageTime="2025.01.01 12:00"
-                unreadCount="21"
+                :unreadCount="21"
                 :isPin=true
                 :isSilent=false />
             <ChattingCard 
@@ -39,7 +39,7 @@
                 chattingName="홍길동"
                 lastMessage="안녕하세요."
                 lastMessageTime="2024.12.31 23:59"
-                unreadCount="1"
+                :unreadCount="1"
                 :isPin=true
                 :isSilent=true />
         </div>
@@ -121,9 +121,9 @@
 
         <h3>ProgressBar</h3>
         <div class="wrap" style="flex-direction: column; align-items: flex-start; width: 275px;">
-            <KProgressBar min="0" max="100" value="32" type="default" :isActive="true" />
-            <KProgressBar min="0" max="100" value="74" type="default" :isActive="false" />
-            <KProgressBar min="0" max="100" value="23" type="round" />
+            <KProgressBar :min="0" :max="100" :value="32" type="default" :isActive="true" />
+            <KProgressBar :min="0" :max="100" :value="74" type="default" :isActive="false" />
+            <KProgressBar :min="0" :max="100" :value="23" type="round" />
         </div>
 
         <h3>ChatBubble</h3>
@@ -247,6 +247,7 @@ import ConfirmModal from '@/components/modal/Modal.vue'
 import ChattingCard from '@/components/chat/ChattingCard.vue'
 import KTabs from '@/components/ui/Tab.vue'
 
+import { markRaw } from 'vue'
 import OverviewTab from '@/views/tabs/OverviewTab.vue'
 import StatsTab from '@/views/tabs/StatsTab.vue'
 import SettingsTab from '@/views/tabs/SettingsTab.vue'
@@ -281,14 +282,14 @@ export default {
                 { optionTitle: '선택5', optionValue: 'value5', optionChecked: false },
             ],
             tabs: [
-                { label: '개요', value: 'overview', component: OverviewTab },
-                { label: '통계', value: 'stats', component: StatsTab },
-                { label: '설정', value: 'settings', component: SettingsTab },
+                { label: '개요', value: 'overview', component: markRaw(OverviewTab) },
+                { label: '통계', value: 'stats', component: markRaw(StatsTab) },
+                { label: '설정', value: 'settings', component: markRaw(SettingsTab) },
             ],
             tabsEmoji: [
-                { label: 'https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif', value: 'e1', component: OverviewTab },
-                { label: 'https://jonsoft.co.kr/resources/icons/36/ic-download.svg', value: 'e2', component: StatsTab },
-                { label: 'https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif', value: 'e3', component: SettingsTab },
+                { label: 'https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif', value: 'e1', component: markRaw(OverviewTab) },
+                { label: 'https://jonsoft.co.kr/resources/icons/36/ic-download.svg', value: 'e2', component: markRaw(StatsTab) },
+                { label: 'https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif', value: 'e3', component: markRaw(SettingsTab) },
             ],
         }
     },

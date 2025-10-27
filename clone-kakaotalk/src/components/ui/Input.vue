@@ -61,6 +61,7 @@
         data() {
             return {
                 localValue: this.value, // 내부적으로 입력값 관리
+                selectedValue: '', // 선택된 값 관리
                 selectOptions: [
                     { optionTitle: '선택1', optionValue: 'value1', optionChecked: false },
                     { optionTitle: '엄청나게 긴 옵션 명일때 이렇게 길어질 수 있습니다.', optionValue: 'value2', optionChecked: false },

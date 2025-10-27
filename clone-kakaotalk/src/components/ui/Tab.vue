@@ -38,7 +38,9 @@
 </template>
 
 <script>
-const FallbackPanel = { name: 'FallbackPanel', template: `<div style="padding:.75rem;color:#6b7280;">패널 없음</div>` }
+import { markRaw } from 'vue'
+
+const FallbackPanel = markRaw({ name: 'FallbackPanel', template: `<div style="padding:.75rem;color:#6b7280;">패널 없음</div>` })
 
 export default {
     name: 'KTabs',
@@ -72,7 +74,10 @@ export default {
             return this.items.some(i => i.value === raw) ? raw : this.safeFirst
         },
         currentIndex() { return this.items.findIndex(i => i.value === this.currentValue) },
-        activeComp() { return this.items.find(i => i.value === this.currentValue)?.component || null },
+        activeComp() { 
+            const comp = this.items.find(i => i.value === this.currentValue)?.component
+            return comp ? markRaw(comp) : null 
+        },
     },
     methods: {
         setBtnRef(el) { if (el && !this.btnRefs.includes(el)) this.btnRefs.push(el) },
