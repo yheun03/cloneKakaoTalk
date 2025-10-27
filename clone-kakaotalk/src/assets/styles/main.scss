@@ -33,6 +33,35 @@ body {
     background-color: #191919;
 }
 
+// 전역 스크롤바 스타일
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #666666 #2d2d2d;
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #2d2d2d;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #666666;
+    border-radius: 4px;
+    border: none;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #777777;
+}
+
+*::-webkit-scrollbar-corner {
+    background: #2d2d2d;
+}
+
 #app {
     background-color: #2d2d2d;
     max-width: 450px;
@@ -43,9 +72,5 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    &::-webkit-scrollbar {
-        display: none;
-    }
+    -ms-overflow-style: auto;
 }
