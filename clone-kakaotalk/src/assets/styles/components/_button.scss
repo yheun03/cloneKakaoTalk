@@ -53,4 +53,19 @@
         background: url('@/assets/icons/12/ic-xmark.svg') no-repeat right 9px center;
         min-width: unset;
     }
+
+    &--icon {
+        min-width: unset;
+        width: 24px;
+        height: 24px;
+        padding: 0;
+        border: none;
+        background: center/24px no-repeat;
+        &.ic-emoji {
+            background-image: url('@/assets/icons/24/ic-emoji.svg');
+        }
+        &.ic-file {
+            background-image: url('@/assets/icons/24/ic-file.svg');
+        }
+    }
 }

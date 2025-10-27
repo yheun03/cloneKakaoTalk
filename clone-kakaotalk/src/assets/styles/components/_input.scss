@@ -46,6 +46,7 @@
         padding: unset;
         border: unset;
         textarea{
+            width: inherit;
             height: 133px;
             padding: 6px;
             font: 500 13px/normal "Pretendard";
@@ -56,6 +57,7 @@
             border-radius: 6px;
             outline: unset;
             resize: none;
+            box-sizing: border-box;
             &:focus{
                 border-color: #fff;
             }

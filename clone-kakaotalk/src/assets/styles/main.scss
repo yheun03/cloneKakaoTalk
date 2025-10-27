@@ -3,28 +3,31 @@
 // ========================================
 
 // 1. Abstracts (유틸리티)
-@use './abstracts/variables';
-@use './abstracts/mixin';
+@use '@/assets/styles/abstracts/variables';
+@use '@/assets/styles/abstracts/mixin';
 
 // 2. Base (기본 스타일)
-@use './base/reset';
-@use './base/fonts';
+@use '@/assets/styles/base/reset';
+@use '@/assets/styles/base/fonts';
 
 // 3. Components (컴포넌트)
-@use './components/button';
-@use './components/input';
-@use './components/select';
-@use './components/checkbox';
-@use './components/radio';
-@use './components/avatar';
-@use './components/chatBubble';
-@use './components/profileCard'; 
-@use './components/progressBar';
-@use './components/emoticon';
-@use './components/table';
-@use './components/modal';
-@use './components/tab';
-@use './components/chattingCard';
+@use '@/assets/styles/components/button';
+@use '@/assets/styles/components/input';
+@use '@/assets/styles/components/select';
+@use '@/assets/styles/components/checkbox';
+@use '@/assets/styles/components/radio';
+@use '@/assets/styles/components/avatar';
+@use '@/assets/styles/components/chatBubble';
+@use '@/assets/styles/components/profileCard'; 
+@use '@/assets/styles/components/progressBar';
+@use '@/assets/styles/components/emoticon';
+@use '@/assets/styles/components/table';
+@use '@/assets/styles/components/modal';
+@use '@/assets/styles/components/tab';
+@use '@/assets/styles/components/chattingCard';
+
+@use '@/assets/styles/views/main.scss';
+
 
 body {
     background-color: #191919;

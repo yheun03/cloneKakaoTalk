@@ -1,19 +1,35 @@
 <!-- ChatView.vue -->
 <template>
-    <div class="view-chat-body">
-        <div v-for="group in grouped" :key="group.key" class="chat-group"
-            :class="group.sender === 'me' ? 'me' : 'other'">
-            <!-- 상대가 보낸 그룹만 프로필/이름 노출 -->
-            <div class="sender-info" v-if="group.sender === 'other'">
-                <KAvatar :size="40" :src="group.avatar" :alt="`${group.name} 프로필`" />
-                <p class="s-name">{{ group.name }}</p>
-            </div>
+    <div class="view-container view-chat">
+        <div class="view-chat-header">
+            header
+        </div>
+        <div class="view-chat-body">
+            <div v-for="group in grouped" :key="group.key" class="chat-group"
+                :class="group.sender === 'me' ? 'me' : 'other'">
+                <!-- 상대가 보낸 그룹만 프로필/이름 노출 -->
+                <div class="sender-info" v-if="group.sender === 'other'">
+                    <KAvatar :size="40" :src="group.avatar" :alt="`${group.name} 프로필`" />
+                    <p class="s-name">{{ group.name }}</p>
+                </div>
 
-            <div class="bubbles">
-                <ChatBubble v-for="(m, idx) in group.items" :key="m.id" :sender="m.sender" :type="m.type"
-                    :message="m.message" :timestamp="m.timestamp" :src="m.imageSrc || m.avatar" :alt="m.alt || ''"
-                    :filename="m.fileName" :filetype="m.filetype" :period="m.period" :filesize="m.filesize"
-                    :showTail="idx === group.items.length - 1" :showTimestamp="idx === group.items.length - 1" />
+                <div class="bubbles">
+                    <ChatBubble v-for="(m, idx) in group.items" :key="m.id" :sender="m.sender" :type="m.type"
+                        :message="m.message" :timestamp="m.timestamp" :src="m.imageSrc || m.avatar" :alt="m.alt || ''"
+                        :filename="m.fileName" :filetype="m.filetype" :period="m.period" :filesize="m.filesize"
+                        :showTail="idx === group.items.length - 1" :showTimestamp="idx === group.items.length - 1" />
+                </div>
+            </div>
+        </div>
+        <div class="view-chat-footer">
+            <div class="input-wrap">
+                <KInput type="textarea" placeholder="메시지를 입력하세요.">
+                </KInput>
+            </div>
+            <div class="btn-wrap">
+                <KButton type="icon" icon="ic-emoji"></KButton>
+                <KButton type="icon" icon="ic-file"></KButton>
+                <KButton color="primary" @click="handleSend">전송</KButton>
             </div>
         </div>
     </div>
@@ -21,6 +37,8 @@
 <script>
 import KAvatar from '@/components/ui/Avatar.vue'
 import ChatBubble from '@/components/chat/ChatBubble.vue'
+import KInput from '@/components/ui/Input.vue'
+import KButton from '@/components/ui/Button.vue'
 
 const minuteKey = (iso) => {
     const d = new Date(iso);
@@ -36,7 +54,9 @@ export default {
     name: 'ChatView',
     components: {
         KAvatar,
-        ChatBubble
+        ChatBubble,
+        KInput,
+        KButton
     },
     data() {
         return {
