@@ -1,17 +1,21 @@
 <template>
     <div class="k-table">
         <table>
-            <tr v-for="(header, index) in headers" :key="header">
-                <th>{{ header }}</th>
-                <td v-html="getFormattedCellValue(rows[index])"></td>
-            </tr>
+            <tbody>
+                <tr v-for="(header, index) in headers" :key="header">
+                    <th>{{ header }}</th>
+                    <td v-html="getFormattedCellValue(rows[index])"></td>
+                </tr>
+            </tbody>
         </table>
         <table v-if="hasButton" class="k-table-footer">
-            <tr>
-                <td>
-                    <KButton type="text" customColor="fff" @click="handleClick">{{ hasButton }}</KButton>
-                </td>
-            </tr>
+            <tbody>
+                <tr>
+                    <td>
+                        <KButton type="text" customColor="fff" @click="handleClick">{{ hasButton }}</KButton>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </template> 

@@ -3,29 +3,46 @@
 // ========================================
 
 // 1. Abstracts (유틸리티)
-@import './abstracts/variables';
-@import './abstracts/mixin';
+@use './abstracts/variables';
+@use './abstracts/mixin';
 
 // 2. Base (기본 스타일)
-@import './base/reset';
-@import './base/fonts';
+@use './base/reset';
+@use './base/fonts';
 
 // 3. Components (컴포넌트)
-@import './components/button';
-@import './components/input';
-@import './components/select';
-@import './components/checkbox';
-@import './components/radio';
-@import './components/avatar';
-@import './components/chatBubble';
-@import './components/profileCard'; 
-@import './components/progressBar';
-@import './components/emoticon';
-@import './components/table';
-@import './components/modal';
-@import './components/tab';
-@import './components/chattingCard';
+@use './components/button';
+@use './components/input';
+@use './components/select';
+@use './components/checkbox';
+@use './components/radio';
+@use './components/avatar';
+@use './components/chatBubble';
+@use './components/profileCard'; 
+@use './components/progressBar';
+@use './components/emoticon';
+@use './components/table';
+@use './components/modal';
+@use './components/tab';
+@use './components/chattingCard';
 
 body {
-    background-color: #2D2D2D;
+    background-color: #191919;
+}
+
+#app {
+    background-color: #2d2d2d;
+    max-width: 450px;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
