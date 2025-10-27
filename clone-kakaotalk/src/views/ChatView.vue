@@ -4,7 +4,7 @@
         <div class="view-chat-header">
             header
         </div>
-        <div class="view-chat-body">
+        <div class="view-chat-body" ref="chatBody">
             <div v-for="group in grouped" :key="group.key" class="chat-group"
                 :class="group.sender === 'me' ? 'me' : 'other'">
                 <!-- 상대가 보낸 그룹만 프로필/이름 노출 -->
@@ -235,6 +235,22 @@ export default {
             const mm = String(d.getMinutes()).padStart(2, '0');
             return `${hh}:${mm}`;
         }
+    },
+    mounted() {
+        this.scrollToBottom();
+    },
+    methods: {
+        scrollToBottom() {
+            this.$nextTick(() => {
+                const chatBody = this.$refs.chatBody;
+                if (chatBody) {
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }
+            });
+        }
+    },
+    updated() {
+        this.scrollToBottom();
     }
 }
 </script>
