@@ -2,7 +2,7 @@
     <div class="chatting-card">
         <KAvatar :src="src" :alt="alt" size="44" />
         <div class="chatting-card-info">
-            <p class="c-name">{{ chattingName }} <span class="c-headcount">1</span> <i class="icon ic-pin" v-if="isPin">pin</i> <i class="icon ic-silent" v-if="isSilent">silent</i></p>
+            <p class="c-name">{{ chattingName }} <span class="c-headcount">1</span> <i class="icon ic-pin" v-if="isPin"></i> <i class="icon ic-silent" v-if="isSilent"></i></p>
             <p class="c-message" v-text="lastMessage"></p>
         </div>
         <div class="chatting-card-info-time">
