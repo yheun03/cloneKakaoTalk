@@ -5,6 +5,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import MainView from '../views/MainView.vue'
 import ChatView from '../views/ChatView.vue'
 import ComponentView from '../views/ComponentView.vue'
+import NotFoundView from '../views/NotFoundView.vue'
 
 const routes = [
   {
@@ -21,6 +22,11 @@ const routes = [
     path: '/component',
     name: 'Component',
     component: ComponentView
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: NotFoundView
   }
 ]
 
