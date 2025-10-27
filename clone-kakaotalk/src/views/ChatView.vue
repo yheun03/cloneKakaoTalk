@@ -2,7 +2,15 @@
 <template>
     <div class="view-container view-chat">
         <div class="view-chat-header">
-            header
+            <KAvatar :size="40" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="프로필 이미지" />
+            <div class="chat-info">
+                <p class="c-name">박현민</p>
+                <p class="c-headcount"><i class="icon ic-profile"></i>1</p>
+            </div>
+            <div class="btn-wrap">
+                <KButton type="icon" icon="ic-search"></KButton>
+                <KButton type="icon" icon="ic-menu"></KButton>
+            </div>
         </div>
         <div class="view-chat-body" ref="chatBody">
             <div v-for="group in grouped" :key="group.key" class="chat-group"

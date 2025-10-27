@@ -3,9 +3,8 @@
         class="k-button"
         :class="buttonClasses"
         :disabled="disabled || loading"
-        :style="{ color: customColor ? `#${customColor}` : '' }"
-        @click="handleClick"
-    >
+        :style="{ color: customColor ? `#${customColor}` : ''}"
+        @click="handleClick">
         <slot />
     </button>
 </template>
@@ -32,7 +31,7 @@
             icon: {
                 type: String,
                 default: '',
-                validator: value => ['', 'ic-emoji', 'ic-file'].includes(value)
+                validator: value => ['', 'ic-emoji', 'ic-file', 'ic-search', 'ic-menu'].includes(value)
             },
             disabled: {
                 type: Boolean,
@@ -51,7 +50,7 @@
                 return [
                     this.type && `k-button--${this.type}`,
                     this.color && `k-button--${this.color}`,
-                    this.icon && `icon ${this.icon}`,
+                    this.icon && `k-button--icon ${this.icon}`,
                     { 
                         'k-button--disabled': this.disabled,
                         'k-button--loading': this.loading 

@@ -2,8 +2,47 @@
     display: flex;
     flex-direction: column;
     &-header{
+        display: flex;
+        align-items: center;
+        gap: 12px;
         flex: 0 0 auto;
-        padding: 10px 20px;
+        padding: 14px 5px 10px 14px;
+
+        .chat-info{
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            .c{
+                &-name{
+                    font: 500 15px/16px "Pretendard";
+                    color: #fff;
+                    margin-left: 2px;
+                }
+                &-headcount{
+                    font: 500 13px/normal "Pretendard";
+                    letter-spacing: -0.07em;
+                    color: #8A8A8A;
+
+                    display: flex;
+                    align-items: center;
+                    gap: 1px;
+                }
+            }
+        }
+
+        .btn-wrap{
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            .k-button--icon{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                &:hover{
+                    background-color: rgba(255, 255, 255, 0.1025);
+                }
+            }
+        }
     }
     &-body{
         flex: 1;
@@ -29,5 +68,14 @@
                 margin-left: auto;
             }
         }
+    }
+}
+.icon{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: center/16px no-repeat;
+    &.ic-profile{
+        background-image: url('@/assets/icons/16/ic-profile.svg');
     }
 }
