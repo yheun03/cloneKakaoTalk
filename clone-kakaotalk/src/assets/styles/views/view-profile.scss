@@ -1,0 +1,53 @@
+.view-profile{
+    .accordion{
+        padding-inline: 20px;
+        .accordion-item{
+            border-top: 1px solid #353535;
+            &-trigger{
+                font: 500 12px/normal "Pretendard";
+                color: #9f9f9f;
+                padding-block: 11px 7px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+                span{
+                    margin-left: 2px;
+                }
+                .icon{
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+                    background: center/16px no-repeat;
+                    &.ic-arrow-bottom{
+                        background-image: url('@/assets/icons/16/ic-arrow-bottom.svg');
+                    }
+                    &.ic-arrow-top{
+                        background-image: url('@/assets/icons/16/ic-arrow-top.svg');
+                    }
+                }
+            }
+            &-content{
+                display: grid;
+                grid-template-rows: 0fr;
+                opacity: 0;
+                transition: grid-template-rows 0.3s ease, opacity 0.2s ease;
+                &-inner{
+                    overflow: hidden;
+                }
+            }
+            &.is-open{
+                .accordion-item-content{
+                    grid-template-rows: 1fr;
+                    opacity: 1;
+                }
+            }
+            .profile-card{
+                margin-bottom: 2px;
+                &:last-child{
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+}
