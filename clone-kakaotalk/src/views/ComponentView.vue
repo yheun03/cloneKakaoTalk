@@ -46,29 +46,14 @@
 
         <h3>ProfileCard</h3>
         <div class="wrap" style="flex-direction: column; align-items: flex-start; width: 275px;">
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
-                alt="사용자의 프로필 이미지입니다." name="홍길동" type="my" :isBirthday=true
-                statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
-                alt="사용자의 프로필 이미지입니다." name="홍길동" :isBirthday=true statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
-                alt="사용자의 프로필 이미지입니다." name="홍길동" :isNew=true :isBirthday=false
-                statusMessage="🇯🇵🇩🇪🇨🇭🇫🇷🇨🇳🇺🇸🇹🇼🇸🇬🇫🇮🇳🇴🇸🇪🇩🇰" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
-                alt="사용자의 프로필 이미지입니다." name="홍길동" :isBirthday=true statusMessage="" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
-                alt="사용자의 프로필 이미지입니다." name="홍길동" :isNew=true :isBirthday=false statusMessage="" />
+            <ProfileCard profileImage="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" userName="홍길동" profileType="my" userMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
 
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
-                alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isBirthday=true
-                statusMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
-                alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isNew=true :isBirthday=false
-                statusMessage="🇯🇵🇩🇪🇨🇭🇫🇷🇨🇳🇺🇸🇹🇼🇸🇬🇫🇮🇳🇴🇸🇪🇩🇰" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
-                alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isBirthday=true statusMessage="" />
-            <ProfileCard src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
-                alt="사용자의 프로필 이미지입니다." name="홍길동" type="birthday" :isNew=true :isBirthday=false statusMessage="" />
+            <ProfileCard profileImage="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" userName="홍길동" userMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
+            <ProfileCard profileImage="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" userName="홍길동" userMessage="🇯🇵🇩🇪🇨🇭🇫🇷🇨🇳🇺🇸🇹🇼🇸🇬🇫🇮🇳🇴🇸🇪🇩🇰" />
+            <ProfileCard profileImage="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" userName="홍길동" userMessage="" />
+
+            <ProfileCard profileImage="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" userName="홍길동" profileType="update" userMessage="손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저" />
+            <ProfileCard profileImage="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" userName="홍길동" profileType="update" userMessage="" />
         </div>
 
         <h3>Tab</h3>

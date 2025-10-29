@@ -1,25 +1,13 @@
 <template>
-    <div class="profile-card" v-if="!type">
-        <KAvatar :src="src" :alt="alt" :isNew="isNew" size="40" />
+    <!-- 기본 타입 -->
+    <div :class="profileCardClasses">
+        <KAvatar :src="profileImage" :alt="`${userName}의 프로필 이미지입니다.`" :size="setSize" :isNew="setNew" />
         <div class="profile-card-info">
-            <p class="name">{{ name }} <i class="icon ic-birthday" v-if="isBirthday"/></p>
-            <p class="status-message">{{ statusMessage }}</p>
+            <p class="name">{{ userName }} <i class="icon ic-birthday" v-if="profileType == 'birthday'"/></p>
+            <p class="status-message" v-if="profileType != 'update'">{{ userMessage }}</p>
         </div>
-        <div v-if="isBirthday">
+        <div v-if="profileType == 'birthday'">
             <KButton type="round">선물하기</KButton>
-        </div>
-    </div>
-    <div class="profile-card type-my" v-else-if="type == 'my'">
-        <KAvatar :src="src" :alt="alt" :isNew="isNew" size="44" />
-        <div class="profile-card-info">
-            <p class="name">{{ name }}</p>
-            <p class="status-message">{{ statusMessage }}</p>
-        </div>
-    </div>
-    <div class="profile-card type-birthday" v-else-if="type == 'birthday'">
-        <KAvatar :src="src" :alt="alt" :isNew="isNew" size="40" />
-        <div class="profile-card-info">
-            <p class="name">{{ name }}</p>
         </div>
     </div>
 </template>
@@ -34,34 +22,40 @@
             KButton
         },
         props: {
-            src: {
+            profileImage: {
                 type: String,
                 default: ''
             },
-            alt: {
+            userName: {
                 type: String,
                 default: ''
             },
-            name: {
+            profileType: {
                 type: String,
-                default: ''
+                default: 'default',
+                validator: value => ['default', 'my', 'update', 'birthday'].includes(value)
             },
-            type: {
+            userMessage: {
                 type: String,
-                default: '',
-                validator: value => ['', 'my', 'birthday'].includes(value)
+            }
+        },
+        computed: {
+            profileCardClasses() {
+                return `profile-card type-${this.profileType}`;
             },
-            isNew: {
-                type: Boolean,
-                default: false
+            setSize() {
+                if (this.profileType == 'my') {
+                    return 44;
+                } else {
+                    return 40;
+                }
             },
-            statusMessage: {
-                type: String,
-                default: ''
-            },
-            isBirthday: {
-                type: Boolean,
-                default: false
+            setNew() {
+                if (this.profileType == 'update') {
+                    return true;
+                } else {
+                    return false;
+                }
             }
         }
     }
