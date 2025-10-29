@@ -7,9 +7,10 @@
         <div v-else-if="type == 'time'">
             <VueDatePicker v-model="time" locale="ko" time-picker hide-input-icon :format="formatKoreanTime" />
         </div>
-        <div v-else class="k-select-wrapper" ref="selectWrapper">
+        <div v-else class="k-select-wrapper" :class="setClasses" ref="selectWrapper">
             <div class="k-select-opener" :class="openerClasses" @click="toggleOptions">
                 {{ displayText }}
+                <i class="icon" v-if="type=='text'"></i>
             </div>
             <div class="k-select-option-list" v-show="isOpen">
                 <selectOption v-for="option in localOptions" :key="option.optionValue" :optionTitle="option.optionTitle"
@@ -60,7 +61,7 @@ export default {
         type: {
             type: String,
             default: '',
-            validator: value => ['', 'date', 'time'].includes(value)
+            validator: value => ['', 'date', 'time', 'text'].includes(value)
         },
         options: {
             type: Array,
@@ -91,6 +92,9 @@ export default {
         openerClasses() {
             const selectedOption = this.localOptions.find(option => option.optionChecked)
             return { 'k-select-opener--placeholder': !selectedOption }
+        },
+        setClasses() {
+            return this.type === 'text' ? 'k-select--text' : null
         }
     },
     methods: {

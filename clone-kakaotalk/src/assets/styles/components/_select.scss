@@ -101,6 +101,23 @@
             font-weight: 500;
         }
     }
+    &--text{
+        width: fit-content;
+        .k-select-opener{
+            font: 800 16px/normal "Pretendard";
+            color: #fff;
+            padding: unset;
+            border: unset;
+            border-radius: unset;
+            background: unset;
+            height: unset;
+        }
+        .icon{
+            width: 16px;
+            height: 16px;
+            background: url('@/assets/icons/16/ic-arrow-bottom.svg') no-repeat center center;
+        }
+    }
     .k-select--date {
         .holiday-red {
           color: red !important;

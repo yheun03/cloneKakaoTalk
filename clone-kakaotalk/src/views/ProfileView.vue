@@ -1,6 +1,6 @@
 <template>
     <div class="view-container view-profile">
-        <div class="gnb">
+        <div class="top-nav top-nav-friend">
             <div>
                 <div class="page-title">친구</div>
                 <KSelect type="text">채팅</KSelect> <!-- 클릭 시 옵션 노출-->
