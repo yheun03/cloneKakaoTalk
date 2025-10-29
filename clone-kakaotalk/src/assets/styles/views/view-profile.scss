@@ -42,11 +42,11 @@
                     opacity: 1;
                 }
             }
+            &:not([class*="is-open"]){
+                margin-bottom: 8px;
+            }
             .profile-card{
                 margin-bottom: 2px;
-                &:last-child{
-                    margin-bottom: 8px;
-                }
             }
         }
     }
