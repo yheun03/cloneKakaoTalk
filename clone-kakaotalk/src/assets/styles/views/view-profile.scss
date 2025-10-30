@@ -78,6 +78,15 @@
     }
 }
 
+.icon {
+    &.ic-birthday {
+        vertical-align: middle;
+        width: 18px;
+        height: 18px;
+        background: url('@/assets/icons/18/ic-birthday.svg') center / 18px no-repeat;
+    }
+}
+
 .top-nav{
     padding: 10px 12px 10px 20px;
     display: flex;
