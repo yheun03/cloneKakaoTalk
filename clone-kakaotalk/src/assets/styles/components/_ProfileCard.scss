@@ -1,6 +1,6 @@
 .profile-card {
     width: 100%;
-    padding-block: 7px;
+    padding: 7px 20px;
     display: flex;
     gap: 12px;
     align-items: center;
@@ -41,7 +41,7 @@
         }
         &-update{
             width: fit-content;
-            display: flex;
+            display: inline-flex;
             flex-direction: column;
             padding: 0 10px;
             gap: 7px;

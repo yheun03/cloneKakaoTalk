@@ -57,10 +57,14 @@
     &--icon {
         min-width: unset;
         width: 24px;
-        height: 24px;
+        aspect-ratio: 1;
         padding: 0;
         border: none;
+        border-radius: unset;
         background: center/24px no-repeat;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         &.ic-emoji {
             background-image: url('@/assets/icons/24/ic-emoji.svg');
         }

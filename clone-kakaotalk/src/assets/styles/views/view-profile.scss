@@ -1,13 +1,12 @@
 .view-profile{
     .accordion{
         margin-top: 10px;
-        padding-inline: 20px;
         .accordion-item{
             border-top: 1px solid #353535;
             &-trigger{
                 font: 500 12px/normal "Pretendard";
                 color: #9f9f9f;
-                padding-block: 11px 7px;
+                padding: 11px 20px 7px 20px;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -36,6 +35,9 @@
                 &-inner{
                     overflow: hidden;
                 }
+                .overflow-y-scroll{
+                    margin-block: 8px 16px;
+                }
             }
             &.is-open{
                 .accordion-item-content{
@@ -53,9 +55,51 @@
     }
 }
 
+.overflow-y-scroll{
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    white-space: nowrap;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    & > *{
+        & + *{
+            margin-left: 2px;
+        }
+        &:first-child{
+            margin-left: 20px;
+        }
+        &:last-child{
+            margin-right: 20px;
+        }
+    }
+}
+
 .top-nav{
-    padding: 18px 16px 18px 20px;
+    padding: 10px 12px 10px 20px;
+    display: flex;
+    align-items: center;
+    &,
+    & > div{
+        display: flex;
+        align-items: center;
+    }
+    .gnb__primary{
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
     .page-title{
+        font: 800 16px/normal "Pretendard";
+        color: #fff;
+    }
+    .btn-wrap{
+        margin-left: auto;
+    }
+    .k-button{
         font: 800 16px/normal "Pretendard";
         color: #fff;
     }

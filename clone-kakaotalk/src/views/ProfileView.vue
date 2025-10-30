@@ -1,41 +1,47 @@
 <template>
     <div class="view-container view-profile">
         <div class="top-nav top-nav-friend">
-            <div>
+            <div class="gnb__primary">
                 <div class="page-title">친구</div>
-                <KSelect type="text">채팅</KSelect> <!-- 클릭 시 옵션 노출-->
+                <KSelect type="text" placeholder="채팅">채팅</KSelect> <!-- 클릭 시 옵션 노출-->
                 <KButton type="text">오픈채팅</KButton> <!-- 클릭 시 오픈 채팅 리스트로 이동-->
             </div>
             <div class="btn-wrap">
-                <KButton type="icon" icon="ic-search"></KButton>
-                <KButton type="icon" icon="ic-add-friend"></KButton>
+                <KButton type="icon" icon="ic-search-white" iconSize="24" buttonSize="36"></KButton>
+                <KButton type="icon" icon="ic-friend-add-white" iconSize="24" buttonSize="36"></KButton>
             </div>
         </div>
         <div class="view-profile-body">
             <ProfileCard :profileImage="me.src" :userName="me.name" :profileType="me.type"
                 :userMessage="me.statusMessage" />
             <div class="accordion">
-                <div class="accordion-item" v-if="profilesByType('update').length" :class="{ 'is-open': openSections.update }">
+                <div class="accordion-item" v-if="profilesByType('update').length"
+                    :class="{ 'is-open': openSections.update }">
                     <p class="accordion-item-trigger" @click="toggleSection('update')">
                         <span>업데이트</span>
                         <i class="icon" :class="openSections.update ? 'ic-arrow-top' : 'ic-arrow-bottom'"></i>
                     </p>
                     <div class="accordion-item-content">
                         <div class="accordion-item-content-inner">
-                            <ProfileCard v-for="(p, idx) in profilesByType('update')" :key="`upd-${idx}`" :profileImage="me.src"
-                                :userName="me.name" :profileType="p.type" :userMessage="p.statusMessage" />
+                            <div class="overflow-y-scroll">
+                                <ProfileCard v-for="(p, idx) in profilesByType('update')" :key="`upd-${idx}`"
+                                    :profileImage="me.src" :userName="me.name" :profileType="p.type"
+                                    :userMessage="p.statusMessage" />
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item" v-if="profilesByType('birthday').length" :class="{ 'is-open': openSections.birthday }">
+                <div class="accordion-item" v-if="profilesByType('birthday').length"
+                    :class="{ 'is-open': openSections.birthday }">
                     <p class="accordion-item-trigger" @click="toggleSection('birthday')">
                         <span>생일</span>
                         <i class="icon" :class="openSections.birthday ? 'ic-arrow-top' : 'ic-arrow-bottom'"></i>
                     </p>
                     <div class="accordion-item-content">
                         <div class="accordion-item-content-inner">
-                            <ProfileCard v-for="(p, idx) in profilesByType('birthday')" :key="`bd-${idx}`" :profileImage="p.src"
-                                :userName="p.name" :profileType="p.type" :userMessage="p.statusMessage" />
+                            <ProfileCard v-for="(p, idx) in profilesByType('birthday')" :key="`bd-${idx}`"
+                                :profileImage="p.src" :userName="p.name" :profileType="p.type"
+                                :userMessage="p.statusMessage" />
                         </div>
                     </div>
                 </div>
@@ -46,8 +52,9 @@
                     </p>
                     <div class="accordion-item-content">
                         <div class="accordion-item-content-inner">
-                            <ProfileCard v-for="(p, idx) in profilesByType('')" :key="`more-${idx}`" :profileImage="p.src"
-                                :userName="p.name" :profileType="p.type" :userMessage="p.statusMessage" />
+                            <ProfileCard v-for="(p, idx) in profilesByType('')" :key="`more-${idx}`"
+                                :profileImage="p.src" :userName="p.name" :profileType="p.type"
+                                :userMessage="p.statusMessage" />
                         </div>
                     </div>
                 </div>
@@ -81,6 +88,11 @@ export default {
                 // 업데이트된 친구들
                 { src: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp', name: '정수진', type: 'update', statusMessage: '' },
                 { src: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp', name: '최동현', type: 'update', statusMessage: '새로운 상태메시지' },
+                { src: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp', name: '한지은', type: 'update', statusMessage: '' },
+                { src: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp', name: '한지은', type: 'update', statusMessage: '' },
+                { src: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp', name: '한지은', type: 'update', statusMessage: '' },
+                { src: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp', name: '한지은', type: 'update', statusMessage: '' },
+                { src: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp', name: '한지은', type: 'update', statusMessage: '' },
                 { src: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp', name: '한지은', type: 'update', statusMessage: '' },
                 { src: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp', name: '윤태호', type: 'update', statusMessage: '' },
                 // 생일인 친구들
