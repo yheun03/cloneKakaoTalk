@@ -7,6 +7,7 @@ import ChatView from '../views/ChatView.vue'
 import ComponentView from '../views/ComponentView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
 import ProfileView from '../views/ProfileView.vue'
+import ChatListView from '../views/ChatListView.vue'
 
 const routes = [
     {
@@ -18,6 +19,11 @@ const routes = [
         path: '/chat',
         name: 'Chat',
         component: ChatView
+    },
+    {
+        path: '/chat-list',
+        name: 'ChatList',
+        component: ChatListView
     },
     {
         path: '/component',

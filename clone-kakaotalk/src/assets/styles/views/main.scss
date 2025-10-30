@@ -6,5 +6,13 @@
 @use '@/assets/styles/views/view-profile.scss';
 
 .view-container{
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
+    // &:has(.top-nav){
+    //     display: grid;
+    //     grid-template-rows: auto 1fr;
+    // }
+    // &-body{
+    //     overflow-y: auto;
+    // }
 }

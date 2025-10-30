@@ -1,4 +1,5 @@
 .view-profile{
+    background-color: #222222;
     .accordion{
         margin-top: 10px;
         .accordion-item{
@@ -84,32 +85,6 @@
         width: 18px;
         height: 18px;
         background: url('@/assets/icons/18/ic-birthday.svg') center / 18px no-repeat;
-    }
-}
-
-.top-nav{
-    padding: 10px 12px 10px 20px;
-    display: flex;
-    align-items: center;
-    &,
-    & > div{
-        display: flex;
-        align-items: center;
-    }
-    .gnb__primary{
-        display: flex;
-        align-items: center;
-        gap: 14px;
-    }
-    .page-title{
-        font: 800 16px/normal "Pretendard";
-        color: #fff;
-    }
-    .btn-wrap{
-        margin-left: auto;
-    }
-    .k-button{
-        font: 800 16px/normal "Pretendard";
-        color: #fff;
+        margin-left: 6px;
     }
 }

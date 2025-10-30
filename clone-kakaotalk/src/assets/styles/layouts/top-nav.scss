@@ -1,0 +1,32 @@
+.top-nav{
+    padding: 10px 12px 10px 20px;
+    display: flex;
+    align-items: center;
+
+    background-color: #222222;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    &,
+    & > div{
+        display: flex;
+        align-items: center;
+    }
+    .gnb__primary{
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+    .page-title{
+        font: 800 16px/normal "Pretendard";
+        color: #fff;
+    }
+    .btn-wrap{
+        margin-left: auto;
+    }
+    .k-button{
+        font: 800 16px/normal "Pretendard";
+        color: #fff;
+    }
+}

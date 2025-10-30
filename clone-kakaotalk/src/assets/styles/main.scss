@@ -26,7 +26,8 @@
 @use '@/assets/styles/components/tab';
 @use '@/assets/styles/components/ChattingCard';
 
-@use '@/assets/styles/views/main.scss';
+@use '@/assets/styles/views/main' as mainView;
+@use '@/assets/styles/layouts/main' as mainLayout;
 
 
 body {
