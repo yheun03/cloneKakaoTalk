@@ -1,0 +1,98 @@
+.view-chat-list{
+    background-color: #222222;
+    .accordion{
+        margin-top: 10px;
+        .accordion-item{
+            position: relative;
+            &::after{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 20px;
+                right: 20px;
+                border-top: 1px solid #353535;
+            }
+            &-trigger{
+                font: 500 12px/normal "Pretendard";
+                color: #9f9f9f;
+                padding: 11px 20px 7px 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+                span{
+                    margin-left: 2px;
+                }
+                .icon{
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+                    background: center/16px no-repeat;
+                    &.ic-arrow-bottom{
+                        background-image: url('@/assets/icons/16/ic-arrow-bottom.svg');
+                    }
+                    &.ic-arrow-top{
+                        background-image: url('@/assets/icons/16/ic-arrow-top.svg');
+                    }
+                }
+            }
+            &-content{
+                display: grid;
+                grid-template-rows: 0fr;
+                opacity: 0;
+                transition: grid-template-rows 0.3s ease, opacity 0.2s ease;
+                &-inner{
+                    overflow: hidden;
+                }
+                .overflow-y-scroll{
+                    margin-block: 8px 16px;
+                }
+            }
+            &.is-open{
+                .accordion-item-content{
+                    grid-template-rows: 1fr;
+                    opacity: 1;
+                }
+            }
+            &:not([class*="is-open"]){
+                margin-bottom: 8px;
+            }
+            .profile-card{
+                margin-bottom: 2px;
+            }
+        }
+    }
+}
+
+.overflow-y-scroll{
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    white-space: nowrap;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    & > *{
+        & + *{
+            margin-left: 2px;
+        }
+        &:first-child{
+            margin-left: 20px;
+        }
+        &:last-child{
+            margin-right: 20px;
+        }
+    }
+}
+
+.icon {
+    &.ic-birthday {
+        vertical-align: middle;
+        width: 18px;
+        height: 18px;
+        background: url('@/assets/icons/18/ic-birthday.svg') center / 18px no-repeat;
+        margin-left: 6px;
+    }
+}

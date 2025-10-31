@@ -1,13 +1,13 @@
 <template>
     <div class="chatting-card">
-        <KAvatar :src="src" :alt="alt" size="44" />
+        <KAvatar :src="src" size="44" />
         <div class="chatting-card-info">
-            <p class="c-name">{{ chattingName }} <span class="c-headcount">1</span> <i class="icon ic-pin" v-if="isPin"></i> <i class="icon ic-silent" v-if="isSilent"></i></p>
+            <p class="c-name">{{ chattingName }} <span v-if="headcount > 1" class="c-headcount">{{ headcount }}</span> <i class="icon ic-pin" v-if="isPin"></i> <i class="icon ic-silent" v-if="isSilent"></i></p>
             <p class="c-message" v-text="lastMessage"></p>
         </div>
         <div class="chatting-card-info-time">
-            <p class="c-time">{{ formattedLastMessageTime }}</p>
-            <p class="c-unread">{{ unreadCount }}</p>
+            <span class="c-time">{{ formattedLastMessageTime }}</span>
+            <span class="c-unread"><span v-if="unreadCount > 0">{{ unreadCount }}</span></span>
         </div>
     </div>
 </template>
@@ -24,10 +24,6 @@
                 type: String,
                 default: ''
             },
-            alt: {
-                type: String,
-                default: ''
-            },
             chattingName: {
                 type: String,
                 default: ''
@@ -35,6 +31,10 @@
             lastMessage: {
                 type: String,
                 default: ''
+            },
+            headcount: {
+                type: Number,
+                default: 1
             },
             lastMessageTime: {
                 type: [String, Date],
