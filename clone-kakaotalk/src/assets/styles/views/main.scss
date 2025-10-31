@@ -8,11 +8,25 @@
 .view-container{
     min-height: 100vh;
     height: auto;
-    // &:has(.top-nav){
-    //     display: grid;
-    //     grid-template-rows: auto 1fr;
-    // }
-    // &-body{
-    //     overflow-y: auto;
-    // }
+
+    &.view-type-main{
+        height: 100vh;
+        display: grid;
+        grid-template-rows: auto 1fr;
+        grid-template-columns: auto 1fr;
+        grid-template-areas:
+            "gnb top-nav"
+            "gnb body";
+
+        .gnb{
+            grid-area: gnb;
+        }
+        .top-nav{
+            grid-area: top-nav;
+        }
+        .view-container-body{
+            grid-area: body;
+            overflow-y: auto;
+        }
+    }
 }

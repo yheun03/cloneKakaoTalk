@@ -2,7 +2,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 // import할 페이지 컴포넌트
-import MainView from '../views/MainView.vue'
 import ChatView from '../views/ChatView.vue'
 import ComponentView from '../views/ComponentView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
@@ -12,8 +11,8 @@ import ChatListView from '../views/ChatListView.vue'
 const routes = [
     {
         path: '/',
-        name: 'Home',
-        component: MainView
+        name: 'Profile',
+        component: ProfileView
     },
     {
         path: '/chat',
@@ -29,11 +28,6 @@ const routes = [
         path: '/component',
         name: 'Component',
         component: ComponentView
-    },
-    {
-        path: '/profile',
-        name: 'Profile',
-        component: ProfileView
     },
     {
         path: '/:pathMatch(.*)*',

@@ -1,5 +1,6 @@
 <template>
-    <div class="view-container view-profile">
+    <div class="view-container view-type-main view-profile">
+        <GlobalNav />
         <topNav />
         <div class="view-container-body">
             <ProfileCard :profileImage="me.src" :userName="me.name" :profileType="me.type"
@@ -55,12 +56,13 @@
 <script>
 import ProfileCard from '@/components/profile/ProfileCard.vue'
 import TopNav from '@/views/layouts/TopNav.vue'
-
+import GlobalNav from '@/views/layouts/Gnb.vue'
 export default {
     name: 'ProfileView',
     components: {
         ProfileCard,
-        TopNav
+        TopNav,
+        GlobalNav
     },
     data() {
         return {

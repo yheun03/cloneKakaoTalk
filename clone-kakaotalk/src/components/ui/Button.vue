@@ -32,10 +32,7 @@
                 validator: value => ['', 'round', 'toggle', 'text', 'icon'].includes(value)
             },
             icon: {
-                type: String,
-                default: '',
-                validator: value => ['', 'ic-emoji', 'ic-file', 'ic-search', 'ic-menu'].includes(value)
-            },
+                type: String            },
             iconSize: {
                 type: [String, Number],
                 default: '',

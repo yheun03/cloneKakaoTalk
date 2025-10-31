@@ -1,9 +1,9 @@
 <template>
     <div class="top-nav top-nav-friend">
-        <div class="gnb__primary" v-if="$route.name === 'Profile'">
+        <div class="tnb_primary" v-if="$route.name === 'Profile'">
             <div class="page-title">친구</div>
         </div>
-        <div class="gnb__primary" v-else-if="$route.name === 'ChatList'">
+        <div class="tnb_primary" v-else-if="$route.name === 'ChatList'">
             <KSelect type="text" placeholder="채팅">채팅</KSelect> <!-- 클릭 시 옵션 노출-->
             <KButton type="text">오픈채팅</KButton> <!-- 클릭 시 오픈 채팅 리스트로 이동-->
         </div>

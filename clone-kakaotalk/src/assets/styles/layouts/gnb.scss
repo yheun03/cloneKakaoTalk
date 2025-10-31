@@ -1,0 +1,20 @@
+.gnb{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 50px 8px 8px;
+    background-color: #383838;
+    .gnb-top{
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        gap: 12px;
+    }
+    .gnb-bottom{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+}
