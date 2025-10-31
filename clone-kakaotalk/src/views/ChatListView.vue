@@ -23,7 +23,7 @@ export default {
             chats: [
                 {src: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp', chattingName: '홍길동', headcount: 1, lastMessage: '안녕하세요. 오랜만이에요.', lastMessageTime: '2025.10.25 12:00', unreadCount: 1, isPin: false, isSilent: false},
                 {src: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp', chattingName: '홍길동', headcount: 1, lastMessage: '안녕하세요. 오랜만이에요.', lastMessageTime: '2025.10.25 12:00', unreadCount: 0, isPin: false, isSilent: false},
-                {src: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp', chattingName: '홍길동', headcount: 1, lastMessage: '안녕하세요. 오랜만이에요.', lastMessageTime: '2025.10.25 12:00', unreadCount: 0, isPin: false, isSilent: false},
+                {src: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp', chattingName: '홍길동', headcount: 1, lastMessage: '안녕하세요. 오랜만이에요.', lastMessageTime: '2025.10.25 12:00', unreadCount: 999, isPin: false, isSilent: false},
                 {src: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp', chattingName: '홍길동', headcount: 3, lastMessage: '안녕하세요. 오랜만이에요.', lastMessageTime: '2025.10.25 12:00', unreadCount: 0, isPin: false, isSilent: false},
                 {src: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp', chattingName: '홍길동', headcount: 1, lastMessage: '안녕하세요. 오랜만이에요.', lastMessageTime: '2025.10.25 12:00', unreadCount: 1, isPin: false, isSilent: false},
                 {src: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp', chattingName: '홍길동', headcount: 5, lastMessage: '안녕하세요. 오랜만이에요.', lastMessageTime: '2025.10.25 12:00', unreadCount: 3, isPin: false, isSilent: false},
