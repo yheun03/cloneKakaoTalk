@@ -6,7 +6,8 @@
         :style="{ color: customColor ? `#${customColor}` : '', width: buttonSize ? `${buttonSize}px` : '', height: buttonSize ? `${buttonSize}px` : ''}"
         @click="handleClick">
         <KIcon v-if="icon" :icon="icon" :iconSize="iconSize" />
-        <slot v-else />
+        <slot v-if="type != 'icon'" />
+        <KIcon v-if="type == 'toggle'" icon="ic-xmark" iconSize="12" />
     </button>
 </template>
   

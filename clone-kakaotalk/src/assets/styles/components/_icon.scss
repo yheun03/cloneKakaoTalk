@@ -31,4 +31,10 @@
         left: -8px;
         right: unset;
     }
+    .k-button--toggle &{
+        position: absolute;
+        right: 9px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
