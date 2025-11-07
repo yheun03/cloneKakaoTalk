@@ -7,6 +7,7 @@ import ComponentView from '../views/ComponentView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import ChatListView from '../views/ChatListView.vue'
+import MoreView from '../views/MoreView.vue'
 
 const routes = [
     {
@@ -28,6 +29,11 @@ const routes = [
         path: '/component',
         name: 'Component',
         component: ComponentView
+    },
+    {
+        path: '/more',
+        name: 'More',
+        component: MoreView
     },
     {
         path: '/:pathMatch(.*)*',

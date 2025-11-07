@@ -7,7 +7,10 @@
             <KSelect type="text" placeholder="채팅">채팅</KSelect> <!-- 클릭 시 옵션 노출-->
             <KButton type="text">오픈채팅</KButton> <!-- 클릭 시 오픈 채팅 리스트로 이동-->
         </div>
-        <div class="btn-wrap">
+        <div class="tnb_primary" v-else-if="$route.name === 'More'">
+            <div class="page-title">더보기</div>
+        </div>
+        <div class="btn-wrap" v-if="$route.name !== 'More'">
             <KButton type="icon" icon="ic-search-white" iconSize="24" buttonSize="36"></KButton>
             <KButton type="icon" icon="ic-friend-add-white" iconSize="24" buttonSize="36"></KButton>
         </div>
