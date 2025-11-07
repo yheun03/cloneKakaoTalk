@@ -17,7 +17,7 @@ export default {
             default: '24',
             validator: value => {
                 const sizeStr = String(value);
-                return ['10', '12', '16', '20', '24', '28', '32'].includes(sizeStr);
+                return ['10', '12', '16', '18', '20', '24', '28', '32'].includes(sizeStr);
             }
         }
     }

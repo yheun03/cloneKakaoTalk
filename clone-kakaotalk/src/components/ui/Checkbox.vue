@@ -1,8 +1,8 @@
 <template>
     <div class="k-checkbox" v-if="type == 'default'">
         <label>
-            <i class="icon ic-checkbox"></i>
-            <input type="checkbox" :name="name" hidden>
+            <KIcon :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></KIcon>
+            <input type="checkbox" :name="name" v-model="isChecked" hidden>
             <span>
                 <slot></slot>
             </span>
@@ -10,15 +10,15 @@
     </div>
     <div class="k-checkbox type-image" v-else-if="type == 'image'">
         <label>
-            <i class="icon ic-checkbox"></i>
-            <input type="checkbox" :name="name" hidden>
+            <KIcon :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></KIcon>
+            <input type="checkbox" :name="name" v-model="isChecked" hidden>
             <img :src="src" :alt="alt">
         </label>
     </div>
     <div class="k-checkbox type-file" v-else-if="type == 'file'">
         <label>
-            <i class="icon ic-checkbox"></i>
-            <input type="checkbox" :name="name" hidden>
+            <KIcon :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></KIcon>
+            <input type="checkbox" :name="name" v-model="isChecked" hidden>
             <div class="file-info">
                 <img :src="require(`@/assets/icons/28/ic-${filetype}.svg`)" :alt="`${filetype} 파일 아이콘`">
                 <div>
@@ -31,8 +31,8 @@
     </div>
     <div class="k-checkbox type-link" v-else-if="type == 'link'">
         <label>
-            <i class="icon ic-checkbox"></i>
-            <input type="checkbox" :name="name" hidden>
+            <KIcon :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></KIcon>
+            <input type="checkbox" :name="name" v-model="isChecked" hidden>
             <img :src="linkThumbnail" :alt="linkTitle">
             <div class="link-info">
                 <p class="l-title">{{ linkTitle }}</p>
@@ -44,8 +44,13 @@
 </template>
 
 <script>
+    import KIcon from './Icon.vue';
+
     export default {
         name: 'KCheckbox',
+        components: {
+            KIcon
+        },
         props: {
             type: {
                 type: String,
@@ -95,6 +100,23 @@
             linkUrl: {
                 type: String,
                 default: ''
+            },
+            value: {
+                type: Boolean,
+                default: false
+            }
+        },
+        data() {
+            return {
+                isChecked: this.value
+            }
+        },
+        watch: {
+            value(newVal) {
+                this.isChecked = newVal;
+            },
+            isChecked(newVal) {
+                this.$emit('input', newVal);
             }
         }
     }
