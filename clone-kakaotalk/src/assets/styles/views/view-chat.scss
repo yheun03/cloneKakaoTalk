@@ -1,11 +1,11 @@
 .view-chat{
-    display: flex;
-    flex-direction: column;
+    max-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     &-header{
         display: flex;
         align-items: center;
         gap: 12px;
-        flex: 0 0 auto;
         padding: 14px 5px 10px 14px;
 
         .chat-info{
@@ -45,12 +45,10 @@
         }
     }
     &-body{
-        flex: 1;
-        padding: 10px 20px;
+        padding: 10px 8px 10px 15px;
         overflow-y: auto;
     }
     &-footer{
-        flex: 0 0 auto;
         padding: 10px 14px;
         border-top: 1px solid #313131;
         .k--textarea{

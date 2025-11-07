@@ -8,8 +8,8 @@
                 <p class="c-headcount"><i class="icon ic-profile"></i>1</p>
             </div>
             <div class="btn-wrap">
-                <KButton type="icon" icon="ic-search"></KButton>
-                <KButton type="icon" icon="ic-menu"></KButton>
+                <KButton type="icon" icon="ic-search" iconSize="24"></KButton>
+                <KButton type="icon" icon="ic-menu" iconSize="24"></KButton>
             </div>
         </div>
         <div class="view-chat-body" ref="chatBody">
@@ -35,8 +35,8 @@
                 </KInput>
             </div>
             <div class="btn-wrap">
-                <KButton type="icon" icon="ic-emoji"></KButton>
-                <KButton type="icon" icon="ic-file"></KButton>
+                <KButton type="icon" icon="ic-emoji" iconSize="24"></KButton>
+                <KButton type="icon" icon="ic-file" iconSize="24"></KButton>
                 <KButton color="primary" @click="handleSend">전송</KButton>
             </div>
         </div>

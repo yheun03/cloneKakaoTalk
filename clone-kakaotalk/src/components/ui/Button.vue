@@ -5,7 +5,7 @@
         :disabled="disabled || loading"
         :style="{ color: customColor ? `#${customColor}` : '', width: buttonSize ? `${buttonSize}px` : '', height: buttonSize ? `${buttonSize}px` : ''}"
         @click="handleClick">
-        <KIcon v-if="icon" :icon="icon" :iconSize="iconSize" />
+        <KIcon v-if="type == 'icon' && icon" :icon="icon" :iconSize="iconSize || '24'" />
         <slot v-if="type != 'icon'" />
         <KIcon v-if="type == 'toggle'" icon="ic-xmark" iconSize="12" />
     </button>
@@ -34,7 +34,8 @@
                 validator: value => ['', 'round', 'toggle', 'text', 'icon'].includes(value)
             },
             icon: {
-                type: String            },
+                type: String
+            },
             iconSize: {
                 type: [String, Number],
                 default: '',
