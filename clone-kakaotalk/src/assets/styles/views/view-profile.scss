@@ -23,18 +23,6 @@
                 span{
                     margin-left: 2px;
                 }
-                .icon{
-                    display: inline-block;
-                    width: 16px;
-                    height: 16px;
-                    background: center/16px no-repeat;
-                    &.ic-arrow-bottom{
-                        background-image: url('@/assets/icons/16/ic-arrow-bottom.svg');
-                    }
-                    &.ic-arrow-top{
-                        background-image: url('@/assets/icons/16/ic-arrow-top.svg');
-                    }
-                }
             }
             &-content{
                 display: grid;
@@ -84,15 +72,5 @@
         &:last-child{
             margin-right: 20px;
         }
-    }
-}
-
-.icon {
-    &.ic-birthday {
-        vertical-align: middle;
-        width: 18px;
-        height: 18px;
-        background: url('@/assets/icons/18/ic-birthday.svg') center / 18px no-repeat;
-        margin-left: 6px;
     }
 }

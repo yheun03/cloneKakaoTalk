@@ -72,17 +72,3 @@
         }
     }
 }
-
-.icon{
-    display: inline-block;
-    &.ic-pin{
-        width: 12px;
-        height: 12px;
-        background: url('@/assets/icons/12/ic-pin.svg') center / 12px no-repeat;
-    }
-    &.ic-silent{
-        width: 12px;
-        height: 12px;
-        background: url('@/assets/icons/12/ic-silent.svg') center / 12px no-repeat;
-    }
-}

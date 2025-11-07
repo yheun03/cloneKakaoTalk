@@ -2,7 +2,7 @@
     <div class="chatting-card">
         <KAvatar :src="src" size="44" />
         <div class="chatting-card-info">
-            <p class="c-name">{{ chattingName }} <span v-if="headcount > 1" class="c-headcount">{{ headcount }}</span> <i class="icon ic-pin" v-if="isPin"></i> <i class="icon ic-silent" v-if="isSilent"></i></p>
+            <p class="c-name">{{ chattingName }} <span v-if="headcount > 1" class="c-headcount">{{ headcount }}</span> <KIcon icon="ic-pin" iconSize="12" v-if="isPin" /> <KIcon icon="ic-silent" iconSize="12" v-if="isSilent" /></p>
             <p class="c-message" v-text="lastMessage"></p>
         </div>
         <div class="chatting-card-info-time">
@@ -13,11 +13,12 @@
 </template>
 <script>
     import KAvatar from '@/components/ui/Avatar.vue';
-
+    import KIcon from '@/components/ui/Icon.vue';
     export default {
         name: 'ChattingCard',
         components: {
-            KAvatar
+            KAvatar,
+            KIcon
         },
         props: {
             src: {

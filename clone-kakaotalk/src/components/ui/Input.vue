@@ -1,6 +1,6 @@
 <template>
     <div class="k-input">
-        <KSelect v-model="selectedValue" :options="selectOptions" v-if="showSelect" @select="handleSelect"></KSelect>
+        <KSelect v-model="selectedValue" :options="selectOptions" v-if="showSelect" @select="handleSelect" setIcon="ic-arrow-bottom" setIconSize="16"></KSelect>
         
         <div v-if="type!='textarea'">
             <input 

@@ -7,13 +7,7 @@
             </div>
             <div v-if="type === 'text'">
                 <div class="content type-text">
-                    <i class="icon ic-chat">
-                        <svg viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M8.063 1.743L1.669 7.498C1.025 8.077 0 7.62 0 6.755V1C0 .448.448 0 1 0h6.394c.916 0 1.35 1.13.669 1.743z"
-                                fill="black" />
-                        </svg>
-                    </i>
+                    <KIcon :icon="sender == 'me' ? 'ic-chat' : 'ic-chat-other'" iconSize="10"/>
                     <p v-html="formattedMessage"></p>
                 </div>
             </div>
@@ -31,8 +25,7 @@
                             <p class="f-size">용량: {{ filesize }}</p>
                         </div>
                         <div class="file-icon">
-                            <img :src="require(`@/assets/icons/28/ic-${iconName}-line.svg`)"
-                                :alt="`${iconName} 파일 아이콘`" />
+                            <KIcon :icon="`ic-${iconName}-line`" iconSize="28"/>
                         </div>
                     </div>
                     <div class="btn-wrap">
@@ -51,13 +44,7 @@
                 </div>
 
                 <div class="content type-text" v-if="message">
-                    <i class="icon ic-chat">
-                        <svg viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M8.063 1.743L1.669 7.498C1.025 8.077 0 7.62 0 6.755V1C0 .448.448 0 1 0h6.394c.916 0 1.35 1.13.669 1.743z"
-                                fill="black" />
-                        </svg>
-                    </i>
+                    <KIcon :icon="sender == 'me' ? 'ic-chat' : 'ic-chat-other'" iconSize="10"/>
                     <p v-html="formattedMessage"></p>
                 </div>
             </div>
@@ -67,10 +54,12 @@
 
 <script>
 import KButton from '@/components/ui/Button.vue'
+import KIcon from '@/components/ui/Icon.vue'
 export default {
     name: 'ChatBubble',
     components: {
-        KButton
+        KButton,
+        KIcon
     },
     props: {
         type: {

@@ -70,12 +70,3 @@
         }
     }
 }
-.icon{
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    background: center/16px no-repeat;
-    &.ic-profile{
-        background-image: url('@/assets/icons/16/ic-profile.svg');
-    }
-}

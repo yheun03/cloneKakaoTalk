@@ -5,17 +5,18 @@
         :disabled="disabled || loading"
         :style="{ color: customColor ? `#${customColor}` : '', width: buttonSize ? `${buttonSize}px` : '', height: buttonSize ? `${buttonSize}px` : ''}"
         @click="handleClick">
-        <i class="icon" v-if="icon" :style="{ width: iconSize ? `${iconSize}px` : '', height: iconSize ? `${iconSize}px` : ''}" >
-            <img :style="{ display: 'inline-block', width: iconSize ? `${iconSize}px` : '', height: iconSize ? `${iconSize}px` : ''}" :src="require(`@/assets/icons/${iconSize}/${icon}.svg`)" :alt="icon">
-        </i>
+        <KIcon v-if="icon" :icon="icon" :iconSize="iconSize" />
         <slot v-else />
     </button>
 </template>
   
 <script>
+    import KIcon from '@/components/ui/Icon.vue'
     export default {
         name: 'KButton',
-  
+        components: {
+            KIcon
+        },
         props: {
             color: {
                 type: String,

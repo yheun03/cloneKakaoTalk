@@ -112,11 +112,6 @@
             background: unset;
             height: unset;
         }
-        .icon{
-            width: 16px;
-            height: 16px;
-            background: url('@/assets/icons/16/ic-arrow-bottom.svg') no-repeat center center;
-        }
     }
     .k-select--date {
         .holiday-red {
@@ -141,7 +136,7 @@
         height: 30px;
         cursor: pointer;
         outline: unset;
-        background: url('@/assets/icons/12/ic-polygon-bottom.svg') no-repeat right 12px center;
+        // background: url('@/assets/icons/12/ic-polygon-bottom.svg') no-repeat right 12px center;
         &--placeholder{
             color: #595959;
         }
@@ -149,10 +144,10 @@
             padding-inline: 0 30px;
             border: unset;
             border-radius: unset;
-            background: {
-                image: url('@/assets/icons/12/ic-arrow-bottom.svg');
-                position-x: right;
-            }
+            // background: {
+            //     image: url('@/assets/icons/12/ic-arrow-bottom.svg');
+            //     position-x: right;
+            // }
             &--placeholder{
                 color: #838383;
             }
@@ -183,4 +178,9 @@
             }
         }
     }
+    .top-nav &{
+        .k-select-opener{
+            padding-inline: 0 15px;
+        }
+    } 
 }

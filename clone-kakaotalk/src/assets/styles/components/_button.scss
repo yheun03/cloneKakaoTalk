@@ -50,7 +50,6 @@
         height: 26px;
         border-radius: 12px;
         padding-inline: 9px 28px;
-        background: url('@/assets/icons/12/ic-xmark.svg') no-repeat right 9px center;
         min-width: unset;
     }
 
@@ -65,17 +64,5 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        &.ic-emoji {
-            background-image: url('@/assets/icons/24/ic-emoji.svg');
-        }
-        &.ic-file {
-            background-image: url('@/assets/icons/24/ic-file.svg');
-        }
-        &.ic-search {
-            background-image: url('@/assets/icons/24/ic-search.svg');
-        }
-        &.ic-menu {
-            background-image: url('@/assets/icons/24/ic-menu.svg');
-        }
     }
 }
