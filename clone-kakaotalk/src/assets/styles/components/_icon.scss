@@ -37,4 +37,9 @@
         top: 50%;
         transform: translateY(-50%);
     }
+    .k-checkbox[class*="type-"] &{
+        position: absolute;
+        left: 5px;
+        top: 5px;
+    }
 }

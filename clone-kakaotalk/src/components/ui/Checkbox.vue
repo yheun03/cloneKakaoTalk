@@ -10,14 +10,14 @@
     </div>
     <div class="k-checkbox type-image" v-else-if="type == 'image'">
         <label>
-            <KIcon :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></KIcon>
+            <KIcon v-if="isChecked" :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></KIcon>
             <input type="checkbox" :name="name" v-model="isChecked" hidden>
             <img :src="src" :alt="alt">
         </label>
     </div>
     <div class="k-checkbox type-file" v-else-if="type == 'file'">
         <label>
-            <KIcon :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></KIcon>
+            <KIcon v-if="isChecked" :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></KIcon>
             <input type="checkbox" :name="name" v-model="isChecked" hidden>
             <div class="file-info">
                 <img :src="require(`@/assets/icons/28/ic-${filetype}.svg`)" :alt="`${filetype} 파일 아이콘`">
@@ -31,7 +31,7 @@
     </div>
     <div class="k-checkbox type-link" v-else-if="type == 'link'">
         <label>
-            <KIcon :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></KIcon>
+            <KIcon v-if="isChecked" :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></KIcon>
             <input type="checkbox" :name="name" v-model="isChecked" hidden>
             <img :src="linkThumbnail" :alt="linkTitle">
             <div class="link-info">

@@ -1,12 +1,4 @@
 .k-checkbox{
-    .icon{
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        border: 1px solid #838383;
-        transition: 0.2s;
-    }
-
     label{
         position: relative;
         display: inline-flex;
@@ -18,26 +10,12 @@
         & + label{
             margin-left: 16px;
         }
-
-        &:has(:checked){
-            .icon{
-                background: url('@/assets/icons/18/ic-checkbox.svg') #FFE707 center / cover no-repeat;
-                border-color: #FFE707;
-                opacity: 1;
-            }
-        }
     }
     span:empty{
         display: none;
     }
     &.type{
         &-image{
-            .icon{
-                position: absolute;
-                top: 5px;
-                left: 5px;
-                border-color: transparent;
-            }
             label{
                 width: 122px;
                 height: 122px;
@@ -68,12 +46,6 @@
             border-radius: 4px;
             padding: 3px;
             box-sizing: border-box;
-            .icon{
-                position: absolute;
-                top: 5px;
-                left: 5px;
-                opacity: 0;
-            }
             .file-info{
                 padding: 10px 10px 7px;
                 img{
@@ -122,17 +94,11 @@
                 width: 100%;
                 flex-direction: column;
                 gap: unset;
-            }
-            .icon{
-                position: absolute;
-                top: 5px;
-                left: 5px;
-                opacity: 0;
-            }
-            img{
-                width: 100%;
-                height: 83px;
-                object-fit: cover;
+                & > img{
+                    width: 100%;
+                    height: 83px;
+                    object-fit: cover;
+                }
             }
             .link-info{
                 padding: 12px 14px 8px;
@@ -172,7 +138,7 @@
                     width: 2px;
                     color: rgba(255, 255, 255, 0.8);
                 }
-                img{
+                & > img{
                     height: 82px;
                 }
                 .link-info{
