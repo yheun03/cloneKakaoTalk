@@ -9,7 +9,7 @@
                     <p class="user-card-email">honggildong@example.com</p>
                 </div>
                 <div>
-                    <KIcon icon="ic-security" iconSize="30" />
+                    <KButton type="icon" icon="ic-security" iconSize="30" />
                 </div>
             </div>
             <div class="anchor-list">
