@@ -10,6 +10,14 @@
 .view-container{
     min-height: 100vh;
     height: auto;
+    .view-container-header{
+        font: 700 15px/100% "Pretendard";
+        color: #fff;
+        padding: 15px 20px;
+        text-align: center;
+        background-color: #222222;
+        border-bottom: 1px solid #434343;
+    }
 
     &.view-type-main{
         height: 100vh;

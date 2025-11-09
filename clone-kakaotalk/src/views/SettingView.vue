@@ -1,6 +1,11 @@
 <template>
     <div class="view-container view-setting">
-        <KTabs :items="tabs" type="setting" />
+        <div class="view-container-header">
+            <h1>설정</h1>
+        </div>
+        <div class="view-container-body">
+            <KTabs :items="tabs" type="setting" />
+        </div>
     </div>
 </template>
 <script>
