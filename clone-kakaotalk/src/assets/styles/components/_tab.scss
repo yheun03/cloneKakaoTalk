@@ -1,11 +1,9 @@
 .k-tabs{
-    max-width: 260px;
-    &__list{
-        display: flex;
-        gap: 20px;
-
-        &.type-filled{
-            gap: unset;
+    &.type{
+        &-filled{
+            .k-tabs__list{
+                gap: unset;
+            }
             button{
                 flex: 1;
                 padding: 6px 0;
@@ -14,8 +12,10 @@
                 border-color: #434343;
             }
         }
-        &.type-text{
-            gap: 14px;
+        &-text{
+            .k-tabs__list{
+                gap: 14px;
+            }
             button{
                 padding: unset;
                 font: 500 14px/130% "Pretendard";
@@ -26,9 +26,11 @@
                 }
             }
         }
-        &.type-emoji{
-            gap: unset;
-            align-items: center;
+        &-emoji{
+            .k-tabs__list{
+                gap: unset;
+                align-items: center;
+            }
             .wrap{
                 display: flex;
                 align-items: center;
@@ -56,6 +58,36 @@
                 }
             }
         }
+
+        &-setting{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 128px 1fr;
+            .k-tabs__list{
+                gap: unset;
+                flex-direction: column;
+            }
+            .k-tabs__panel{
+                padding: 32px 30px;
+                background-color: #222222;
+            }
+            button{
+                padding: 13px 20px;
+                border: unset;
+                text-align: left;
+                font: 700 13px/100% "Pretendard";
+                color: #a7a7a7;
+                &[aria-selected="true"]{
+                    color: #fff;
+                    background-color: rgba(255, 255, 255, 0.05);
+                }
+            }
+        }
+    }
+    &__list{
+        display: flex;
+        gap: 20px;
+
         button{
             appearance: unset;
             background-color: unset;

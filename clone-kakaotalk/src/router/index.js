@@ -8,6 +8,7 @@ import NotFoundView from '../views/NotFoundView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import ChatListView from '../views/ChatListView.vue'
 import MoreView from '../views/MoreView.vue'
+import SettingView from '../views/SettingView.vue'
 
 const routes = [
     {
@@ -34,6 +35,11 @@ const routes = [
         path: '/more',
         name: 'More',
         component: MoreView
+    },
+    {
+        path: '/setting',
+        name: 'Setting',
+        component: SettingView
     },
     {
         path: '/:pathMatch(.*)*',

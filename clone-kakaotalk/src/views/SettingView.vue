@@ -1,0 +1,45 @@
+<template>
+    <div class="view-container view-setting">
+        <KTabs :items="tabs" type="setting" />
+    </div>
+</template>
+<script>
+import KTabs from '@/components/ui/Tab.vue'
+
+import SettingAccountTabView from '@/views/settings/SettingAccountTabView.vue'
+import SettingSecurityTabView from '@/views/settings/SettingSecurityTabView.vue'
+import SettingNotificationTabView from '@/views/settings/SettingNotificationTabView.vue'
+import SettingFriendTabView from '@/views/settings/SettingFriendTabView.vue'
+import SettingChatTabView from '@/views/settings/SettingChatTabView.vue'
+import SettingEmojiTabView from '@/views/settings/SettingEmojiTabView.vue'
+import SettingScreenTabView from '@/views/settings/SettingScreenTabView.vue'
+import SettingCallTabView from '@/views/settings/SettingCallTabView.vue'
+import SettingLabTabView from '@/views/settings/SettingLabTabView.vue'
+import SettingStorageTabView from '@/views/settings/SettingStorageTabView.vue'
+
+import { markRaw } from 'vue'
+
+
+export default {
+    name: 'SettingView',
+    components: {
+        KTabs
+    },
+    data() {
+        return {
+            tabs: [
+                { label: '계정', value: 'setting-account', component: markRaw(SettingAccountTabView) },
+                { label: '보안', value: 'setting-security', component: markRaw(SettingSecurityTabView) },
+                { label: '알림', value: 'setting-notification', component: markRaw(SettingNotificationTabView) },
+                { label: '친구', value: 'setting-friend', component: markRaw(SettingFriendTabView) },
+                { label: '채팅', value: 'setting-chat', component: markRaw(SettingChatTabView) },
+                { label: '이모티콘', value: 'setting-emoji', component: markRaw(SettingEmojiTabView) },
+                { label: '화면', value: 'setting-screen', component: markRaw(SettingScreenTabView) },
+                { label: '통화', value: 'setting-call', component: markRaw(SettingCallTabView) },
+                { label: '실험실', value: 'setting-lab', component: markRaw(SettingLabTabView) },
+                { label: '저장공간 관리', value: 'setting-storage', component: markRaw(SettingStorageTabView) },
+            ]
+        }
+    }
+}
+</script>

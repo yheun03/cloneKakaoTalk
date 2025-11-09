@@ -1,7 +1,7 @@
 <template>
-    <div class="k-tabs">
+    <div class="k-tabs" :class="[type && `type-${type}`]">
         <!-- 이모지 타입 -->
-        <div v-if="type === 'emoji'" class="k-tabs__list" :class="[type && `type-${type}`]" role="tablist"
+        <div v-if="type === 'emoji'" class="k-tabs__list" role="tablist"
             aria-orientation="horizontal" @keydown="onKeydown">
             <button role="button" aria-label="이전 탭" type="button" class="nav-btn" @click="focusIndex(currentIndex - 1)">
                 <i class="icon ic-arrow-left"></i>
@@ -21,7 +21,7 @@
         </div>
 
         <!-- 기본/filled/text 타입 -->
-        <div v-else class="k-tabs__list" :class="[type && `type-${type}`]" role="tablist" aria-orientation="horizontal"
+        <div v-else class="k-tabs__list" role="tablist" aria-orientation="horizontal"
             @keydown="onKeydown">
             <button v-for="it in items" :key="it.value" ref="setBtnRef" class="k-tab" role="tab" type="button"
                 :aria-selected="currentValue === it.value ? 'true' : 'false'"
