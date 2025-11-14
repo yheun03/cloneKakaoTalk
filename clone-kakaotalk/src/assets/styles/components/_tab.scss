@@ -4,7 +4,7 @@
             .k-tabs__list{
                 gap: unset;
             }
-            button{
+            .k-tab{
                 flex: 1;
                 padding: 6px 0;
                 font:500 13px/normal "Pretendard";
@@ -16,7 +16,7 @@
             .k-tabs__list{
                 gap: 14px;
             }
-            button{
+            .k-tab{
                 padding: unset;
                 font: 500 14px/130% "Pretendard";
                 color: #9E9E9E;
@@ -41,7 +41,7 @@
                     display: none;
                 }
             }
-            button{
+            .k-tab{
                 flex: 0 0 auto;
                 width: 30px;
                 aspect-ratio: 1;
@@ -61,6 +61,7 @@
 
         &-setting{
             width: 100%;
+            height: 100%;
             display: grid;
             grid-template-columns: 128px 1fr;
             .k-tabs__list{
@@ -72,7 +73,7 @@
                 padding: 32px 30px;
                 background-color: #222222;
             }
-            button{
+            .k-tab{
                 padding: 13px 20px;
                 border: unset;
                 text-align: left;
@@ -89,7 +90,7 @@
         display: flex;
         gap: 20px;
 
-        button{
+        .k-tab{
             appearance: unset;
             background-color: unset;
             border: none;

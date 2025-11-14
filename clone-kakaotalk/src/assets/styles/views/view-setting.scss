@@ -1,0 +1,45 @@
+.view-setting{
+    .wrap-setting{
+        margin-bottom: 34px;
+        dt{
+            margin-bottom: 10px;
+        }
+        &-title{
+            font: 700 15px/120% "Pretendard";
+            color: #fff;
+            letter-spacing: -0.06em;
+        }
+        &-description{
+            font: 500 14px/115% "Pretendard";
+            color: #9E9E9E;
+            letter-spacing: -0.04em;
+            margin-bottom: 12px;
+        }
+    }
+}
+
+.info-account{
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    padding: 14px 20px 18px;
+    font: 500 13px/ 120% "Pretendard";
+    color: #a7a7a7;
+    display: table;
+    width: 100%;
+    dl{
+        display: table-row;
+        &:not(:last-child) > *{
+            padding-bottom: 10px;
+        }
+    }
+    dt{
+        display: table-cell;
+        width: 1%;
+        white-space: nowrap;
+    }
+    dd{
+        display: table-cell;
+        color: #fff;
+        padding-left: 10px;
+    }
+}

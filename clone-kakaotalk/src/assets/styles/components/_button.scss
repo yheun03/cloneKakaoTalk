@@ -6,6 +6,7 @@
     height: 30px;
     border-radius: 6px;
     min-width: 60px;
+    padding-inline: 12px;
     font: 500 13px/normal "Pretendard";
     cursor: pointer;
 
@@ -69,5 +70,8 @@
 
     .user-card &{
         margin-bottom: 3px;
+    }
+
+    .wrap-setting &{
     }
 }
