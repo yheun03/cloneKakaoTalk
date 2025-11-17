@@ -38,8 +38,7 @@
                 <p class="wrap-setting-title">글자크기</p>
             </dt>
             <dd>
-                <KRange :value="fontSize" @input="fontSize = $event" :min="1" :max="7" :step="1" label-left="작게" label-right="크게"/>
-                <KSelect :options="fontSizeOptions" />
+                <KRange :value="fontSize" @input="fontSize = $event" :min="1" :max="7" :step="1" label-left="가" label-right="가"/>
             </dd>
         </dl>
     </div>
@@ -61,8 +60,7 @@ export default {
         return {
             screenMode: '',
             fontSize: 4, // 기본값: 중간 (1-7 범위에서 4)
-            fontOptions: [],
-            fontSizeOptions: []
+            fontOptions: []
         }
     },
     watch: {

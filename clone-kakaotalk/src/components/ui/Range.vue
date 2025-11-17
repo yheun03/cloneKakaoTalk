@@ -1,7 +1,7 @@
 <template>
     <div class="k-range">
         <span v-if="labelLeft" class="k-range-label k-range-label--left">{{ labelLeft }}</span>
-        <div class="k-range-wrapper" :style="{ '--progress': progressPercent + '%' }">
+        <div class="k-range-wrapper" :style="wrapperStyle">
             <input 
                 type="range" 
                 :value="value"
@@ -47,11 +47,24 @@ export default {
     },
     emits: ['input'],
     computed: {
+        stepCount() {
+            const range = this.max - this.min
+            if (range <= 0 || this.step <= 0) {
+                return 1
+            }
+            return Math.max(1, range / this.step)
+        },
         progressPercent() {
             // min-max 범위를 0-100%로 변환
             const range = this.max - this.min;
             const currentValue = this.value - this.min;
             return range > 0 ? (currentValue / range) * 100 : 0;
+        },
+        wrapperStyle() {
+            return {
+                '--progress': `${this.progressPercent}%`,
+                '--range-step-count': this.stepCount
+            }
         }
     },
     methods: {
