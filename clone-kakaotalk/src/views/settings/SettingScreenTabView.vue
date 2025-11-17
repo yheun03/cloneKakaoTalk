@@ -6,9 +6,9 @@
             </dt>
             <dd>
                 <div class="wrap-item">
-                    <KRadio v-model="screenMode" type="illustration" src="@/assets/images/setScreenMode/screen-mode-1.png" alt="화면 모드"></KRadio>
-                    <KRadio v-model="screenMode" type="illustration" src="@/assets/images/setScreenMode/screen-mode-2.png" alt="화면 모드"></KRadio>
-                    <KRadio v-model="screenMode" type="illustration" src="@/assets/images/setScreenMode/screen-mode-3.png" alt="화면 모드"></KRadio>
+                    <KRadio v-model="screenMode" type="illustration" :src="require('@/assets/images/setScreenMode/screen-mode-1.png')" alt="화면 모드"></KRadio>
+                    <KRadio v-model="screenMode" type="illustration" :src="require('@/assets/images/setScreenMode/screen-mode-2.png')" alt="화면 모드"></KRadio>
+                    <KRadio v-model="screenMode" type="illustration" :src="require('@/assets/images/setScreenMode/screen-mode-3.png')" alt="화면 모드"></KRadio>
                 </div>
             </dd>
         </dl>
