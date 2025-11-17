@@ -18,7 +18,6 @@ import SettingFriendTabView from '@/views/settings/SettingFriendTabView.vue'
 import SettingChatTabView from '@/views/settings/SettingChatTabView.vue'
 import SettingScreenTabView from '@/views/settings/SettingScreenTabView.vue'
 import SettingCallTabView from '@/views/settings/SettingCallTabView.vue'
-import SettingStorageTabView from '@/views/settings/SettingStorageTabView.vue'
 
 import { markRaw } from 'vue'
 
@@ -38,7 +37,6 @@ export default {
                 { label: '채팅', value: 'setting-chat', component: markRaw(SettingChatTabView) },
                 { label: '화면', value: 'setting-screen', component: markRaw(SettingScreenTabView) },
                 { label: '통화', value: 'setting-call', component: markRaw(SettingCallTabView) },
-                { label: '저장공간 관리', value: 'setting-storage', component: markRaw(SettingStorageTabView) },
             ]
         }
     }
