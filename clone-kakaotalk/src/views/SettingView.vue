@@ -16,7 +16,6 @@ import SettingSecurityTabView from '@/views/settings/SettingSecurityTabView.vue'
 import SettingNotificationTabView from '@/views/settings/SettingNotificationTabView.vue'
 import SettingFriendTabView from '@/views/settings/SettingFriendTabView.vue'
 import SettingChatTabView from '@/views/settings/SettingChatTabView.vue'
-import SettingEmojiTabView from '@/views/settings/SettingEmojiTabView.vue'
 import SettingScreenTabView from '@/views/settings/SettingScreenTabView.vue'
 import SettingCallTabView from '@/views/settings/SettingCallTabView.vue'
 import SettingLabTabView from '@/views/settings/SettingLabTabView.vue'
@@ -38,7 +37,6 @@ export default {
                 { label: '알림', value: 'setting-notification', component: markRaw(SettingNotificationTabView) },
                 { label: '친구', value: 'setting-friend', component: markRaw(SettingFriendTabView) },
                 { label: '채팅', value: 'setting-chat', component: markRaw(SettingChatTabView) },
-                { label: '이모티콘', value: 'setting-emoji', component: markRaw(SettingEmojiTabView) },
                 { label: '화면', value: 'setting-screen', component: markRaw(SettingScreenTabView) },
                 { label: '통화', value: 'setting-call', component: markRaw(SettingCallTabView) },
                 { label: '실험실', value: 'setting-lab', component: markRaw(SettingLabTabView) },

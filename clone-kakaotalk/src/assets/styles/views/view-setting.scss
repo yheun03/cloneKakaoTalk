@@ -4,6 +4,12 @@
         dt{
             margin-bottom: 10px;
         }
+        dd{
+            margin-bottom: 20px;
+            & > * + *{
+                margin-top: 10px;
+            }
+        }
         &-title{
             font: 700 15px/120% "Pretendard";
             color: #fff;
@@ -14,6 +20,18 @@
             color: #9E9E9E;
             letter-spacing: -0.04em;
             margin-bottom: 12px;
+        }
+
+        .wrap-item{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            span{
+                font: 500 13px/120% "Pretendard";
+                color: #9E9E9E;
+                letter-spacing: -0.008em;
+                margin: unset;
+            }
         }
     }
 }
