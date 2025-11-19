@@ -4,8 +4,8 @@
         <h2>UI 컴포넌트</h2>
 
         <h3>Setting</h3>
-            <div class="wrap">
-                <dl class="wrap-setting">
+        <div class="wrap">
+            <dl class="wrap-setting">
                 <dt>
                     <p class="title">타이틀 <span>(1/3)</span></p>
                 </dt>
@@ -34,7 +34,7 @@
                 </dt>
                 <dd>
                     <p class="dscpt">등록된 키워드가 포함된 메세지는 채팅방 알림이 꺼져 있어도 푸시 알림을 받게 됩니다. Mac에서 등록한 키워드는 모바일과 동기화됩니다.</p>
-                    <div class="wrap-input">
+                    <div class="wrap-input type-column">
                         <KCheckbox v-model="showKeywordNotification">키워드 알림</KCheckbox>
                         <KCheckbox v-model="showKeywordNotification">키워드 알림</KCheckbox>
                         <KCheckbox v-model="showKeywordNotification">키워드 알림</KCheckbox>
@@ -47,7 +47,7 @@
                 </dt>
                 <dd>
                     <p class="dscpt">Mac 카카오톡을 선택한 글씨체로 변경합니다.</p>
-                    <div class="wrap-input type-column">
+                    <div class="wrap-input">
                         <span class="label-select">글씨체</span>
                         <KSelect :options="fontOptions" />
                     </div>

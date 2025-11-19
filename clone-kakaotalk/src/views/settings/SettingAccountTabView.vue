@@ -1,7 +1,10 @@
 <template>
     <div class="setting-account-tab">
+
         <dl class="wrap-setting">
-            <dt><p class="wrap-setting-title">계정 정보</p></dt>
+            <dt>
+                <p class="title">계정 정보</p>
+            </dt>
             <dd>
                 <div class="info-account">
                     <dl>
