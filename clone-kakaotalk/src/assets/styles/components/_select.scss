@@ -32,6 +32,7 @@
 }
 
 .k-select {
+    max-width: 40%;
     &--date{
         width: 131px;
         .dp__menu{
@@ -136,6 +137,10 @@
         height: 30px;
         cursor: pointer;
         outline: unset;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         // background: url('@/assets/icons/12/ic-polygon-bottom.svg') no-repeat right 12px center;
         &--placeholder{
             color: #595959;
