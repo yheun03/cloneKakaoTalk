@@ -1,37 +1,49 @@
 .view-setting{
-    .wrap-setting{
-        margin-bottom: 34px;
-        dt{
-            margin-bottom: 10px;
+}
+
+.wrap-setting{
+    margin-bottom: 34px;
+    dt{
+        margin-bottom: 8px;
+    }
+    dd{
+        margin-bottom: 20px;
+    }
+    .title{
+        font: 700 14px/120% "Pretendard";
+        color: #fff;
+        letter-spacing: -0.06em;
+        span{
+            font: {
+                weight: 500;
+                size: 13px
+            };
+            line-height: 110%;
+            color: #9e9e9e;
         }
-        dd{
-            margin-bottom: 20px;
-            & > * + *{
-                margin-top: 10px;
-            }
-        }
-        &-title{
-            font: 700 15px/120% "Pretendard";
-            color: #fff;
-            letter-spacing: -0.06em;
-        }
-        &-description{
-            font: 500 14px/115% "Pretendard";
-            color: #9E9E9E;
-            letter-spacing: -0.04em;
-            margin-bottom: 12px;
+    }
+    .dscpt{
+        font: 500 13px/120% "Pretendard";
+        color: #9E9E9E;
+        letter-spacing: -0.04em;
+        margin-bottom: 10px;
+    }
+    .wrap-input{
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 10px;
+        &.type-column{
+            flex-direction: column;
+            gap: 6px;
+            align-items: unset;
         }
 
-        .wrap-item{
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            span{
-                font: 500 13px/120% "Pretendard";
-                color: #9E9E9E;
-                letter-spacing: -0.008em;
-                margin: unset;
-            }
+        .label-select{
+            font: 500 13px/120% "Pretendard";
+            color: #9E9E9E;
+            letter-spacing: -0.04em;
+            margin-right: auto;
         }
     }
 }
