@@ -17,7 +17,6 @@ import SettingNotificationTabView from '@/views/settings/SettingNotificationTabV
 import SettingFriendTabView from '@/views/settings/SettingFriendTabView.vue'
 import SettingChatTabView from '@/views/settings/SettingChatTabView.vue'
 import SettingScreenTabView from '@/views/settings/SettingScreenTabView.vue'
-import SettingCallTabView from '@/views/settings/SettingCallTabView.vue'
 
 import { markRaw } from 'vue'
 
@@ -35,8 +34,7 @@ export default {
                 { label: '알림', value: 'setting-notification', component: markRaw(SettingNotificationTabView) },
                 { label: '친구', value: 'setting-friend', component: markRaw(SettingFriendTabView) },
                 { label: '채팅', value: 'setting-chat', component: markRaw(SettingChatTabView) },
-                { label: '화면', value: 'setting-screen', component: markRaw(SettingScreenTabView) },
-                { label: '통화', value: 'setting-call', component: markRaw(SettingCallTabView) },
+                { label: '화면', value: 'setting-screen', component: markRaw(SettingScreenTabView) }
             ]
         }
     }
