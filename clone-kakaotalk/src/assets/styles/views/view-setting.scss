@@ -1,4 +1,11 @@
-.view-setting{
+.view-container.view-setting{
+    height: 50vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    
+    .view-container-body{
+        overflow-y: auto;
+    }
 }
 
 .wrap-setting{
