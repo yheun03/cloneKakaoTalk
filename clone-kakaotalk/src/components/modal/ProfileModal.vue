@@ -19,7 +19,7 @@
                         <span>나와의 채팅</span>
                     </label>
                     <label>
-                        <KButton type="icon" icon="ic-menu" iconSize="24" @click="console.log('test')"></KButton>
+                        <KButton type="icon" icon="ic-menu" iconSize="24" @click="openProfileEditModal"></KButton>
                         <span>프로필 편집</span>
                     </label>
                 </div>
@@ -27,6 +27,10 @@
             <SetBackgroundModal 
                 v-if="showSetBackgroundModal"
                 @close="closeSetBackgroundModal"
+            />
+            <ProfileEditModal 
+                v-if="showProfileEditModal"
+                @close="closeProfileEditModal"
             />
         </div>
     </teleport>
@@ -36,13 +40,15 @@
 import KAvatar from '@/components/ui/Avatar.vue'
 import KButton from '@/components/ui/Button.vue'
 import SetBackgroundModal from '@/components/modal/setBackgroundModal.vue'
+import ProfileEditModal from '@/components/modal/ProfileEditModal.vue'
 
 export default {
     name: 'ProfileModal',
     components: {
         KAvatar,
         KButton,
-        SetBackgroundModal
+        SetBackgroundModal,
+        ProfileEditModal
     },
     props: {
         profileImage: {
@@ -65,7 +71,8 @@ export default {
     emits: ['close'],
     data() {
         return {
-            showSetBackgroundModal: false
+            showSetBackgroundModal: false,
+            showProfileEditModal: false
         }
     },
     computed: {
@@ -96,11 +103,14 @@ export default {
         openGiftshop() {
             window.open('https://gift.kakao.com/', '_blank')
         },
-        openSetBackgroundModal() {
-            this.showSetBackgroundModal = true
-        },
         closeSetBackgroundModal() {
             this.showSetBackgroundModal = false
+        },
+        openProfileEditModal() {
+            this.showProfileEditModal = true
+        },
+        closeProfileEditModal() {
+            this.showProfileEditModal = false
         }
     }
 }
