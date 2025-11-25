@@ -51,6 +51,10 @@
             loading: {
                 type: Boolean,
                 default: false
+            },
+            active: {
+                type: Boolean,
+                default: false
             }
         },
   
@@ -64,7 +68,8 @@
                     this.icon && `k-button--icon ${this.icon}`,
                     { 
                         'k-button--disabled': this.disabled,
-                        'k-button--loading': this.loading 
+                        'k-button--loading': this.loading,
+                        'active': this.active
                     }
                 ]
             }
