@@ -4,7 +4,7 @@
         <topNav />
         <div class="view-container-body">
             <ProfileCard :profileImage="me.src" :userName="me.name" :profileType="me.type"
-                :userMessage="me.statusMessage" />
+                :userMessage="me.statusMessage" @avatar-click="openProfileModal" />
             <div class="accordion">
                 <div class="accordion-item" v-if="profilesByType('update').length"
                     :class="{ 'is-open': openSections.update }">
@@ -16,8 +16,8 @@
                         <div class="accordion-item-content-inner">
                             <div class="overflow-y-scroll">
                                 <ProfileCard v-for="(p, idx) in profilesByType('update')" :key="`upd-${idx}`"
-                                    :profileImage="me.src" :userName="me.name" :profileType="p.type"
-                                    :userMessage="p.statusMessage" />
+                                    :profileImage="p.src" :userName="p.name" :profileType="p.type"
+                                    :userMessage="p.statusMessage" @avatar-click="openProfileModal" />
                             </div>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                         <div class="accordion-item-content-inner">
                             <ProfileCard v-for="(p, idx) in profilesByType('birthday')" :key="`bd-${idx}`"
                                 :profileImage="p.src" :userName="p.name" :profileType="p.type"
-                                :userMessage="p.statusMessage" />
+                                :userMessage="p.statusMessage" @avatar-click="openProfileModal" />
                         </div>
                     </div>
                 </div>
@@ -45,27 +45,42 @@
                         <div class="accordion-item-content-inner">
                             <ProfileCard v-for="(p, idx) in profilesByType('')" :key="`more-${idx}`"
                                 :profileImage="p.src" :userName="p.name" :profileType="p.type"
-                                :userMessage="p.statusMessage" />
+                                :userMessage="p.statusMessage" @avatar-click="openProfileModal" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <ProfileModal 
+            v-if="showProfileModal"
+            :profileImage="selectedProfile.profileImage"
+            :userName="selectedProfile.userName"
+            :userMessage="selectedProfile.userMessage"
+            @close="closeProfileModal"
+        />
     </div>
 </template>
 <script>
 import ProfileCard from '@/components/profile/ProfileCard.vue'
 import TopNav from '@/views/layouts/TopNav.vue'
 import GlobalNav from '@/views/layouts/Gnb.vue'
+import ProfileModal from '@/components/modal/ProfileModal.vue'
 export default {
     name: 'ProfileView',
     components: {
         ProfileCard,
         TopNav,
-        GlobalNav
+        GlobalNav,
+        ProfileModal
     },
     data() {
         return {
+            showProfileModal: false,
+            selectedProfile: {
+                profileImage: '',
+                userName: '',
+                userMessage: ''
+            },
             me: {
                 src: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp', name: '홍길동', type: 'my', statusMessage: '손에 잡힐 듯 허나 잡히지 않는. 내 역할은 그저',
             },
@@ -180,6 +195,17 @@ export default {
     methods: {
         toggleSection(section) {
             this.openSections[section] = !this.openSections[section]
+        },
+        openProfileModal(profile) {
+            this.selectedProfile = {
+                profileImage: profile.profileImage,
+                userName: profile.userName,
+                userMessage: profile.userMessage || ''
+            }
+            this.showProfileModal = true
+        },
+        closeProfileModal() {
+            this.showProfileModal = false
         }
     }
 }

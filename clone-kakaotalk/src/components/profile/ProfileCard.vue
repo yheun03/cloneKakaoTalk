@@ -1,7 +1,9 @@
 <template>
     <!-- 기본 타입 -->
     <div :class="profileCardClasses">
-        <KAvatar :src="profileImage" :alt="`${userName}의 프로필 이미지입니다.`" :size="setSize" :isNew="setNew" />
+        <div class="profile-card-avatar" @click="handleAvatarClick">
+            <KAvatar :src="profileImage" :alt="`${userName}의 프로필 이미지입니다.`" :size="setSize" :isNew="setNew" />
+        </div>
         <div class="profile-card-info">
             <p class="name">{{ userName }} <KIcon icon="ic-birthday" iconSize="18" v-if="profileType == 'birthday'" /></p>
             <p class="status-message" v-if="profileType != 'update'">{{ userMessage }}</p>
@@ -59,6 +61,15 @@
                 } else {
                     return false;
                 }
+            }
+        },
+        methods: {
+            handleAvatarClick() {
+                this.$emit('avatar-click', {
+                    profileImage: this.profileImage,
+                    userName: this.userName,
+                    userMessage: this.userMessage
+                })
             }
         }
     }

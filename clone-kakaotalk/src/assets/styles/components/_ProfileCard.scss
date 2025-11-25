@@ -8,6 +8,9 @@
     color: #fff;
 
     overflow: hidden;
+    &-avatar{
+        cursor: pointer;
+    }
     &-info{
         min-width: 0;
         display: flex;
