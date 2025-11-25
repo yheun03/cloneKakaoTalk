@@ -42,6 +42,10 @@
             },
             userMessage: {
                 type: String,
+            },
+            backgroundImage: {
+                type: String,
+                default: ''
             }
         },
         computed: {
@@ -68,7 +72,8 @@
                 this.$emit('avatar-click', {
                     profileImage: this.profileImage,
                     userName: this.userName,
-                    userMessage: this.userMessage
+                    userMessage: this.userMessage,
+                    backgroundImage: this.backgroundImage
                 })
             }
         }
