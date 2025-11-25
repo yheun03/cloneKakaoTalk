@@ -1,7 +1,7 @@
 <template>
     <teleport to="body">
         <div class="modal profileModal" @click.self="closeModal">
-            <div class="modal-content" :style="backgroundImage ? `background-image: url(${backgroundImage});` : ''">
+            <div class="modal-content" :style="backgroundStyle">
                 <div class="modal-header">
                     <div class="btn-wrap">
                         <KButton type="icon" icon="ic-bell" iconSize="24" buttonSize="24" @click="openGiftshop"></KButton>
@@ -66,6 +66,23 @@ export default {
     data() {
         return {
             showSetBackgroundModal: false
+        }
+    },
+    computed: {
+        backgroundStyle() {
+            if (!this.backgroundImage) {
+                return {}
+            }
+            const value = this.backgroundImage.trim()
+            const hexPattern = /^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/
+            if (hexPattern.test(value)) {
+                return {
+                    backgroundColor: value
+                }
+            }
+            return {
+                backgroundImage: `url(${value})`,
+            }
         }
     },
     methods: {
