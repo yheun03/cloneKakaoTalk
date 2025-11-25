@@ -9,16 +9,27 @@
     z-index: 1000;
 
     &-content{ 
-        width: 260px;
         background-color: #191919;
         border-radius: 9px;
         border: 1px solid #474747;
-        padding: 10px 24px 24px;
 
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    &-header{
+        padding: 20px 20px 8px;
+        p.title{
+            font: 700 15px/100% "Pretendard";
+            color: #fff;
+            letter-spacing: -0.04em;
+            text-align: center;
+        }
     }
 
     &-body{
@@ -45,8 +56,6 @@
                 padding: unset;
                 width: 80dvw;
                 height: 80dvh;
-                display: grid;
-                grid-template-rows: auto 1fr auto;
             }
             &-header{
                 padding: 10px;    
@@ -95,6 +104,30 @@
                     color: #fff;
                     cursor: pointer;
                 }
+            }
+        }
+    }
+
+    &.ConfirmModal{
+        .modal{
+            &-content{
+                width: 260px;
+                padding: 10px 24px 24px;
+            }
+        }
+    }
+
+    &.setBackgroundModal{
+        .modal{
+            &-content{
+                width: 360px;
+            }
+            &-body{
+                padding-inline: 20px;
+            }
+            &-footer{
+                padding: 10px 20px 20px;
+                border-top: 1px solid rgba(255, 255, 255, 0.15);
             }
         }
     }
