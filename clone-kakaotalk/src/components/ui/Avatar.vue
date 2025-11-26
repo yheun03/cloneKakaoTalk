@@ -1,10 +1,17 @@
 <template>
     <div class="k-avatar" :class="avatarClasses">
-        <img :src="src" :alt="alt" class="k-avatar__img" />
+        <img 
+            :src="resolvedSrc" 
+            :alt="alt || '프로필 이미지'" 
+            class="k-avatar__img" 
+            @error="handleError"
+        />
     </div>
 </template>
 
 <script>
+    import defaultAvatar from '@/assets/images/profileImage/profile.png'
+
     export default {
         name: 'KAvatar',
         props: {
@@ -29,6 +36,11 @@
                 default: false
             }
         },
+        data() {
+            return {
+                hasError: false
+            }
+        },
         computed: {
             avatarClasses() {
                 const sizeStr = String(this.size);
@@ -36,6 +48,17 @@
                     return `k-avatar--size-${sizeStr} k-avatar--type-new`
                 }
                 return `k-avatar--size-${sizeStr}`
+            },
+            resolvedSrc() {
+                if (!this.src || this.hasError) {
+                    return defaultAvatar
+                }
+                return this.src
+            }
+        },
+        methods: {
+            handleError() {
+                this.hasError = true
             }
         }
     }

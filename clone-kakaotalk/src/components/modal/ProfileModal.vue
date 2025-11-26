@@ -103,6 +103,9 @@ export default {
         openGiftshop() {
             window.open('https://gift.kakao.com/', '_blank')
         },
+        openSetBackgroundModal() {
+            this.showSetBackgroundModal = true
+        },
         closeSetBackgroundModal() {
             this.showSetBackgroundModal = false
         },
