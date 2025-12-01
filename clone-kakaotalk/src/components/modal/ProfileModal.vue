@@ -9,9 +9,9 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <KAvatar :src="profileImage" :alt="`${userName}의 프로필 이미지입니다.`" :size="84" />
-                    <p class="profile-name">{{ userName }}</p>
-                    <p class="profile-message">{{ userMessage }}</p>
+                    <KAvatar :userId="userId" :alt="`${profile.userName}의 프로필 이미지입니다.`" :size="84" />
+                    <p class="profile-name">{{ profile.userName }}</p>
+                    <p class="profile-message">{{ profile.userMessage }}</p>
                 </div>
                 <div class="modal-footer">
                     <label>
@@ -30,6 +30,7 @@
             />
             <ProfileEditModal 
                 v-if="showProfileEditModal"
+                :userId="userId"
                 @close="closeProfileEditModal"
             />
         </div>
@@ -41,6 +42,7 @@ import KAvatar from '@/components/ui/Avatar.vue'
 import KButton from '@/components/ui/Button.vue'
 import SetBackgroundModal from '@/components/modal/setBackgroundModal.vue'
 import ProfileEditModal from '@/components/modal/ProfileEditModal.vue'
+import profileService from '@/services/profileService'
 
 export default {
     name: 'ProfileModal',
@@ -51,21 +53,9 @@ export default {
         ProfileEditModal
     },
     props: {
-        profileImage: {
+        userId: {
             type: String,
-            default: ''
-        },
-        userName: {
-            type: String,
-            default: ''
-        },
-        userMessage: {
-            type: String,
-            default: ''
-        },
-        backgroundImage: {
-            type: String,
-            default: ''
+            required: true
         }
     },
     emits: ['close'],
@@ -76,11 +66,14 @@ export default {
         }
     },
     computed: {
+        profile() {
+            return profileService.getProfile(this.userId) || {}
+        },
         backgroundStyle() {
-            if (!this.backgroundImage) {
+            if (!this.profile.backgroundImage) {
                 return {}
             }
-            const value = this.backgroundImage.trim()
+            const value = this.profile.backgroundImage.trim()
             const hexPattern = /^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/
             if (hexPattern.test(value)) {
                 return {
@@ -89,6 +82,8 @@ export default {
             }
             return {
                 backgroundImage: `url(${value})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
             }
         }
     },

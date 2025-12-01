@@ -7,13 +7,13 @@
                 </div>
                 <div class="modal-body">
                     <div class="profile-wrap">
-                        <KAvatar :src="profileImage" :alt="`${userName}의 프로필 이미지입니다.`" :size="90" />
-                        <KInput type="text" placeholder="이름" value="홍길동" :maxlength="20"/>
-                        <KInput type="text" placeholder="상태메시지 입력" value="상태메시지를 입력해주세요." :maxlength="20"/>
+                        <KAvatar :userId="userId" :alt="`${profile.userName}의 프로필 이미지입니다.`" :size="90" />
+                        <KInput type="text" placeholder="이름" v-model="editableUserName" :maxlength="20"/>
+                        <KInput type="text" placeholder="상태메시지 입력" v-model="editableUserMessage" :maxlength="20"/>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <KButton color="primary">확인</KButton>
+                    <KButton color="primary" @click="saveProfile">확인</KButton>
                 </div>
             </div>
         </div>
@@ -24,6 +24,8 @@
 import KButton from '@/components/ui/Button.vue'
 import KInput from '@/components/ui/Input.vue'
 import KAvatar from '@/components/ui/Avatar.vue'
+import profileService from '@/services/profileService'
+
 export default {
     name: 'ProfileEditModal',
     components: {
@@ -31,9 +33,42 @@ export default {
         KInput,
         KAvatar
     },
+    props: {
+        userId: {
+            type: String,
+            required: true
+        }
+    },
     emits: ['close'],
+    data() {
+        return {
+            editableUserName: '',
+            editableUserMessage: ''
+        }
+    },
+    computed: {
+        profile() {
+            return profileService.getProfile(this.userId) || {}
+        }
+    },
+    watch: {
+        profile: {
+            immediate: true,
+            handler(newProfile) {
+                this.editableUserName = newProfile.userName || ''
+                this.editableUserMessage = newProfile.userMessage || ''
+            }
+        }
+    },
     methods: {
         closeModal() {
+            this.$emit('close')
+        },
+        saveProfile() {
+            profileService.updateProfile(this.userId, {
+                userName: this.editableUserName,
+                userMessage: this.editableUserMessage
+            })
             this.$emit('close')
         }
     }
