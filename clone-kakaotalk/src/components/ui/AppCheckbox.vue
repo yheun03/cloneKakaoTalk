@@ -20,7 +20,7 @@
             <app-icon v-if="isChecked" :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></app-icon>
             <input type="checkbox" :name="name" v-model="isChecked" hidden>
             <div class="file-info">
-                <img :src="require(`@/assets/icons/28/ic-${filetype}.svg`)" :alt="`${filetype} 파일 아이콘`">
+                <img :src="getFileIcon(filetype)" :alt="`${filetype} 파일 아이콘`">
                 <div>
                     <p class="f-name">{{ filename }}.{{ filetype }}</p>
                     <p class="f-period">유효기간 {{ period }}</p>
@@ -117,6 +117,18 @@
             },
             isChecked(newVal) {
                 this.$emit('input', newVal);
+            }
+        },
+        methods: {
+            getFileIcon(filetype) {
+                // Vite에서 동적 import를 위한 URL 생성
+                try {
+                    const iconPath = `/src/assets/icons/28/ic-${filetype}.svg`;
+                    return new URL(iconPath, import.meta.url).href;
+                } catch (e) {
+                    // fallback: 직접 경로 사용
+                    return `/src/assets/icons/28/ic-${filetype}.svg`;
+                }
             }
         }
     }

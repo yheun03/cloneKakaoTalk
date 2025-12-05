@@ -6,9 +6,9 @@
             </dt>
             <dd>
                 <div class="wrap-input">
-                    <app-radio v-model="screenMode" type="illustration" :src="require('@/assets/images/setScreenMode/screen-mode-1.png')" alt="화면 모드"></app-radio>
-                    <app-radio v-model="screenMode" type="illustration" :src="require('@/assets/images/setScreenMode/screen-mode-2.png')" alt="화면 모드"></app-radio>
-                    <app-radio v-model="screenMode" type="illustration" :src="require('@/assets/images/setScreenMode/screen-mode-3.png')" alt="화면 모드"></app-radio>
+                    <app-radio v-model="screenMode" type="illustration" :src="getImageUrl('screen-mode-1.png')" alt="화면 모드"></app-radio>
+                    <app-radio v-model="screenMode" type="illustration" :src="getImageUrl('screen-mode-2.png')" alt="화면 모드"></app-radio>
+                    <app-radio v-model="screenMode" type="illustration" :src="getImageUrl('screen-mode-3.png')" alt="화면 모드"></app-radio>
                 </div>
                 <p class="dscpt">시스템 설정 모드를 선택할 경우 OS 디스플레이 설정에 따라 카카오톡도 라이트/다크 모드로 자동 전환됩니다.</p>
             </dd>
@@ -79,6 +79,17 @@ export default {
         const savedFontSize = localStorage.getItem('fontSize');
         if (savedFontSize) {
             this.fontSize = parseInt(savedFontSize, 10);
+        }
+    },
+    methods: {
+        getImageUrl(filename) {
+            // Vite에서 이미지 import
+            try {
+                return new URL(`/src/assets/images/setScreenMode/${filename}`, import.meta.url).href;
+            } catch (e) {
+                // fallback: 직접 경로 사용
+                return `/src/assets/images/setScreenMode/${filename}`;
+            }
         }
     }
 }

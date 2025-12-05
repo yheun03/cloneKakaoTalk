@@ -5,7 +5,8 @@
 </template>
 
 <script>
-const iconContext = require.context('@/assets/icons', true, /\.svg$/);
+// Vite에서 동적 import를 위한 glob import
+const iconModules = import.meta.glob('/src/assets/icons/**/*.svg', { eager: true, query: '?url' });
 
 export default {
     name: 'AppIcon',
@@ -25,12 +26,15 @@ export default {
     },
     computed: {
         iconSrc() {
-            const iconPath = `./${this.iconSize}/${this.icon}.svg`;
+            const iconPath = `/src/assets/icons/${this.iconSize}/${this.icon}.svg`;
             try {
-                const keys = iconContext.keys();
-                const found = keys.find(key => key === iconPath);
-                if (found) {
-                    return iconContext(found);
+                // Vite glob import에서 경로 찾기
+                const fullPath = Object.keys(iconModules).find(path => 
+                    path.includes(`/${this.iconSize}/${this.icon}.svg`)
+                );
+                
+                if (fullPath && iconModules[fullPath]) {
+                    return iconModules[fullPath].default || iconModules[fullPath];
                 }
                 console.warn(`Icon not found: ${iconPath}`);
                 return null;
