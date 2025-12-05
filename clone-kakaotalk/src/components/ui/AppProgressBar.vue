@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: 'KProgressBar',
+        name: 'AppProgressBar',
         props: {
             min: {
                 type: Number,

@@ -1,24 +1,24 @@
 <template>
-    <div class="modal ConfirmModal">
+    <div class="modal confirm-modal">
         <div class="modal-content">
             <div class="modal-body">
                 <p>{{content}}</p>
             </div>
             <div class="modal-footer">
-                <KButton @click="handleClickCancel">{{ cancelButton }}</KButton>
-                <KButton color="primary" @click="handleClickConfirm">{{ confirmButton }}</KButton>
+                <app-button @click="handleClickCancel">{{ cancelButton }}</app-button>
+                <app-button color="primary" @click="handleClickConfirm">{{ confirmButton }}</app-button>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import KButton from '@/components/ui/Button.vue';
+import AppButton from '@/components/ui/AppButton.vue';
 
 export default {
     name: 'ConfirmModal',
     components: {
-        KButton,
+        AppButton,
     },
     props: {
         type: {

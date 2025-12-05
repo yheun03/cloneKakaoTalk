@@ -6,9 +6,9 @@
             </dt>
             <dd>
                 <div class="wrap-input type-column">
-                    <KCheckbox v-model="autoRun">Mac 시작시 자동 실행</KCheckbox>
-                    <KCheckbox v-model="autoLogin">실행 시 자동 로그인</KCheckbox>
-                    <KCheckbox v-model="autoLogin">잠금모드로 자동 로그인</KCheckbox>
+                    <app-checkbox v-model="autoRun">Mac 시작시 자동 실행</app-checkbox>
+                    <app-checkbox v-model="autoLogin">실행 시 자동 로그인</app-checkbox>
+                    <app-checkbox v-model="autoLogin">잠금모드로 자동 로그인</app-checkbox>
                 </div>
             </dd>
         </dl>
@@ -19,20 +19,20 @@
             <dd>
                 <p class="dscpt">사용하는 PC가 변경되었거나 도용이 의심되는 경우 PC 인증을 해제한 후 다시 인증을 받을 수 있습니다.</p>
                 <div class="wrap-input">
-                    <KButton>PC 인증 해제</KButton>
+                    <app-button>PC 인증 해제</app-button>
                 </div>
             </dd>
         </dl>
     </div>
 </template>
 <script>
-import KCheckbox from '@/components/ui/Checkbox.vue'
-import KButton from '@/components/ui/Button.vue'
+import AppCheckbox from '@/components/ui/AppCheckbox.vue'
+import AppButton from '@/components/ui/AppButton.vue'
 export default {
     name: 'SettingSecurityTabView',
     components: {
-        KCheckbox,
-        KButton
+        AppCheckbox,
+        AppButton
     },
     data() {
         return {

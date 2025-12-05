@@ -18,7 +18,7 @@
 
 <script>
 export default {
-    name: 'KRange',
+    name: 'AppRange',
     props: {
         value: {
             type: Number,

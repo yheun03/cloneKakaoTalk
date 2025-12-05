@@ -12,7 +12,7 @@
             <tbody>
                 <tr>
                     <td>
-                        <KButton type="text" customColor="fff" @click="handleClick">{{ hasButton }}</KButton>
+                        <app-button type="text" custom-color="fff" @click="handleClick">{{ hasButton }}</app-button>
                     </td>
                 </tr>
             </tbody>
@@ -20,12 +20,12 @@
     </div>
 </template> 
 <script>
-    import KButton from '@/components/ui/Button.vue'
+    import AppButton from '@/components/ui/AppButton.vue'
 
     export default {
-        name: 'KTable',
+        name: 'AppTable',
         components: {
-            KButton
+            AppButton
         },
         inheritAttrs: false,
         emits: ['click'],

@@ -1,19 +1,19 @@
 <template>
     <teleport to="body">
-        <div class="modal setBackgroundModal" @click.self="closeModal">
+        <div class="modal profile-edit-modal" @click.self="closeModal">
             <div class="modal-content">
                 <div class="modal-header">
                     <p class="title">기본프로필 편집</p>
                 </div>
                 <div class="modal-body">
                     <div class="profile-wrap">
-                        <KAvatar :userId="userId" :alt="`${profile.userName}의 프로필 이미지입니다.`" :size="90" />
-                        <KInput type="text" placeholder="이름" v-model="editableUserName" :maxlength="20"/>
-                        <KInput type="text" placeholder="상태메시지 입력" v-model="editableUserMessage" :maxlength="20"/>
+                        <app-avatar :userId="userId" :alt="`${profile.userName}의 프로필 이미지입니다.`" :size="90" />
+                        <app-input type="text" placeholder="이름" v-model="editableUserName" :maxlength="20"/>
+                        <app-input type="text" placeholder="상태메시지 입력" v-model="editableUserMessage" :maxlength="20"/>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <KButton color="primary" @click="saveProfile">확인</KButton>
+                    <app-button color="primary" @click="saveProfile">확인</app-button>
                 </div>
             </div>
         </div>
@@ -21,17 +21,17 @@
 </template>
 
 <script>
-import KButton from '@/components/ui/Button.vue'
-import KInput from '@/components/ui/Input.vue'
-import KAvatar from '@/components/ui/Avatar.vue'
+import AppButton from '@/components/ui/AppButton.vue'
+import AppInput from '@/components/ui/AppInput.vue'
+import AppAvatar from '@/components/ui/AppAvatar.vue'
 import profileService from '@/services/profileService'
 
 export default {
     name: 'ProfileEditModal',
     components: {
-        KButton,
-        KInput,
-        KAvatar
+        AppButton,
+        AppInput,
+        AppAvatar
     },
     props: {
         userId: {

@@ -1,6 +1,6 @@
 <template>
     <div class="k-input">
-        <KSelect v-model="selectedValue" :options="selectOptions" v-if="showSelect" @select="handleSelect" setIcon="ic-arrow-bottom" setIconSize="16"></KSelect>
+        <app-select v-model="selectedValue" :options="selectOptions" v-if="showSelect" @select="handleSelect" :set-icon="'ic-arrow-bottom'" :set-icon-size="16"></app-select>
         
         <div v-if="type!='textarea'">
             <input 
@@ -26,12 +26,12 @@
 </template>
     
 <script>
-    import KSelect from '@/components/ui/Select.vue'
+    import AppSelect from '@/components/ui/AppSelect.vue'
 
     export default {
-        name: 'KInput',
+        name: 'AppInput',
         components: {
-            KSelect
+            AppSelect
         },
         props: {
             maxlength: {

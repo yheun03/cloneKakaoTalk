@@ -5,18 +5,18 @@
         :disabled="disabled || loading"
         :style="{ color: customColor ? `#${customColor}` : '', width: buttonSize ? `${buttonSize}px` : '', height: buttonSize ? `${buttonSize}px` : ''}"
         @click="handleClick">
-        <KIcon v-if="type == 'icon' && icon" :icon="icon" :iconSize="iconSize || '24'" />
+        <app-icon v-if="type == 'icon' && icon" :icon="icon" :icon-size="iconSize || '24'" />
         <slot v-if="type != 'icon'" />
-        <KIcon v-if="type == 'toggle'" icon="ic-xmark" iconSize="12" />
+        <app-icon v-if="type == 'toggle'" icon="ic-xmark" :icon-size="12" />
     </button>
 </template>
   
 <script>
-    import KIcon from '@/components/ui/Icon.vue'
+    import AppIcon from '@/components/ui/AppIcon.vue'
     export default {
-        name: 'KButton',
+        name: 'AppButton',
         components: {
-            KIcon
+            AppIcon
         },
         props: {
             color: {

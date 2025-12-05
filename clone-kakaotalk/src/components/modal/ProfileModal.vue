@@ -1,25 +1,25 @@
 <template>
     <teleport to="body">
-        <div class="modal profileModal" @click.self="closeModal">
+        <div class="modal profile-modal" @click.self="closeModal">
             <div class="modal-content" :style="backgroundStyle">
                 <div class="modal-header">
                     <div class="btn-wrap">
-                        <KButton type="icon" icon="ic-bell" iconSize="24" buttonSize="24" @click="openGiftshop"></KButton>
-                        <KButton type="icon" icon="ic-file" iconSize="24" buttonSize="24" @click="openSetBackgroundModal"></KButton>
+                        <app-button type="icon" icon="ic-bell" :icon-size="24" :button-size="24" @click="openGiftshop"></app-button>
+                        <app-button type="icon" icon="ic-file" :icon-size="24" :button-size="24" @click="openSetBackgroundModal"></app-button>
                     </div>
                 </div>
                 <div class="modal-body">
-                    <KAvatar :userId="userId" :alt="`${profile.userName}의 프로필 이미지입니다.`" :size="84" />
+                    <app-avatar :userId="userId" :alt="`${profile.userName}의 프로필 이미지입니다.`" :size="84" />
                     <p class="profile-name">{{ profile.userName }}</p>
                     <p class="profile-message">{{ profile.userMessage }}</p>
                 </div>
                 <div class="modal-footer">
                     <label>
-                        <KButton type="icon" icon="ic-emoji" iconSize="24" @click="console.log('test')"></KButton>
+                        <app-button type="icon" icon="ic-emoji" :icon-size="24" @click="console.log('test')"></app-button>
                         <span>나와의 채팅</span>
                     </label>
                     <label>
-                        <KButton type="icon" icon="ic-menu" iconSize="24" @click="openProfileEditModal"></KButton>
+                        <app-button type="icon" icon="ic-menu" :icon-size="24" @click="openProfileEditModal"></app-button>
                         <span>프로필 편집</span>
                     </label>
                 </div>
@@ -38,17 +38,17 @@
 </template>
 
 <script>
-import KAvatar from '@/components/ui/Avatar.vue'
-import KButton from '@/components/ui/Button.vue'
-import SetBackgroundModal from '@/components/modal/setBackgroundModal.vue'
+import AppAvatar from '@/components/ui/AppAvatar.vue'
+import AppButton from '@/components/ui/AppButton.vue'
+import SetBackgroundModal from '@/components/modal/SetBackgroundModal.vue'
 import ProfileEditModal from '@/components/modal/ProfileEditModal.vue'
 import profileService from '@/services/profileService'
 
 export default {
     name: 'ProfileModal',
     components: {
-        KAvatar,
-        KButton,
+        AppAvatar,
+        AppButton,
         SetBackgroundModal,
         ProfileEditModal
     },

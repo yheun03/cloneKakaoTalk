@@ -1,7 +1,7 @@
 <template>
     <div class="view-container view-type-main view-profile">
-        <GlobalNav />
-        <topNav />
+        <global-nav />
+        <top-nav />
         <div class="view-container-body">
             <ProfileCard :userId="me.userId" :profileType="'my'" />
             <div class="accordion">
@@ -52,7 +52,7 @@
 <script>
 import ProfileCard from '@/components/profile/ProfileCard.vue'
 import TopNav from '@/views/layouts/TopNav.vue'
-import GlobalNav from '@/views/layouts/Gnb.vue'
+import GlobalNav from '@/views/layouts/GlobalNav.vue'
 
 export default {
     name: 'ProfileView',

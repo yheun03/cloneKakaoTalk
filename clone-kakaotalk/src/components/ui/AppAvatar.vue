@@ -17,7 +17,7 @@
     import eventBus from '@/utils/eventBus'
 
     export default {
-        name: 'KAvatar',
+        name: 'AppAvatar',
         props: {
             size: {
                 type: [String, Number],

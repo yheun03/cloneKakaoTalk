@@ -50,7 +50,7 @@
         }
     }
 
-    &.profileModal{
+    &.profile-modal{
         .modal{
             &-content{
                 padding: unset;
@@ -119,7 +119,7 @@
         }
     }
 
-    &.ConfirmModal{
+    &.confirm-modal{
         .modal{
             &-content{
                 width: 260px;
@@ -128,7 +128,22 @@
         }
     }
 
-    &.setBackgroundModal{
+    &.set-background-modal{
+        .modal{
+            &-content{
+                width: 360px;
+            }
+            &-body{
+                padding-inline: 20px;
+            }
+            &-footer{
+                padding: 10px 20px 20px;
+                border-top: 1px solid rgba(255, 255, 255, 0.15);
+            }
+        }
+    }
+
+    &.profile-edit-modal{
         .modal{
             &-content{
                 width: 360px;

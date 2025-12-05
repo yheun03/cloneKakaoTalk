@@ -1,15 +1,15 @@
 <template>
     <div class="illustrationTab-tab">
-        <KRadio type="illustration" :src="illustration.src" :alt="illustration.alt" v-for="illustration in illustrations" :key="illustration.src" />
+        <app-radio type="illustration" :src="illustration.src" :alt="illustration.alt" v-for="illustration in illustrations" :key="illustration.src" />
     </div>
 </template>
 
 <script>
-import KRadio from '@/components/ui/Radio.vue'
+import AppRadio from '@/components/ui/AppRadio.vue'
 export default {
     name: 'IllustrationTab',
     components: {
-        KRadio
+        AppRadio
     },
     data() {
         return {

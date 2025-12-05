@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: 'KEmoticon',
+        name: 'AppEmoticon',
         props: {
             src: {
                 type: String,

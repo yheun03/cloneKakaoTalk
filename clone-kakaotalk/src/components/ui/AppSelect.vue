@@ -10,11 +10,11 @@
         <div v-else class="k-select-wrapper" :class="setClasses" ref="selectWrapper">
             <div class="k-select-opener" :class="openerClasses" @click="toggleOptions">
                 {{ displayText }}
-                <KIcon :icon="setIcon ? setIcon : 'ic-polygon-bottom'" :iconSize="setIconSize ? setIconSize : '12'"/>
+                <app-icon :icon="setIcon ? setIcon : 'ic-polygon-bottom'" :icon-size="setIconSize ? setIconSize : '12'"/>
             </div>
             <div class="k-select-option-list" v-show="isOpen">
-                <selectOption v-for="option in localOptions" :key="option.optionValue" :optionTitle="option.optionTitle"
-                    :optionValue="option.optionValue" :optionChecked="option.optionChecked"
+                <app-option v-for="option in localOptions" :key="option.optionValue" :option-title="option.optionTitle"
+                    :option-value="option.optionValue" :option-checked="option.optionChecked"
                     @click="handleOptionClick(option)" />
             </div>
         </div>
@@ -53,12 +53,13 @@ const formatKoreanTime = (date) => {
 
 <script>
 import VueDatePicker from '@vuepic/vue-datepicker';
-import selectOption from '@/components/ui/Option.vue';
-import KIcon from '@/components/ui/Icon.vue';
+import AppOption from '@/components/ui/AppOption.vue';
+import AppIcon from '@/components/ui/AppIcon.vue';
 export default {
-    name: 'KSelect',
+    name: 'AppSelect',
     components: {
-        KIcon
+        AppIcon,
+        AppOption
     },
     props: {
         type: {

@@ -1,7 +1,7 @@
 <template>
     <div class="k-checkbox" v-if="type == 'default'">
         <label>
-            <KIcon :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></KIcon>
+            <app-icon :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" :icon-size="18"></app-icon>
             <input type="checkbox" :name="name" v-model="isChecked" hidden>
             <span>
                 <slot></slot>
@@ -10,14 +10,14 @@
     </div>
     <div class="k-checkbox type-image" v-else-if="type == 'image'">
         <label>
-            <KIcon v-if="isChecked" :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></KIcon>
+            <app-icon v-if="isChecked" :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></app-icon>
             <input type="checkbox" :name="name" v-model="isChecked" hidden>
             <img :src="src" :alt="alt">
         </label>
     </div>
     <div class="k-checkbox type-file" v-else-if="type == 'file'">
         <label>
-            <KIcon v-if="isChecked" :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></KIcon>
+            <app-icon v-if="isChecked" :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></app-icon>
             <input type="checkbox" :name="name" v-model="isChecked" hidden>
             <div class="file-info">
                 <img :src="require(`@/assets/icons/28/ic-${filetype}.svg`)" :alt="`${filetype} 파일 아이콘`">
@@ -31,7 +31,7 @@
     </div>
     <div class="k-checkbox type-link" v-else-if="type == 'link'">
         <label>
-            <KIcon v-if="isChecked" :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></KIcon>
+            <app-icon v-if="isChecked" :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></app-icon>
             <input type="checkbox" :name="name" v-model="isChecked" hidden>
             <img :src="linkThumbnail" :alt="linkTitle">
             <div class="link-info">
@@ -44,12 +44,12 @@
 </template>
 
 <script>
-    import KIcon from './Icon.vue';
+    import AppIcon from './AppIcon.vue';
 
     export default {
-        name: 'KCheckbox',
+        name: 'AppCheckbox',
         components: {
-            KIcon
+            AppIcon
         },
         props: {
             type: {

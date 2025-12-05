@@ -1,8 +1,8 @@
 <template>
     <div class="chatting-card">
-        <KAvatar :src="src" size="44" />
+        <app-avatar :src="src" size="44" />
         <div class="chatting-card-info">
-            <p class="c-name">{{ chattingName }} <span v-if="headcount > 1" class="c-headcount">{{ headcount }}</span> <KIcon icon="ic-pin" iconSize="12" v-if="isPin" /> <KIcon icon="ic-silent" iconSize="12" v-if="isSilent" /></p>
+            <p class="c-name">{{ chattingName }} <span v-if="headcount > 1" class="c-headcount">{{ headcount }}</span> <app-icon icon="ic-pin" :icon-size="12" v-if="isPin" /> <app-icon icon="ic-silent" :icon-size="12" v-if="isSilent" /></p>
             <p class="c-message" v-text="lastMessage"></p>
         </div>
         <div class="chatting-card-info-time">
@@ -12,13 +12,13 @@
     </div>
 </template>
 <script>
-    import KAvatar from '@/components/ui/Avatar.vue';
-    import KIcon from '@/components/ui/Icon.vue';
+    import AppAvatar from '@/components/ui/AppAvatar.vue';
+    import AppIcon from '@/components/ui/AppIcon.vue';
     export default {
         name: 'ChattingCard',
         components: {
-            KAvatar,
-            KIcon
+            AppAvatar,
+            AppIcon
         },
         props: {
             src: {

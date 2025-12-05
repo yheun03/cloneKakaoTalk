@@ -1,14 +1,14 @@
 <template>
     <div class="view-container view-type-main view-chat-list">
-        <GlobalNav />
-        <topNav />
+        <global-nav />
+        <top-nav />
         <div class="view-container-body">
             <ChattingCard v-for="chat in chats" :key="chat.id" :src="chat.src" :chattingName="chat.chattingName" :headcount="chat.headcount" :lastMessage="chat.lastMessage" :lastMessageTime="chat.lastMessageTime" :unreadCount="chat.unreadCount" :isPin="chat.isPin" :isSilent="chat.isSilent" />
         </div>
     </div>
 </template>
 <script>
-import GlobalNav from '@/views/layouts/Gnb.vue'
+import GlobalNav from '@/views/layouts/GlobalNav.vue'
 import TopNav from '@/views/layouts/TopNav.vue'
 import ChattingCard from '@/components/chat/ChattingCard.vue'
 export default {

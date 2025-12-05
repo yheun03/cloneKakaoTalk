@@ -1,15 +1,15 @@
 <template>
     <div class="colorTab-tab">
-        <KRadio type="palette" :color="color" v-for="color in colors" :key="color" />
+        <app-radio type="palette" :color="color" v-for="color in colors" :key="color" />
     </div>
 </template>
 
 <script>
-import KRadio from '@/components/ui/Radio.vue'
+import AppRadio from '@/components/ui/AppRadio.vue'
 export default {
     name: 'ColorTab',
     components: {
-        KRadio
+        AppRadio
     },
     data() {
         return {

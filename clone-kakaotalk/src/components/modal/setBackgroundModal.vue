@@ -6,10 +6,10 @@
                     <p class="title">배경화면 선택</p>
                 </div>
                 <div class="modal-body">
-                    <KTabs :items="tabs" type="filled" />
+                    <app-tabs :items="tabs" type="filled" />
                 </div>
                 <div class="modal-footer">
-                    <KButton color="primary">적용</KButton>
+                    <app-button color="primary">적용</app-button>
                 </div>
             </div>
         </div>
@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import KButton from '@/components/ui/Button.vue'
-import KTabs from '@/components/ui/Tab.vue'
+import AppButton from '@/components/ui/AppButton.vue'
+import AppTabs from '@/components/ui/AppTabs.vue'
 
 import { markRaw } from 'vue'
 import IllustrationTab from '@/views/setBackground/IllustrationTab.vue'
@@ -27,8 +27,8 @@ import ColorTab from '@/views/setBackground/ColorTab.vue'
 export default {
     name: 'SetBackgroundModal',
     components: {
-        KButton,
-        KTabs
+        AppButton,
+        AppTabs
     },
     emits: ['close'],
     data() {

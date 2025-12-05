@@ -12,19 +12,19 @@
                 <dd>
                     <p class="dscpt">등록된 키워드가 포함된 메세지는 채팅방 알림이 꺼져 있어도 푸시 알림을 받게 됩니다. Mac에서 등록한 키워드는 모바일과 동기화됩니다.</p>
                     <div class="wrap-input">
-                        <KButton>키워드 편집</KButton>
+                        <app-button>키워드 편집</app-button>
                     </div>
                 </dd>
             </dl>
             <dl class="wrap-setting">
                 <dt>
-                    <KCheckbox v-model="showKeywordNotification">키워드 알림</KCheckbox>
+                    <app-checkbox v-model="showKeywordNotification">키워드 알림</app-checkbox>
                 </dt>
                 <dd>
                     <p class="dscpt">등록된 키워드가 포함된 메세지는 채팅방 알림이 꺼져 있어도 푸시 알림을 받게 됩니다. Mac에서 등록한 키워드는 모바일과 동기화됩니다.</p>
                     <div class="wrap-input">
-                        <KButton>키워드 편집</KButton>
-                        <KButton>키워드 편집</KButton>
+                        <app-button>키워드 편집</app-button>
+                        <app-button>키워드 편집</app-button>
                     </div>
                 </dd>
             </dl>
@@ -35,9 +35,9 @@
                 <dd>
                     <p class="dscpt">등록된 키워드가 포함된 메세지는 채팅방 알림이 꺼져 있어도 푸시 알림을 받게 됩니다. Mac에서 등록한 키워드는 모바일과 동기화됩니다.</p>
                     <div class="wrap-input type-column">
-                        <KCheckbox v-model="showKeywordNotification">키워드 알림</KCheckbox>
-                        <KCheckbox v-model="showKeywordNotification">키워드 알림</KCheckbox>
-                        <KCheckbox v-model="showKeywordNotification">키워드 알림</KCheckbox>
+                        <app-checkbox v-model="showKeywordNotification">키워드 알림</app-checkbox>
+                        <app-checkbox v-model="showKeywordNotification">키워드 알림</app-checkbox>
+                        <app-checkbox v-model="showKeywordNotification">키워드 알림</app-checkbox>
                     </div>
                 </dd>
             </dl>
@@ -49,7 +49,7 @@
                     <p class="dscpt">Mac 카카오톡을 선택한 글씨체로 변경합니다.</p>
                     <div class="wrap-input">
                         <span class="label-select">글씨체</span>
-                        <KSelect :options="fontOptions" />
+                        <app-select :options="fontOptions" />
                     </div>
                 </dd>
             </dl>
@@ -60,7 +60,7 @@
                 <dd>
                     <p class="dscpt">Mac 카카오톡을 선택한 글씨체로 변경합니다.</p>
                     <div class="wrap-input">
-                        <KRange :value="fontSize" @input="fontSize = $event" :min="1" :max="7" :step="1" label-left="가" label-right="가"/>
+                        <app-range :value="fontSize" @input="fontSize = $event" :min="1" :max="7" :step="1" label-left="가" label-right="가"/>
                     </div>
                 </dd>
             </dl>
@@ -121,29 +121,29 @@
 
         <h3>Tab</h3>
         <div class="wrap">
-            <KTabs :items="tabsEmoji" type="emoji" />
-            <KTabs :items="tabs" />
-            <KTabs :items="tabs" type="filled" />
-            <KTabs :items="tabs" type="text" />
+            <app-tabs :items="tabsEmoji" type="emoji" />
+            <app-tabs :items="tabs" />
+            <app-tabs :items="tabs" type="filled" />
+            <app-tabs :items="tabs" type="text" />
         </div>
 
         <h3>Select</h3>
         <div class="wrap">
-            <KSelect :options="selectOptions" placeholder="옵션을 선택하세요" />
-            <KSelect :options="selectOptions" />
-            <KSelect type="date" />
-            <KSelect type="time" />
+            <app-select :options="selectOptions" placeholder="옵션을 선택하세요" />
+            <app-select :options="selectOptions" />
+            <app-select type="date" />
+            <app-select type="time" />
         </div>
 
         <h3>Input</h3>
         <div class="wrap">
-            <KInput />
-            <KInput value="test" />
-            <KInput :maxlength="10" />
-            <KInput placeholder="placeholder" />
-            <KInput showSelect />
-            <KInput showSelect placeholder="placeholder" />
-            <KInput type="textarea" placeholder="placeholder" />
+            <app-input />
+            <app-input value="test" />
+            <app-input :maxlength="10" />
+            <app-input placeholder="placeholder" />
+            <app-input showSelect />
+            <app-input showSelect placeholder="placeholder" />
+            <app-input type="textarea" placeholder="placeholder" />
         </div>
 
         <h3>Modal</h3>
@@ -154,24 +154,24 @@
 
         <h3>Table</h3>
         <div class="wrap">
-            <KTable :headers="['백업 일시', '복원 기한', '백업 기기', '채팅방 개수']" :rows="['없음', '-', 'mac', '164개']"
+            <app-table :headers="['백업 일시', '복원 기한', '백업 기기', '채팅방 개수']" :rows="['없음', '-', 'mac', '164개']"
                 hasButton="백업 삭제" @click="handleBackupDelete" />
-            <KTable :headers="['백업 일시', '복원 기한', '백업 기기', '채팅방 개수']" :rows="['없음', '기한 만료', 'mac', '164개']" />
+            <app-table :headers="['백업 일시', '복원 기한', '백업 기기', '채팅방 개수']" :rows="['없음', '기한 만료', 'mac', '164개']" />
         </div>
 
         <h3>emoticon</h3>
         <div class="wrap">
-            <KEmoticon src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다."
+            <app-emoticon src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다."
                 type="default" />
-            <KEmoticon src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다." type="mini" />
-            <KEmoticon src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다." type="kakao" />
+            <app-emoticon src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다." type="mini" />
+            <app-emoticon src="https://www.gc.go.kr/design/main/img/sub01/532/imo_02.gif" alt="이모지 이미지입니다." type="kakao" />
         </div>
 
         <h3>ProgressBar</h3>
         <div class="wrap" style="flex-direction: column; align-items: flex-start; width: 275px;">
-            <KProgressBar :min="0" :max="100" :value="32" type="default" :isActive="true" />
-            <KProgressBar :min="0" :max="100" :value="74" type="default" :isActive="false" />
-            <KProgressBar :min="0" :max="100" :value="23" type="round" />
+            <app-progress-bar :min="0" :max="100" :value="32" type="default" :isActive="true" />
+            <app-progress-bar :min="0" :max="100" :value="74" type="default" :isActive="false" />
+            <app-progress-bar :min="0" :max="100" :value="23" type="round" />
         </div>
 
         <h3>ChatBubble</h3>
@@ -216,63 +216,63 @@
         </div>
         <h3>Checkbox</h3>
         <div class="wrap">
-            <KCheckbox name="checkbox" />
-            <KCheckbox name="checkbox">기본 체크박스</KCheckbox>
-            <KCheckbox type="image" name="checkbox-image"
+            <app-checkbox name="checkbox" />
+            <app-checkbox name="checkbox">기본 체크박스</app-checkbox>
+            <app-checkbox type="image" name="checkbox-image"
                 src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="사용자의 프로필 이미지입니다." />
-            <KCheckbox type="file" name="checkbox-file"
+            <app-checkbox type="file" name="checkbox-file"
                 src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" filename="졸업예정증명서_은영환"
                 filetype="pdf" period="2025.03.10" filesize="89.3KB" />
-            <KCheckbox type="link" name="checkbox-link"
+            <app-checkbox type="link" name="checkbox-link"
                 linkThumbnail="https://yheun03.github.io/portfolio/src/assets/images/og-image.png"
                 linkTitle="IA 정보구조도 설계 첫번째단계" linkDescription="IA는 Information Architech" linkUrl="brunch.co.lr" />
         </div>
 
         <h3>Selector</h3>
         <div class="wrap">
-            <KRadio type="image" />
-            <KRadio type="image" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+            <app-radio type="image" />
+            <app-radio type="image" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
                 alt="사용자의 프로필 이미지입니다." />
-            <KRadio type="illustration" src="https://cdn.pixabay.com/photo/2025/08/13/18/49/mountains-9772732_1280.png"
+            <app-radio type="illustration" src="https://cdn.pixabay.com/photo/2025/08/13/18/49/mountains-9772732_1280.png"
                 alt="채팅 화면의 배경화면 입니다." />
-            <KRadio type="illustration" src="https://cdn.pixabay.com/photo/2025/04/05/06/58/flower-9514615_640.png"
+            <app-radio type="illustration" src="https://cdn.pixabay.com/photo/2025/04/05/06/58/flower-9514615_640.png"
                 alt="채팅 화면의 배경화면 입니다." />
-            <KRadio type="illustration" src="https://cdn.pixabay.com/photo/2025/03/16/19/25/flowers-9474432_640.jpg"
+            <app-radio type="illustration" src="https://cdn.pixabay.com/photo/2025/03/16/19/25/flowers-9474432_640.jpg"
                 alt="채팅 화면의 배경화면 입니다." />
-            <KRadio type="palette" color="#44f" />
-            <KRadio type="palette-sm" color="#f44" />
+            <app-radio type="palette" color="#44f" />
+            <app-radio type="palette-sm" color="#f44" />
         </div>
 
         <h3>Button</h3>
         <div class="wrap">
-            <KButton>버튼</KButton>
-            <KButton color="primary">버튼</KButton>
-            <KButton disabled>버튼</KButton>
-            <KButton type="round">선물하기</KButton>
-            <KButton type="toggle">이름</KButton>
+            <app-button>버튼</app-button>
+            <app-button color="primary">버튼</app-button>
+            <app-button disabled>버튼</app-button>
+            <app-button type="round">선물하기</app-button>
+            <app-button type="toggle">이름</app-button>
         </div>
 
         <h3>Avatar</h3>
         <div class="wrap">
-            <KAvatar size="90" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+            <app-avatar size="90" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
                 alt="사용자의 프로필 이미지입니다." />
-            <KAvatar size="84" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+            <app-avatar size="84" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
                 alt="사용자의 프로필 이미지입니다." />
-            <KAvatar size="54" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+            <app-avatar size="54" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
                 alt="사용자의 프로필 이미지입니다." />
-            <KAvatar size="44" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+            <app-avatar size="44" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
                 alt="사용자의 프로필 이미지입니다." />
-            <KAvatar size="40" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+            <app-avatar size="40" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
                 alt="사용자의 프로필 이미지입니다." />
-            <KAvatar size="40" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+            <app-avatar size="40" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
                 alt="사용자의 프로필 이미지입니다." type="new" />
-            <KAvatar size="36" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+            <app-avatar size="36" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
                 alt="사용자의 프로필 이미지입니다." />
-            <KAvatar size="28" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+            <app-avatar size="28" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
                 alt="사용자의 프로필 이미지입니다." />
-            <KAvatar size="24" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+            <app-avatar size="24" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
                 alt="사용자의 프로필 이미지입니다." />
-            <KAvatar size="22" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
+            <app-avatar size="22" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
                 alt="사용자의 프로필 이미지입니다." />
         </div>
 
@@ -280,20 +280,20 @@
 </template>
 
 <script>
-import KButton from '@/components/ui/Button.vue'
-import KInput from '@/components/ui/Input.vue'
-import KAvatar from '@/components/ui/Avatar.vue'
-import KSelect from '@/components/ui/Select.vue'
-import KRadio from '@/components/ui/Radio.vue'
-import KCheckbox from '@/components/ui/Checkbox.vue'
+import AppButton from '@/components/ui/AppButton.vue'
+import AppInput from '@/components/ui/AppInput.vue'
+import AppAvatar from '@/components/ui/AppAvatar.vue'
+import AppSelect from '@/components/ui/AppSelect.vue'
+import AppRadio from '@/components/ui/AppRadio.vue'
+import AppCheckbox from '@/components/ui/AppCheckbox.vue'
 import ChatBubble from '@/components/chat/ChatBubble.vue'
 import ProfileCard from '@/components/profile/ProfileCard.vue'
-import KProgressBar from '@/components/ui/ProgressBar.vue'
-import KEmoticon from '@/components/chat/Emoticon.vue'
-import KTable from '@/components/ui/Table.vue'
-import ConfirmModal from '@/components/modal/Modal.vue'
+import AppProgressBar from '@/components/ui/AppProgressBar.vue'
+import AppEmoticon from '@/components/chat/AppEmoticon.vue'
+import AppTable from '@/components/ui/AppTable.vue'
+import ConfirmModal from '@/components/modal/ConfirmModal.vue'
 import ChattingCard from '@/components/chat/ChattingCard.vue'
-import KTabs from '@/components/ui/Tab.vue'
+import AppTabs from '@/components/ui/AppTabs.vue'
 
 import { markRaw } from 'vue'
 import OverviewTab from '@/views/tabs/OverviewTab.vue'
@@ -304,19 +304,19 @@ import SettingsTab from '@/views/tabs/SettingsTab.vue'
 export default {
     name: 'ComponentView',
     components: {
-        KButton,
-        KInput,
-        KAvatar,
-        KSelect,
-        KRadio,
-        KCheckbox,
+        AppButton,
+        AppInput,
+        AppAvatar,
+        AppSelect,
+        AppRadio,
+        AppCheckbox,
         ChatBubble,
         ProfileCard,
-        KProgressBar,
-        KEmoticon,
-        KTable,
+        AppProgressBar,
+        AppEmoticon,
+        AppTable,
         ConfirmModal,
-        KTabs,
+        AppTabs,
         ChattingCard,
     },
     data() {

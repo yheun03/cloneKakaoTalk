@@ -1,51 +1,51 @@
 <template>
     <div class="gnb">
         <div class="gnb-top">
-            <KButton 
+            <app-button 
                 type="icon" 
                 icon="ic-profile" 
-                iconSize="32" 
-                buttonSize="48" 
+                :icon-size="32" 
+                :button-size="48" 
                 :active="isProfileActive"
                 @click="goToProfile">
-            </KButton>
-            <KButton 
+            </app-button>
+            <app-button 
                 type="icon" 
                 icon="ic-chat" 
-                iconSize="32" 
-                buttonSize="48" 
+                :icon-size="32" 
+                :button-size="48" 
                 :active="isChatListActive"
                 @click="goToChatList">
-            </KButton>
-            <KButton 
+            </app-button>
+            <app-button 
                 type="icon" 
                 icon="ic-more" 
-                iconSize="32" 
-                buttonSize="48" 
+                :icon-size="32" 
+                :button-size="48" 
                 :active="isMoreActive"
                 @click="goToMore">
-            </KButton>
+            </app-button>
         </div>
         <div class="gnb-bottom">
-            <KButton type="icon" icon="ic-bell" iconSize="24" buttonSize="24"></KButton>
-            <KButton 
+            <app-button type="icon" icon="ic-bell" :icon-size="24" :button-size="24"></app-button>
+            <app-button 
                 type="icon" 
                 icon="ic-setting" 
-                iconSize="24" 
-                buttonSize="24" 
+                :icon-size="24" 
+                :button-size="24" 
                 :active="isSettingActive"
                 @click="goToSetting">
-            </KButton>
+            </app-button>
         </div>
     </div>
 </template>
 <script>
-import KButton from '@/components/ui/Button.vue'
+import AppButton from '@/components/ui/AppButton.vue'
 
 export default {
     name: 'GlobalNav',
     components: {
-        KButton
+        AppButton
     },
     computed: {
         isProfileActive() {

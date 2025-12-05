@@ -4,7 +4,7 @@
 
 <script>
 export default {
-    name: 'selectOption',
+    name: 'AppOption',
     props: {
         optionTitle: {
             type: String,

@@ -8,7 +8,7 @@
 const iconContext = require.context('@/assets/icons', true, /\.svg$/);
 
 export default {
-    name: 'KIcon',
+    name: 'AppIcon',
     props: {
         icon: {
             type: String,

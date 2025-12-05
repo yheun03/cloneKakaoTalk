@@ -42,7 +42,7 @@
 
 <script>
     export default {
-        name: 'KRadio',
+        name: 'AppRadio',
         props: {
             type: {
                 type: String,

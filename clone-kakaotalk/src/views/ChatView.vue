@@ -2,14 +2,14 @@
 <template>
     <div class="view-container view-chat">
         <div class="view-chat-header">
-            <KAvatar :size="40" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="프로필 이미지" />
+            <app-avatar :size="40" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="프로필 이미지" />
             <div class="chat-info">
                 <p class="c-name">박현민</p>
                 <p class="c-headcount"><i class="icon ic-profile"></i>1</p>
             </div>
             <div class="btn-wrap">
-                <KButton type="icon" icon="ic-search" iconSize="24"></KButton>
-                <KButton type="icon" icon="ic-menu" iconSize="24"></KButton>
+                <app-button type="icon" icon="ic-search" :icon-size="24"></app-button>
+                <app-button type="icon" icon="ic-menu" :icon-size="24"></app-button>
             </div>
         </div>
         <div class="view-chat-body" ref="chatBody">
@@ -17,7 +17,7 @@
                 :class="group.sender === 'me' ? 'me' : 'other'">
                 <!-- 상대가 보낸 그룹만 프로필/이름 노출 -->
                 <div class="sender-info" v-if="group.sender === 'other'">
-                    <KAvatar :size="40" :src="group.avatar" :alt="`${group.name} 프로필`" />
+                    <app-avatar :size="40" :src="group.avatar" :alt="`${group.name} 프로필`" />
                     <p class="s-name">{{ group.name }}</p>
                 </div>
 
@@ -31,22 +31,22 @@
         </div>
         <div class="view-chat-footer">
             <div class="input-wrap">
-                <KInput type="textarea" placeholder="메시지를 입력하세요.">
-                </KInput>
+                <app-input type="textarea" placeholder="메시지를 입력하세요.">
+                </app-input>
             </div>
             <div class="btn-wrap">
-                <KButton type="icon" icon="ic-emoji" iconSize="24"></KButton>
-                <KButton type="icon" icon="ic-file" iconSize="24"></KButton>
-                <KButton color="primary" @click="handleSend">전송</KButton>
+                <app-button type="icon" icon="ic-emoji" :icon-size="24"></app-button>
+                <app-button type="icon" icon="ic-file" :icon-size="24"></app-button>
+                <app-button color="primary" @click="handleSend">전송</app-button>
             </div>
         </div>
     </div>
 </template>
 <script>
-import KAvatar from '@/components/ui/Avatar.vue'
+import AppAvatar from '@/components/ui/AppAvatar.vue'
 import ChatBubble from '@/components/chat/ChatBubble.vue'
-import KInput from '@/components/ui/Input.vue'
-import KButton from '@/components/ui/Button.vue'
+import AppInput from '@/components/ui/AppInput.vue'
+import AppButton from '@/components/ui/AppButton.vue'
 
 const minuteKey = (iso) => {
     const d = new Date(iso);
@@ -61,10 +61,10 @@ const minuteKey = (iso) => {
 export default {
     name: 'ChatView',
     components: {
-        KAvatar,
+        AppAvatar,
         ChatBubble,
-        KInput,
-        KButton
+        AppInput,
+        AppButton
     },
     data() {
         return {

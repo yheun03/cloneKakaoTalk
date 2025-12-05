@@ -4,12 +4,12 @@
             <h1>설정</h1>
         </div>
         <div class="view-container-body">
-            <KTabs :items="tabs" type="setting" />
+            <app-tabs :items="tabs" type="setting" />
         </div>
     </div>
 </template>
 <script>
-import KTabs from '@/components/ui/Tab.vue'
+import AppTabs from '@/components/ui/AppTabs.vue'
 
 import SettingAccountTabView from '@/views/settings/SettingAccountTabView.vue'
 import SettingSecurityTabView from '@/views/settings/SettingSecurityTabView.vue'
@@ -24,7 +24,7 @@ import { markRaw } from 'vue'
 export default {
     name: 'SettingView',
     components: {
-        KTabs
+        AppTabs
     },
     data() {
         return {

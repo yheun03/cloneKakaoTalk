@@ -43,7 +43,7 @@ import { markRaw } from 'vue'
 const FallbackPanel = markRaw({ name: 'FallbackPanel', template: `<div style="padding:.75rem;color:#6b7280;">패널 없음</div>` })
 
 export default {
-    name: 'KTabs',
+    name: 'AppTabs',
     props: {
         // v-model이 없어도 동작하도록 default를 undefined로
         modelValue: { type: [String, Number], default: undefined },
