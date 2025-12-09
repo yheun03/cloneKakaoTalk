@@ -65,13 +65,18 @@
                 return `k-avatar--size-${sizeStr}`
             },
             hasImage() {
-                return !!(this.profile.profileImage || this.src) && !this.hasError
+                // 에러가 발생해도 기본 이미지를 표시하기 위해 항상 true 반환
+                return true
             },
             resolvedSrc() {
-                if (this.profile.profileImage && !this.hasError) {
+                // 에러가 발생한 경우 기본 이미지 반환
+                if (this.hasError) {
+                    return defaultAvatar
+                }
+                if (this.profile.profileImage) {
                     return this.profile.profileImage
                 }
-                if (this.src && !this.hasError) {
+                if (this.src) {
                     return this.src
                 }
                 return defaultAvatar
