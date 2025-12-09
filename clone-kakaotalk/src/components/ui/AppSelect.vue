@@ -10,7 +10,7 @@
         <div v-else class="k-select-wrapper" :class="setClasses" ref="selectWrapper">
             <div class="k-select-opener" :class="openerClasses" @click="toggleOptions">
                 {{ displayText }}
-                <app-icon :icon="setIcon ? setIcon : 'ic-polygon-bottom'" :icon-size="setIconSize ? setIconSize : '12'"/>
+                <component :is="iconComponent" :width="setIconSize || 12" :height="setIconSize || 12" />
             </div>
             <div class="k-select-option-list" v-show="isOpen">
                 <app-option v-for="option in localOptions" :key="option.optionValue" :option-title="option.optionTitle"
@@ -54,12 +54,14 @@ const formatKoreanTime = (date) => {
 <script>
 import VueDatePicker from '@vuepic/vue-datepicker';
 import AppOption from '@/components/ui/AppOption.vue';
-import AppIcon from '@/components/ui/AppIcon.vue';
+import Icon12PolygonBottom from '@/assets/icons/12/ic-polygon-bottom.svg';
+import Icon16ArrowBottom from '@/assets/icons/16/ic-arrow-bottom.svg';
 export default {
     name: 'AppSelect',
     components: {
-        AppIcon,
-        AppOption
+        AppOption,
+        Icon12PolygonBottom,
+        Icon16ArrowBottom
     },
     props: {
         type: {
@@ -105,6 +107,17 @@ export default {
         },
         setClasses() {
             return this.type === 'text' ? 'k-select--text' : null
+        },
+        iconComponent() {
+            if (this.setIcon) {
+                // setIcon이 있으면 해당 아이콘 사용 (예: 'ic-arrow-bottom')
+                const iconMap = {
+                    'ic-arrow-bottom': Icon16ArrowBottom,
+                    'ic-polygon-bottom': Icon12PolygonBottom
+                };
+                return iconMap[this.setIcon] || Icon12PolygonBottom;
+            }
+            return Icon12PolygonBottom;
         }
     },
     methods: {

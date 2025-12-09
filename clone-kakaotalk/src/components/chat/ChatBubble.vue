@@ -7,7 +7,8 @@
             </div>
             <div v-if="type === 'text'">
                 <div class="content type-text">
-                    <app-icon :icon="sender == 'me' ? 'ic-chat' : 'ic-chat-other'" :icon-size="10"/>
+                    <Icon10Chat v-if="sender == 'me'" :width="10" :height="10" />
+                    <Icon10ChatOther v-else :width="10" :height="10" />
                     <p v-html="formattedMessage"></p>
                 </div>
             </div>
@@ -24,9 +25,7 @@
                             <p class="f-period">유효기간: ~{{ period }}</p>
                             <p class="f-size">용량: {{ filesize }}</p>
                         </div>
-                        <div class="file-icon">
-                            <app-icon :icon="`ic-${iconName}-line`" :icon-size="28"/>
-                        </div>
+                        <component :is="getFileIconComponent(iconName)" :width="28" :height="28" />
                     </div>
                     <div class="btn-wrap">
                         <app-button type="text" :custom-color="'0B73DC'" @click="handleDownloadFile">
@@ -44,7 +43,8 @@
                 </div>
 
                 <div class="content type-text" v-if="message">
-                    <app-icon :icon="sender == 'me' ? 'ic-chat' : 'ic-chat-other'" :icon-size="10"/>
+                    <Icon10Chat v-if="sender == 'me'" :width="10" :height="10" />
+                    <Icon10ChatOther v-else :width="10" :height="10" />
                     <p v-html="formattedMessage"></p>
                 </div>
             </div>
@@ -54,12 +54,27 @@
 
 <script>
 import AppButton from '@/components/ui/AppButton.vue'
-import AppIcon from '@/components/ui/AppIcon.vue'
+
+// 10px 채팅 아이콘들 import
+import Icon10Chat from '@/assets/icons/10/ic-chat.svg'
+import Icon10ChatOther from '@/assets/icons/10/ic-chat-other.svg'
+
+// 28px 파일 아이콘들 import
+import Icon28Pdf from '@/assets/icons/28/ic-pdf.svg'
+import Icon28Excel from '@/assets/icons/28/ic-excel.svg'
+import Icon28Ppt from '@/assets/icons/28/ic-ppt.svg'
+import Icon28Word from '@/assets/icons/28/ic-word.svg'
+import Icon28ImgLine from '@/assets/icons/28/ic-img-line.svg'
+import Icon28VideoLine from '@/assets/icons/28/ic-video-line.svg'
+import Icon28PdfLine from '@/assets/icons/28/ic-pdf-line.svg'
+import Icon28DownloadLine from '@/assets/icons/28/ic-download-line.svg'
+
 export default {
     name: 'ChatBubble',
     components: {
         AppButton,
-        AppIcon
+        Icon10Chat,
+        Icon10ChatOther
     },
     props: {
         type: {
@@ -175,6 +190,21 @@ export default {
         }
     },
     methods: {
+        getFileIconComponent(iconName) {
+            // 파일 타입별 아이콘 맵
+            const fileIconMap = {
+                'pdf': Icon28Pdf,
+                'excel': Icon28Excel,
+                'ppt': Icon28Ppt,
+                'word': Icon28Word,
+                'img': Icon28ImgLine,
+                'video': Icon28VideoLine,
+                'pdf-line': Icon28PdfLine,
+                'download': Icon28DownloadLine,
+            };
+            
+            return fileIconMap[iconName] || Icon28DownloadLine;
+        },
         handleDownloadFile() {
             // 파일 다운로드 로직 구현
             console.log('파일 다운로드:', this.filename);

@@ -8,8 +8,12 @@
                 <p class="c-headcount"><i class="icon ic-profile"></i>1</p>
             </div>
             <div class="btn-wrap">
-                <app-button type="icon" icon="ic-search" :icon-size="24"></app-button>
-                <app-button type="icon" icon="ic-menu" :icon-size="24"></app-button>
+                <app-button type="icon">
+                    <Icon24Search :width="24" :height="24" />
+                </app-button>
+                <app-button type="icon">
+                    <Icon24Menu :width="24" :height="24" />
+                </app-button>
             </div>
         </div>
         <div class="view-chat-body" ref="chatBody">
@@ -35,8 +39,12 @@
                 </app-input>
             </div>
             <div class="btn-wrap">
-                <app-button type="icon" icon="ic-emoji" :icon-size="24"></app-button>
-                <app-button type="icon" icon="ic-file" :icon-size="24"></app-button>
+                <app-button type="icon">
+                    <Icon24Emoji :width="24" :height="24" />
+                </app-button>
+                <app-button type="icon">
+                    <Icon24File :width="24" :height="24" />
+                </app-button>
                 <app-button color="primary" @click="handleSend">전송</app-button>
             </div>
         </div>
@@ -47,6 +55,10 @@ import AppAvatar from '@/components/ui/AppAvatar.vue'
 import ChatBubble from '@/components/chat/ChatBubble.vue'
 import AppInput from '@/components/ui/AppInput.vue'
 import AppButton from '@/components/ui/AppButton.vue'
+import Icon24Search from '@/assets/icons/24/ic-search.svg'
+import Icon24Menu from '@/assets/icons/24/ic-menu.svg'
+import Icon24Emoji from '@/assets/icons/24/ic-emoji.svg'
+import Icon24File from '@/assets/icons/24/ic-file.svg'
 
 const minuteKey = (iso) => {
     const d = new Date(iso);
@@ -64,7 +76,11 @@ export default {
         AppAvatar,
         ChatBubble,
         AppInput,
-        AppButton
+        AppButton,
+        Icon24Search,
+        Icon24Menu,
+        Icon24Emoji,
+        Icon24File
     },
     data() {
         return {

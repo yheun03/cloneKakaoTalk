@@ -1,7 +1,8 @@
 <template>
     <div class="k-checkbox" v-if="type == 'default'">
         <label>
-            <app-icon :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" :icon-size="18"></app-icon>
+            <Icon18CheckboxActive v-if="isChecked" :width="18" :height="18" />
+            <Icon18CheckboxDefault v-else :width="18" :height="18" />
             <input type="checkbox" :name="name" v-model="isChecked" hidden>
             <span>
                 <slot></slot>
@@ -10,17 +11,19 @@
     </div>
     <div class="k-checkbox type-image" v-else-if="type == 'image'">
         <label>
-            <app-icon v-if="isChecked" :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></app-icon>
+            <Icon18CheckboxActive v-if="isChecked" :width="18" :height="18" />
+            <Icon18CheckboxDefault v-else :width="18" :height="18" />
             <input type="checkbox" :name="name" v-model="isChecked" hidden>
             <img :src="src" :alt="alt">
         </label>
     </div>
     <div class="k-checkbox type-file" v-else-if="type == 'file'">
         <label>
-            <app-icon v-if="isChecked" :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></app-icon>
+            <Icon18CheckboxActive v-if="isChecked" :width="18" :height="18" />
+            <Icon18CheckboxDefault v-else :width="18" :height="18" />
             <input type="checkbox" :name="name" v-model="isChecked" hidden>
             <div class="file-info">
-                <img :src="getFileIcon(filetype)" :alt="`${filetype} 파일 아이콘`">
+                <component :is="fileIconComponent" :width="28" :height="28" />
                 <div>
                     <p class="f-name">{{ filename }}.{{ filetype }}</p>
                     <p class="f-period">유효기간 {{ period }}</p>
@@ -31,7 +34,8 @@
     </div>
     <div class="k-checkbox type-link" v-else-if="type == 'link'">
         <label>
-            <app-icon v-if="isChecked" :icon="isChecked ? 'ic-checkbox-active' : 'ic-checkbox-default'" iconSize="18"></app-icon>
+            <Icon18CheckboxActive v-if="isChecked" :width="18" :height="18" />
+            <Icon18CheckboxDefault v-else :width="18" :height="18" />
             <input type="checkbox" :name="name" v-model="isChecked" hidden>
             <img :src="linkThumbnail" :alt="linkTitle">
             <div class="link-info">
@@ -44,13 +48,22 @@
 </template>
 
 <script>
-    import AppIcon from './AppIcon.vue';
+    // 18px 체크박스 아이콘들 import
+    import Icon18CheckboxActive from '@/assets/icons/18/ic-checkbox-active.svg'
+    import Icon18CheckboxDefault from '@/assets/icons/18/ic-checkbox-default.svg'
+    
+    // 28px 파일 아이콘들 import
+    import Icon28Pdf from '@/assets/icons/28/ic-pdf.svg'
+    import Icon28Excel from '@/assets/icons/28/ic-excel.svg'
+    import Icon28Ppt from '@/assets/icons/28/ic-ppt.svg'
+    import Icon28Word from '@/assets/icons/28/ic-word.svg'
+    import Icon28ImgLine from '@/assets/icons/28/ic-img-line.svg'
+    import Icon28VideoLine from '@/assets/icons/28/ic-video-line.svg'
+    import Icon28PdfLine from '@/assets/icons/28/ic-pdf-line.svg'
+    import Icon28DownloadLine from '@/assets/icons/28/ic-download-line.svg'
 
     export default {
         name: 'AppCheckbox',
-        components: {
-            AppIcon
-        },
         props: {
             type: {
                 type: String,
@@ -119,16 +132,34 @@
                 this.$emit('input', newVal);
             }
         },
-        methods: {
-            getFileIcon(filetype) {
-                // Vite에서 동적 import를 위한 URL 생성
-                try {
-                    const iconPath = `/src/assets/icons/28/ic-${filetype}.svg`;
-                    return new URL(iconPath, import.meta.url).href;
-                } catch (e) {
-                    // fallback: 직접 경로 사용
-                    return `/src/assets/icons/28/ic-${filetype}.svg`;
-                }
+        computed: {
+            fileIconComponent() {
+                // 파일 타입별 아이콘 맵
+                const fileIconMap = {
+                    'pdf': Icon28Pdf,
+                    'excel': Icon28Excel,
+                    'xls': Icon28Excel,
+                    'xlsx': Icon28Excel,
+                    'ppt': Icon28Ppt,
+                    'pptx': Icon28Ppt,
+                    'word': Icon28Word,
+                    'doc': Icon28Word,
+                    'docx': Icon28Word,
+                    'jpg': Icon28ImgLine,
+                    'jpeg': Icon28ImgLine,
+                    'png': Icon28ImgLine,
+                    'gif': Icon28ImgLine,
+                    'img': Icon28ImgLine,
+                    'mp4': Icon28VideoLine,
+                    'avi': Icon28VideoLine,
+                    'mov': Icon28VideoLine,
+                    'video': Icon28VideoLine,
+                    'pdf-line': Icon28PdfLine,
+                    'download': Icon28DownloadLine,
+                };
+                
+                const lowerFiletype = (this.filetype || '').toLowerCase();
+                return fileIconMap[lowerFiletype] || Icon28DownloadLine;
             }
         }
     }

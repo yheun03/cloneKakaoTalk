@@ -5,7 +5,7 @@
             <app-avatar :userId="userId" :alt="`${profile.userName}의 프로필 이미지입니다.`" :size="setSize" :isNew="setNew" />
         </div>
         <div class="profile-card-info">
-            <p class="name">{{ profile.userName }} <app-icon icon="ic-birthday" :icon-size="18" v-if="profileType == 'birthday'" /></p>
+            <p class="name">{{ profile.userName }} <Icon18Birthday v-if="profileType == 'birthday'" :width="18" :height="18" /></p>
             <p class="status-message" v-if="profileType != 'update'">{{ profile.userMessage }}</p>
         </div>
         <div v-if="profileType == 'birthday'">
@@ -17,7 +17,7 @@
 <script>
 import AppAvatar from '@/components/ui/AppAvatar.vue'
 import AppButton from '@/components/ui/AppButton.vue'
-import AppIcon from '@/components/ui/AppIcon.vue'
+import Icon18Birthday from '@/assets/icons/18/ic-birthday.svg'
 import profileService from '@/services/profileService'
 
 export default {
@@ -25,7 +25,7 @@ export default {
     components: {
         AppAvatar,
         AppButton,
-        AppIcon
+        Icon18Birthday
     },
     props: {
         userId: {

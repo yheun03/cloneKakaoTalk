@@ -2,7 +2,7 @@
     <div class="chatting-card">
         <app-avatar :src="src" size="44" />
         <div class="chatting-card-info">
-            <p class="c-name">{{ chattingName }} <span v-if="headcount > 1" class="c-headcount">{{ headcount }}</span> <app-icon icon="ic-pin" :icon-size="12" v-if="isPin" /> <app-icon icon="ic-silent" :icon-size="12" v-if="isSilent" /></p>
+            <p class="c-name">{{ chattingName }} <span v-if="headcount > 1" class="c-headcount">{{ headcount }}</span> <Icon12Pin v-if="isPin" :width="12" :height="12" /> <Icon12Silent v-if="isSilent" :width="12" :height="12" /></p>
             <p class="c-message" v-text="lastMessage"></p>
         </div>
         <div class="chatting-card-info-time">
@@ -13,12 +13,14 @@
 </template>
 <script>
     import AppAvatar from '@/components/ui/AppAvatar.vue';
-    import AppIcon from '@/components/ui/AppIcon.vue';
+    import Icon12Pin from '@/assets/icons/12/ic-pin.svg';
+    import Icon12Silent from '@/assets/icons/12/ic-silent.svg';
     export default {
         name: 'ChattingCard',
         components: {
             AppAvatar,
-            AppIcon
+            Icon12Pin,
+            Icon12Silent
         },
         props: {
             src: {

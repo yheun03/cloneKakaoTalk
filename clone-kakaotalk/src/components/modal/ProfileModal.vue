@@ -4,8 +4,12 @@
             <div class="modal-content" :style="backgroundStyle">
                 <div class="modal-header">
                     <div class="btn-wrap">
-                        <app-button type="icon" icon="ic-bell" :icon-size="24" :button-size="24" @click="openGiftshop"></app-button>
-                        <app-button type="icon" icon="ic-file" :icon-size="24" :button-size="24" @click="openSetBackgroundModal"></app-button>
+                        <app-button type="icon" :button-size="24" @click="openGiftshop">
+                            <Icon24Bell :width="24" :height="24" />
+                        </app-button>
+                        <app-button type="icon" :button-size="24" @click="openSetBackgroundModal">
+                            <Icon24File :width="24" :height="24" />
+                        </app-button>
                     </div>
                 </div>
                 <div class="modal-body">
@@ -15,11 +19,15 @@
                 </div>
                 <div class="modal-footer">
                     <label>
-                        <app-button type="icon" icon="ic-emoji" :icon-size="24" @click="console.log('test')"></app-button>
+                        <app-button type="icon" @click="console.log('test')">
+                            <Icon24Emoji :width="24" :height="24" />
+                        </app-button>
                         <span>나와의 채팅</span>
                     </label>
                     <label>
-                        <app-button type="icon" icon="ic-menu" :icon-size="24" @click="openProfileEditModal"></app-button>
+                        <app-button type="icon" @click="openProfileEditModal">
+                            <Icon24Menu :width="24" :height="24" />
+                        </app-button>
                         <span>프로필 편집</span>
                     </label>
                 </div>
@@ -42,6 +50,10 @@ import AppAvatar from '@/components/ui/AppAvatar.vue'
 import AppButton from '@/components/ui/AppButton.vue'
 import SetBackgroundModal from '@/components/modal/SetBackgroundModal.vue'
 import ProfileEditModal from '@/components/modal/ProfileEditModal.vue'
+import Icon24Bell from '@/assets/icons/24/ic-bell.svg'
+import Icon24File from '@/assets/icons/24/ic-file.svg'
+import Icon24Emoji from '@/assets/icons/24/ic-emoji.svg'
+import Icon24Menu from '@/assets/icons/24/ic-menu.svg'
 import profileService from '@/services/profileService'
 
 export default {
@@ -50,7 +62,11 @@ export default {
         AppAvatar,
         AppButton,
         SetBackgroundModal,
-        ProfileEditModal
+        ProfileEditModal,
+        Icon24Bell,
+        Icon24File,
+        Icon24Emoji,
+        Icon24Menu
     },
     props: {
         userId: {

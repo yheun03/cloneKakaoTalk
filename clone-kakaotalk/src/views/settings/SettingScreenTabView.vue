@@ -6,9 +6,9 @@
             </dt>
             <dd>
                 <div class="wrap-input">
-                    <app-radio v-model="screenMode" type="illustration" :src="getImageUrl('screen-mode-1.png')" alt="화면 모드"></app-radio>
-                    <app-radio v-model="screenMode" type="illustration" :src="getImageUrl('screen-mode-2.png')" alt="화면 모드"></app-radio>
-                    <app-radio v-model="screenMode" type="illustration" :src="getImageUrl('screen-mode-3.png')" alt="화면 모드"></app-radio>
+                    <app-radio v-model="screenMode" type="illustration" :src="screenMode1" alt="화면 모드"></app-radio>
+                    <app-radio v-model="screenMode" type="illustration" :src="screenMode2" alt="화면 모드"></app-radio>
+                    <app-radio v-model="screenMode" type="illustration" :src="screenMode3" alt="화면 모드"></app-radio>
                 </div>
                 <p class="dscpt">시스템 설정 모드를 선택할 경우 OS 디스플레이 설정에 따라 카카오톡도 라이트/다크 모드로 자동 전환됩니다.</p>
             </dd>
@@ -53,6 +53,9 @@ import AppRadio from '@/components/ui/AppRadio.vue'
 import AppButton from '@/components/ui/AppButton.vue'
 import AppSelect from '@/components/ui/AppSelect.vue'
 import AppRange from '@/components/ui/AppRange.vue'
+import screenMode1 from '@/assets/images/setScreenMode/screen-mode-1.png'
+import screenMode2 from '@/assets/images/setScreenMode/screen-mode-2.png'
+import screenMode3 from '@/assets/images/setScreenMode/screen-mode-3.png'
 export default {
     name: 'SettingScreenTabView',
     components: {
@@ -65,7 +68,10 @@ export default {
         return {
             screenMode: '',
             fontSize: 4, // 기본값: 중간 (1-7 범위에서 4)
-            fontOptions: []
+            fontOptions: [],
+            screenMode1,
+            screenMode2,
+            screenMode3
         }
     },
     watch: {
@@ -79,17 +85,6 @@ export default {
         const savedFontSize = localStorage.getItem('fontSize');
         if (savedFontSize) {
             this.fontSize = parseInt(savedFontSize, 10);
-        }
-    },
-    methods: {
-        getImageUrl(filename) {
-            // Vite에서 이미지 import
-            try {
-                return new URL(`/src/assets/images/setScreenMode/${filename}`, import.meta.url).href;
-            } catch (e) {
-                // fallback: 직접 경로 사용
-                return `/src/assets/images/setScreenMode/${filename}`;
-            }
         }
     }
 }
