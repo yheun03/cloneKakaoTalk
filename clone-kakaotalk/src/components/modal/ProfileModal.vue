@@ -5,10 +5,10 @@
                 <div class="modal-header">
                     <div class="btn-wrap">
                         <app-button type="icon" :button-size="24" @click="openGiftshop">
-                            <Icon24Bell :width="24" :height="24" />
+                            <Icon24Gift :width="24" :height="24" />
                         </app-button>
                         <app-button type="icon" :button-size="24" @click="openSetBackgroundModal">
-                            <Icon24File :width="24" :height="24" />
+                            <Icon24Gallery :width="24" :height="24" />
                         </app-button>
                     </div>
                 </div>
@@ -50,8 +50,8 @@ import AppAvatar from '@/components/ui/AppAvatar.vue'
 import AppButton from '@/components/ui/AppButton.vue'
 import SetBackgroundModal from '@/components/modal/SetBackgroundModal.vue'
 import ProfileEditModal from '@/components/modal/ProfileEditModal.vue'
-import Icon24Bell from '@/assets/icons/24/ic-bell.svg'
-import Icon24File from '@/assets/icons/24/ic-file.svg'
+import Icon24Gift from '@/assets/icons/24/ic-gift.svg'
+import Icon24Gallery from '@/assets/icons/24/ic-gallery.svg'
 import Icon24Emoji from '@/assets/icons/24/ic-emoji.svg'
 import Icon24Menu from '@/assets/icons/24/ic-menu.svg'
 import profileService from '@/services/profileService'
@@ -63,8 +63,8 @@ export default {
         AppButton,
         SetBackgroundModal,
         ProfileEditModal,
-        Icon24Bell,
-        Icon24File,
+        Icon24Gift,
+        Icon24Gallery,
         Icon24Emoji,
         Icon24Menu
     },
