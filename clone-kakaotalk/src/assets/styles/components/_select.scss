@@ -128,8 +128,9 @@
         position: relative;
     }
     &-opener{
-        display: inline-flex;
+        display: flex;
         align-items: center;
+        justify-content: space-between;
         gap: 8px;
         background-color: unset;
         border-radius: 6px;
@@ -140,14 +141,9 @@
         height: 30px;
         cursor: pointer;
         outline: unset;
-
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        // background: url('@/assets/icons/12/ic-polygon-bottom.svg') no-repeat right 12px center;
-        svg{
-            margin-right: auto;
-        }
         &--placeholder{
             color: #595959;
         }
