@@ -19,7 +19,7 @@
                 </div>
                 <div class="modal-footer">
                     <label>
-                        <app-button type="icon" @click="console.log('test')">
+                        <app-button type="icon" @click="goToChat">
                             <Icon24Emoji :width="24" :height="24" />
                         </app-button>
                         <span>나와의 채팅</span>
@@ -125,6 +125,10 @@ export default {
         },
         closeProfileEditModal() {
             this.showProfileEditModal = false
+        },
+        goToChat() {
+            this.$emit('close')
+            this.$router.push('/chat')
         }
     }
 }
