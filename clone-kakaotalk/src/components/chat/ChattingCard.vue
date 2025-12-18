@@ -1,5 +1,5 @@
 <template>
-    <div class="chatting-card">
+    <div class="chatting-card" @click="goToChat">
         <app-avatar :src="src" size="44" />
         <div class="chatting-card-info">
             <p class="c-name">{{ chattingName }} <span v-if="headcount > 1" class="c-headcount">{{ headcount }}</span> <Icon12Pin v-if="isPin" :width="12" :height="12" /> <Icon12Silent v-if="isSilent" :width="12" :height="12" /></p>
@@ -85,6 +85,11 @@
                     month: '2-digit',
                     day: '2-digit'
                 }).replace(/\./g, '. ').replace(/\s/g, '');
+            }
+        },
+        methods: {
+            goToChat() {
+                this.$router.push('/chat')
             }
         }
     }
