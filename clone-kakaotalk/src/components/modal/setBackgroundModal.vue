@@ -21,8 +21,8 @@ import AppButton from '@/components/ui/AppButton.vue'
 import AppTabs from '@/components/ui/AppTabs.vue'
 
 import { markRaw } from 'vue'
-import IllustrationTab from '@/views/setBackground/IllustrationTab.vue'
-import ColorTab from '@/views/setBackground/ColorTab.vue'
+import IllustrationTab from '@/views/tabs/setBackground/IllustrationTab.vue'
+import ColorTab from '@/views/tabs/setBackground/ColorTab.vue'
 
 export default {
     name: 'SetBackgroundModal',

@@ -7,6 +7,9 @@
         font: 700 13px/120% "Pretendard";
         color: #fff;
         cursor: pointer;
+        svg{
+            flex: 0 0 18px;
+        }
         & + label{
             margin-left: 16px;
         }

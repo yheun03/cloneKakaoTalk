@@ -11,12 +11,12 @@
 <script>
 import AppTabs from '@/components/ui/AppTabs.vue'
 
-import SettingAccountTabView from '@/views/settings/SettingAccountTabView.vue'
-import SettingSecurityTabView from '@/views/settings/SettingSecurityTabView.vue'
-import SettingNotificationTabView from '@/views/settings/SettingNotificationTabView.vue'
-import SettingFriendTabView from '@/views/settings/SettingFriendTabView.vue'
-import SettingChatTabView from '@/views/settings/SettingChatTabView.vue'
-import SettingScreenTabView from '@/views/settings/SettingScreenTabView.vue'
+import SettingAccountTabView from '@/views/tabs/settings/SettingAccountTabView.vue'
+import SettingSecurityTabView from '@/views/tabs/settings/SettingSecurityTabView.vue'
+import SettingNotificationTabView from '@/views/tabs/settings/SettingNotificationTabView.vue'
+import SettingFriendTabView from '@/views/tabs/settings/SettingFriendTabView.vue'
+import SettingChatTabView from '@/views/tabs/settings/SettingChatTabView.vue'
+import SettingScreenTabView from '@/views/tabs/settings/SettingScreenTabView.vue'
 
 import { markRaw } from 'vue'
 

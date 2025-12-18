@@ -64,6 +64,15 @@
 
     export default {
         name: 'AppCheckbox',
+        components: {
+            Icon18CheckboxActive,
+            Icon18CheckboxDefault,
+            Icon28Pdf,
+            Icon28Excel,
+            Icon28Ppt,
+            Icon28Word,
+            Icon28ImgLine,
+        },
         props: {
             type: {
                 type: String,
