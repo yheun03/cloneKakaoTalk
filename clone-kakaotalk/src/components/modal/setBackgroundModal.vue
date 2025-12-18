@@ -1,6 +1,6 @@
 <template>
     <teleport to="body">
-        <div class="modal setBackgroundModal" @click.self="closeModal">
+        <div class="modal set-background-modal" @click.self="closeModal">
             <div class="modal-content">
                 <div class="modal-header">
                     <p class="title">배경화면 선택</p>
