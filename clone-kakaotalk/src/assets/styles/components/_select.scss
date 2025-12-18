@@ -128,12 +128,15 @@
         position: relative;
     }
     &-opener{
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
         background-color: unset;
         border-radius: 6px;
         border: 1px solid #4e4e4e;
         color: #EDEDED;
         font: 500 13px/30px "Pretendard";
-        padding-inline: 12px 32px;
+        padding-inline: 12px;
         height: 30px;
         cursor: pointer;
         outline: unset;
@@ -142,6 +145,9 @@
         overflow: hidden;
         text-overflow: ellipsis;
         // background: url('@/assets/icons/12/ic-polygon-bottom.svg') no-repeat right 12px center;
+        svg{
+            margin-right: auto;
+        }
         &--placeholder{
             color: #595959;
         }
