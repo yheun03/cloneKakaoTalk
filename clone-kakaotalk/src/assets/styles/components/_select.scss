@@ -141,9 +141,13 @@
         height: 30px;
         cursor: pointer;
         outline: unset;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        &-text{
+            flex: 1;
+            min-width: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
         svg{
             flex: 0 0 12px;
         }

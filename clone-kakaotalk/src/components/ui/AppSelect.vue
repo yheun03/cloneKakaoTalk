@@ -9,7 +9,7 @@
         </div>
         <div v-else class="k-select-wrapper" :class="setClasses" ref="selectWrapper">
             <div class="k-select-opener" :class="openerClasses" @click="toggleOptions">
-                {{ displayText }}
+                <span class="k-select-opener-text">{{ displayText }}</span>
                 <component :is="iconComponent" :width="setIconSize || 12" :height="setIconSize || 12" />
             </div>
             <div class="k-select-option-list" v-show="isOpen">
