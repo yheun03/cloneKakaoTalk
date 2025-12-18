@@ -41,7 +41,11 @@
                     letter-spacing: 0.01em;
                     padding: 7px 10px 8px;
                     white-space: pre-line;
-                    
+
+                    svg{
+                        position: absolute;
+                        right: -8px;
+                    }
                     .message-link {
                         color: inherit;
                         text-decoration: underline;
@@ -135,13 +139,13 @@
                     &-text{
                         background-color: map.get(map.get($chat-colors, other), bg);
                         color: map.get(map.get($chat-colors, other), text);
-                        .icon{
+                        svg{
                             left: -8px;
                             right: unset;
-                            // transform: rotateY(180deg);
-                            // path{
-                            //     fill: map.get(map.get($chat-colors, other), bg);
-                            // }
+                            transform: rotateY(180deg);
+                            path{
+                                fill: map.get(map.get($chat-colors, other), bg);
+                            }
                         }
                     }
                     &-emoji{

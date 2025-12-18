@@ -7,8 +7,7 @@
             </div>
             <div v-if="type === 'text'">
                 <div class="content type-text">
-                    <Icon10Chat v-if="sender == 'me'" :width="10" :height="10" />
-                    <Icon10ChatOther v-else :width="10" :height="10" />
+                    <Icon10Chat :width="10" :height="10" />
                     <p v-html="formattedMessage"></p>
                 </div>
             </div>
@@ -43,8 +42,7 @@
                 </div>
 
                 <div class="content type-text" v-if="message">
-                    <Icon10Chat v-if="sender == 'me'" :width="10" :height="10" />
-                    <Icon10ChatOther v-else :width="10" :height="10" />
+                    <Icon10Chat :width="10" :height="10" />
                     <p v-html="formattedMessage"></p>
                 </div>
             </div>
@@ -57,7 +55,6 @@ import AppButton from '@/components/ui/AppButton.vue'
 
 // 10px 채팅 아이콘들 import
 import Icon10Chat from '@/assets/icons/10/ic-chat.svg'
-import Icon10ChatOther from '@/assets/icons/10/ic-chat-other.svg'
 
 // 28px 파일 아이콘들 import
 import Icon28Pdf from '@/assets/icons/28/ic-pdf.svg'
@@ -73,8 +70,7 @@ export default {
     name: 'ChatBubble',
     components: {
         AppButton,
-        Icon10Chat,
-        Icon10ChatOther
+        Icon10Chat
     },
     props: {
         type: {
