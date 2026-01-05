@@ -9,7 +9,8 @@
                     :class="{ 'is-open': openSections.update }">
                     <p class="accordion-item-trigger" @click="toggleSection('update')">
                         <span>업데이트</span>
-                        <i class="icon" :class="openSections.update ? 'ic-arrow-top' : 'ic-arrow-bottom'"></i>
+                        <Icon16ArrowTop v-if="openSections.update" :width="16" :height="16" />
+                        <Icon16ArrowBottom v-else :width="16" :height="16" />
                     </p>
                     <div class="accordion-item-content">
                         <div class="accordion-item-content-inner">
@@ -24,7 +25,8 @@
                     :class="{ 'is-open': openSections.birthday }">
                     <p class="accordion-item-trigger" @click="toggleSection('birthday')">
                         <span>생일</span>
-                        <i class="icon" :class="openSections.birthday ? 'ic-arrow-top' : 'ic-arrow-bottom'"></i>
+                        <Icon16ArrowTop v-if="openSections.birthday" :width="16" :height="16" />
+                        <Icon16ArrowBottom v-else :width="16" :height="16" />
                     </p>
                     <div class="accordion-item-content">
                         <div class="accordion-item-content-inner">
@@ -36,7 +38,8 @@
                 <div class="accordion-item" v-if="profilesByType('').length" :class="{ 'is-open': openSections.more }">
                     <p class="accordion-item-trigger" @click="toggleSection('more')">
                         <span>더보기</span>
-                        <i class="icon" :class="openSections.more ? 'ic-arrow-top' : 'ic-arrow-bottom'"></i>
+                        <Icon16ArrowTop v-if="openSections.more" :width="16" :height="16" />
+                        <Icon16ArrowBottom v-else :width="16" :height="16" />
                     </p>
                     <div class="accordion-item-content">
                         <div class="accordion-item-content-inner">
@@ -53,13 +56,17 @@
 import ProfileCard from '@/components/profile/ProfileCard.vue'
 import TopNav from '@/views/layouts/TopNav.vue'
 import GlobalNav from '@/views/layouts/GlobalNav.vue'
+import Icon16ArrowTop from '@/assets/icons/16/ic-arrow-top.svg'
+import Icon16ArrowBottom from '@/assets/icons/16/ic-arrow-bottom.svg'
 
 export default {
     name: 'ProfileView',
     components: {
         ProfileCard,
         TopNav,
-        GlobalNav
+        GlobalNav,
+        Icon16ArrowTop,
+        Icon16ArrowBottom
     },
     data() {
         return {
