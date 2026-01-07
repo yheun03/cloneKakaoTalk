@@ -74,4 +74,12 @@
 
     .wrap-setting &{
     }
+
+    .gnb-top &{
+        &.active{
+            path{
+                fill: #eeeeee;
+            }
+        }
+    }
 }

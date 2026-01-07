@@ -54,8 +54,8 @@
         .modal{
             &-content{
                 padding: unset;
-                width: 80dvw;
                 height: 80dvh;
+                aspect-ratio: 5/7;
                 background: #222222 center/cover no-repeat;
                 &::before{
                     content: '';
