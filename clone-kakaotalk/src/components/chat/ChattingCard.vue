@@ -1,6 +1,11 @@
 <template>
     <div class="chatting-card" @click="goToChat">
-        <app-avatar :src="src" size="44" />
+        <app-avatar
+            :userId="userId"
+            :src="src"
+            size="44"
+            @click.stop
+        />
         <div class="chatting-card-info">
             <p class="c-name">{{ chattingName }} <span v-if="headcount > 1" class="c-headcount">{{ headcount }}</span> <Icon12Pin v-if="isPin" :width="12" :height="12" /> <Icon12Silent v-if="isSilent" :width="12" :height="12" /></p>
             <p class="c-message" v-text="lastMessage"></p>
@@ -23,6 +28,10 @@
             Icon12Silent
         },
         props: {
+            userId: {
+                type: String,
+                default: ''
+            },
             src: {
                 type: String,
                 default: ''
@@ -89,7 +98,11 @@
         },
         methods: {
             goToChat() {
-                this.$router.push('/chat')
+                const query = {}
+                if (this.userId) {
+                    query.userId = this.userId
+                }
+                this.$router.push({ path: '/chat', query })
             }
         }
     }

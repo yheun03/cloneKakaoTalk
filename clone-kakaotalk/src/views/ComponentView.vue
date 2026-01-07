@@ -69,6 +69,7 @@
         <h3>ChattingListCard</h3>
         <div class="wrap">
             <ChattingCard 
+                userId="kim-minsu"
                 src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
                 alt="사용자의 프로필 이미지입니다."
                 chattingName="홍길동"
@@ -78,6 +79,7 @@
                 :isPin=false
                 :isSilent=false />
             <ChattingCard 
+                userId="lee-jieun"
                 src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
                 alt="사용자의 프로필 이미지입니다."
                 chattingName="홍길동"
@@ -87,6 +89,7 @@
                 :isPin=false
                 :isSilent=true />
             <ChattingCard 
+                userId="park-seojun"
                 src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
                 alt="사용자의 프로필 이미지입니다."
                 chattingName="홍길동"
@@ -97,6 +100,7 @@
                 :isPin=true
                 :isSilent=false />
             <ChattingCard 
+                userId="choi-sujin"
                 src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp"
                 alt="사용자의 프로필 이미지입니다."
                 chattingName="홍길동"

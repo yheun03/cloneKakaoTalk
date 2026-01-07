@@ -1,5 +1,5 @@
 <template>
-    <div class="k-avatar" :class="avatarClasses" @click="handleClick" :style="clickable ? 'cursor: pointer;' : ''">
+    <div class="k-avatar" :class="avatarClasses" @click.stop="handleClick" :style="clickable ? 'cursor: pointer;' : ''">
         <img 
             v-if="hasImage"
             :src="resolvedSrc" 
@@ -54,8 +54,28 @@
             }
         },
         computed: {
+            effectiveUserId() {
+                // 1순위: 명시적으로 전달된 userId
+                if (this.userId) {
+                    return this.userId
+                }
+
+                // 2순위: src 로 저장된 프로필 이미지와 매칭되는 userId 탐색
+                if (this.src) {
+                    const profiles = profileService.getAllProfiles()
+                    const matched = profiles.find(profile => profile.profileImage === this.src)
+                    if (matched) {
+                        return matched.userId
+                    }
+                }
+
+                return ''
+            },
             profile() {
-                return profileService.getProfile(this.userId) || {}
+                if (!this.effectiveUserId) {
+                    return {}
+                }
+                return profileService.getProfile(this.effectiveUserId) || {}
             },
             avatarClasses() {
                 const sizeStr = String(this.size);
@@ -90,8 +110,8 @@
                 this.hasError = true
             },
             handleClick() {
-                if (this.clickable && this.userId) {
-                    eventBus.emit('open-profile-modal', this.userId)
+                if (this.clickable && this.effectiveUserId) {
+                    eventBus.emit('open-profile-modal', this.effectiveUserId)
                 }
             }
         }

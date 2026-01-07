@@ -2,10 +2,15 @@
 <template>
     <div class="view-container view-chat">
         <div class="view-chat-header">
-            <app-avatar :size="40" src="https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp" alt="프로필 이미지" />
+            <app-avatar
+                :size="40"
+                :userId="activeUserId"
+                :src="otherProfile.profileImage"
+                :alt="`${otherProfile.userName || '상대방'} 프로필`"
+            />
             <div class="chat-info">
-                <p class="c-name">박현민</p>
-                <p class="c-headcount"><i class="icon ic-profile"></i>1</p>
+                <p class="c-name">{{ otherProfile.userName || '상대방' }}</p>
+                <p class="c-headcount"><i class="icon ic-profile"></i>{{ headcount }}</p>
             </div>
             <div class="btn-wrap">
                 <app-button type="icon">
@@ -59,6 +64,7 @@ import Icon24Search from '@/assets/icons/24/ic-search.svg'
 import Icon24Menu from '@/assets/icons/24/ic-menu.svg'
 import Icon24Emoji from '@/assets/icons/24/ic-emoji.svg'
 import Icon24File from '@/assets/icons/24/ic-file.svg'
+import profileService from '@/services/profileService'
 
 const minuteKey = (iso) => {
     const d = new Date(iso);
@@ -84,151 +90,49 @@ export default {
     },
     data() {
         return {
-            messages: [
-                {
-                    id: 'm1',
-                    sender: 'other',
-                    name: '박현민',
-                    avatar: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp',
-                    type: 'text',
-                    message: '안녕하세요! 오랜만이에요 😊',
-                    timestamp: '2025-10-27T11:56:00'
-                },
-                {
-                    id: 'm2',
-                    sender: 'me',
-                    name: '나',
-                    avatar: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp',
-                    type: 'text',
-                    message: '어, 안녕! 잘 지냈어?\n날씨 많이 추워졌지?',
-                    timestamp: '2025-10-27T11:57:00'
-                },
-                {
-                    id: 'm3',
-                    sender: 'other',
-                    name: '박현민',
-                    avatar: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp',
-                    type: 'text',
-                    message: '응! 옷 따뜻하게 입고 다녀야겠더라구요 ㅎㅎ',
-                    timestamp: '2025-10-27T11:58:00'
-                },
-                {
-                    id: 'm4',
-                    sender: 'other',
-                    name: '박현민',
-                    avatar: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp',
-                    type: 'image',
-                    imageSrc: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp',
-                    timestamp: '2025-10-27T11:58:30'
-                },
-                {
-                    id: 'm5',
-                    sender: 'me',
-                    name: '나',
-                    avatar: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp',
-                    type: 'text',
-                    message: '와 사진 진짜 잘 나왔다! 어디서 찍은 거에요?',
-                    timestamp: '2025-10-27T11:59:00'
-                },
-                {
-                    id: 'm6',
-                    sender: 'other',
-                    name: '박현민',
-                    avatar: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp',
-                    type: 'text',
-                    message: '지난주에 남산 갔다가 찍었어요. 뷰가 너무 좋아서!',
-                    timestamp: '2025-10-27T12:00:00'
-                },
-                {
-                    id: 'm7',
-                    sender: 'me',
-                    name: '나',
-                    avatar: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp',
-                    type: 'text',
-                    message: '부럽다 ㅎㅎ 나도 다음에 같이 가요!',
-                    timestamp: '2025-10-27T12:01:00'
-                },
-                {
-                    id: 'm8',
-                    sender: 'other',
-                    name: '박현민',
-                    avatar: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp',
-                    type: 'file',
-                    message: '좋아요! 그리고 지난 번 프로젝트 파일도 공유드릴게요.',
-                    fileName: '프로젝트자료',
-                    filetype: 'jpg',
-                    fileUrl: 'https://yheun03.github.io/portfolio/src/assets/images/sample-photo-1.jpg',
-                    period: '2025-10-30',
-                    filesize: '4.5MB',
-                    timestamp: '2025-10-27T12:02:00'
-                },
-                {
-                    id: 'm9',
-                    sender: 'me',
-                    name: '나',
-                    avatar: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp',
-                    type: 'text',
-                    message: '감사합니다! 덕분에 큰 도움 될 것 같아요 :)',
-                    timestamp: '2025-10-27T12:02:30'
-                },
-                {
-                    id: 'm10',
-                    sender: 'me',
-                    name: '나',
-                    avatar: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp',
-                    type: 'text',
-                    message: '혹시 메신저에 파일 잘 올라가는지 확인 가능해요?',
-                    timestamp: '2025-10-27T12:03:00'
-                },
-                {
-                    id: 'm11',
-                    sender: 'other',
-                    name: '박현민',
-                    avatar: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp',
-                    type: 'text',
-                    message: '네! 방금 전송한 자료 제대로 확인돼요!',
-                    timestamp: '2025-10-27T12:04:00'
-                },
-                {
-                    id: 'm12',
-                    sender: 'me',
-                    name: '나',
-                    avatar: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp',
-                    type: 'text',
-                    message: '굿! 그리고 혹시 이번주 토요일 시간 괜찮으면 밥 같이 먹어요~',
-                    timestamp: '2025-10-27T12:04:30'
-                },
-                {
-                    id: 'm13',
-                    sender: 'other',
-                    name: '박현민',
-                    avatar: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp',
-                    type: 'text',
-                    message: '좋습니다! 시간은 오후 6시쯤 어때요?',
-                    timestamp: '2025-10-27T12:05:00'
-                },
-                {
-                    id: 'm14',
-                    sender: 'me',
-                    name: '나',
-                    avatar: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp',
-                    type: 'text',
-                    message: '네 완전 좋아요! 그날 봐요 😄',
-                    timestamp: '2025-10-27T12:06:00'
-                },
-                {
-                    id: 'm15',
-                    sender: 'other',
-                    name: '박현민',
-                    avatar: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp',
-                    type: 'text',
-                    message: '알겠습니다~ 그럼 토요일에 봬요 🖐️',
-                    timestamp: '2025-10-27T12:07:00'
-                },
+            myUserId: 'eyh',
+            headcount: 1,
+            rawMessages: [
+                { id: 'm1', sender: 'other', type: 'text', message: '안녕하세요! 오랜만이에요 😊', timestamp: '2025-10-27T11:56:00' },
+                { id: 'm2', sender: 'me', type: 'text', message: '어, 안녕! 잘 지냈어?\n날씨 많이 추워졌지?', timestamp: '2025-10-27T11:57:00' },
+                { id: 'm3', sender: 'other', type: 'text', message: '응! 옷 따뜻하게 입고 다녀야겠더라구요 ㅎㅎ', timestamp: '2025-10-27T11:58:00' },
+                { id: 'm4', sender: 'other', type: 'image', imageSrc: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp', timestamp: '2025-10-27T11:58:30' },
+                { id: 'm5', sender: 'me', type: 'text', message: '와 사진 진짜 잘 나왔다! 어디서 찍은 거에요?', timestamp: '2025-10-27T11:59:00' },
+                { id: 'm6', sender: 'other', type: 'text', message: '지난주에 남산 갔다가 찍었어요. 뷰가 너무 좋아서!', timestamp: '2025-10-27T12:00:00' },
+                { id: 'm7', sender: 'me', type: 'text', message: '부럽다 ㅎㅎ 나도 다음에 같이 가요!', timestamp: '2025-10-27T12:01:00' },
+                { id: 'm8', sender: 'other', type: 'file', message: '좋아요! 그리고 지난 번 프로젝트 파일도 공유드릴게요.', fileName: '프로젝트자료', filetype: 'jpg', fileUrl: 'https://yheun03.github.io/portfolio/src/assets/images/sample-photo-1.jpg', period: '2025-10-30', filesize: '4.5MB', timestamp: '2025-10-27T12:02:00' },
+                { id: 'm9', sender: 'me', type: 'text', message: '감사합니다! 덕분에 큰 도움 될 것 같아요 :)', timestamp: '2025-10-27T12:02:30' },
+                { id: 'm10', sender: 'me', type: 'text', message: '혹시 메신저에 파일 잘 올라가는지 확인 가능해요?', timestamp: '2025-10-27T12:03:00' },
+                { id: 'm11', sender: 'other', type: 'text', message: '네! 방금 전송한 자료 제대로 확인돼요!', timestamp: '2025-10-27T12:04:00' },
+                { id: 'm12', sender: 'me', type: 'text', message: '굿! 그리고 혹시 이번주 토요일 시간 괜찮으면 밥 같이 먹어요~', timestamp: '2025-10-27T12:04:30' },
+                { id: 'm13', sender: 'other', type: 'text', message: '좋습니다! 시간은 오후 6시쯤 어때요?', timestamp: '2025-10-27T12:05:00' },
+                { id: 'm14', sender: 'me', type: 'text', message: '네 완전 좋아요! 그날 봐요 😄', timestamp: '2025-10-27T12:06:00' },
+                { id: 'm15', sender: 'other', type: 'text', message: '알겠습니다~ 그럼 토요일에 봬요 🖐️', timestamp: '2025-10-27T12:07:00' },
             ]
         }
     },
     computed: {
+        activeUserId() {
+            const queryId = this.$route?.query?.userId
+            return queryId || 'kim-minsu'
+        },
+        otherProfile() {
+            return profileService.getProfile(this.activeUserId) || {}
+        },
+        myProfile() {
+            return profileService.getProfile(this.myUserId) || {}
+        },
+        messages() {
+            return this.rawMessages.map(msg => {
+                const isOther = msg.sender === 'other'
+                const profile = isOther ? this.otherProfile : this.myProfile
+                return {
+                    name: profile.userName || (isOther ? '상대방' : '나'),
+                    avatar: profile.profileImage || msg.avatar,
+                    ...msg
+                }
+            })
+        },
         grouped() {
             const out = [];
             let cur = null;
