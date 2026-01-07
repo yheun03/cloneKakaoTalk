@@ -33,7 +33,18 @@ export default {
     },
     computed: {
         chats() {
-            return chatService.getChatList()
+            return chatService
+                .getChatList()
+                .filter(Boolean)
+                .sort((a, b) => {
+                    // 1) 상단 고정 우선
+                    if (a.isPin && !b.isPin) return -1
+                    if (!a.isPin && b.isPin) return 1
+                    // 2) 최신 메시지 시간순 (최근 먼저)
+                    const ta = a.lastMessageTime ? new Date(a.lastMessageTime).getTime() : 0
+                    const tb = b.lastMessageTime ? new Date(b.lastMessageTime).getTime() : 0
+                    return tb - ta
+                })
         }
     }
 }

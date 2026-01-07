@@ -39,7 +39,33 @@ const chatStore = {
             { id: 'lj-4', sender: 'other', type: 'text', message: '와 색 조합 훨씬 보기 좋다… 역시 감성 장인 👍', timestamp: '2025-10-26T09:37:40' },
             { id: 'lj-5', sender: 'other', type: 'text', message: '발표 스크립트도 같이 연습해볼까요? 나 긴장 많이 해서…', timestamp: '2025-10-27T08:05:00' },
             { id: 'lj-6', sender: 'me', type: 'text', message: '좋아요. 오늘 오후에 30분 정도 시간 빼둘게요.', timestamp: '2025-10-27T08:07:20' },
-            { id: 'lj-7', sender: 'other', type: 'text', message: '그럼 4시에 회의실 B에서 만나는 걸로!', timestamp: '2025-10-27T08:10:00' }
+            { id: 'lj-7', sender: 'other', type: 'text', message: '그럼 4시에 회의실 B에서 만나는 걸로!', timestamp: '2025-10-27T08:10:00' },
+
+            { id: 'lj-8', sender: 'me', type: 'text', message: '발표 순서는 기존 안 그대로 가면 될 것 같아요.', timestamp: '2025-10-27T15:40:00' },
+            { id: 'lj-9', sender: 'other', type: 'text', message: '네! 도입부 멘트만 조금 더 다듬어볼게요.', timestamp: '2025-10-27T15:42:10' },
+            { id: 'lj-10', sender: 'me', type: 'text', message: '첫 슬라이드에서 문제 제기만 명확하면 좋아요.', timestamp: '2025-10-27T15:44:30' },
+            { id: 'lj-11', sender: 'other', type: 'text', message: '아 그 부분이 좀 애매했죠… 다시 써볼게요.', timestamp: '2025-10-27T15:46:00' },
+            { id: 'lj-12', sender: 'me', type: 'text', message: '뒤에 사례 슬라이드는 지금도 충분히 설득력 있어요.', timestamp: '2025-10-27T15:48:20' },
+            { id: 'lj-13', sender: 'other', type: 'text', message: '다행이다 ㅠㅠ 거기 제일 걱정했어요.', timestamp: '2025-10-27T15:49:40' },
+            { id: 'lj-14', sender: 'other', type: 'text', message: '발표 시간 7분 맞춰도 괜찮을까요?', timestamp: '2025-10-27T15:52:00' },
+            { id: 'lj-15', sender: 'me', type: 'text', message: '네, 질의응답 생각하면 딱 좋아요.', timestamp: '2025-10-27T15:53:30' },
+            { id: 'lj-16', sender: 'other', type: 'text', message: '그럼 그 기준으로 연습해볼게요.', timestamp: '2025-10-27T15:55:10' },
+            { id: 'lj-17', sender: 'me', type: 'text', message: '목소리 톤만 지금보다 조금만 더 천천히 가면 좋아요.', timestamp: '2025-10-27T15:58:00' },
+            { id: 'lj-18', sender: 'other', type: 'text', message: '알겠습니다… 연습 때는 괜찮았는데 실전이 문제네요 😭', timestamp: '2025-10-27T16:00:20' },
+
+            { id: 'lj-19', sender: 'other', type: 'file', message: '수정한 버전 다시 공유드릴게요!', fileName: 'presentation_final.pptx', filetype: 'pptx', fileUrl: 'https://example.com/presentation_final.pptx', period: '2025-10-30', filesize: '8.7MB', timestamp: '2025-10-27T18:20:00' },
+            { id: 'lj-20', sender: 'me', type: 'text', message: '확인해볼게요.', timestamp: '2025-10-27T18:21:30' },
+            { id: 'lj-21', sender: 'me', type: 'text', message: '도입부 문장 훨씬 좋아졌어요.', timestamp: '2025-10-27T18:25:10' },
+            { id: 'lj-22', sender: 'other', type: 'text', message: '휴… 그 말 들으니까 좀 살 것 같아요.', timestamp: '2025-10-27T18:26:40' },
+            { id: 'lj-23', sender: 'me', type: 'text', message: '내일은 그냥 하던 대로만 하시면 돼요.', timestamp: '2025-10-27T18:28:00' },
+            { id: 'lj-24', sender: 'other', type: 'text', message: '응원 감사합니다 진짜…', timestamp: '2025-10-27T18:29:30' },
+
+            { id: 'lj-25', sender: 'other', type: 'text', message: '발표 끝났어요!!', timestamp: '2025-10-28T11:40:00' },
+            { id: 'lj-26', sender: 'me', type: 'text', message: '오 고생하셨어요! 어떠셨어요?', timestamp: '2025-10-28T11:41:10' },
+            { id: 'lj-27', sender: 'other', type: 'text', message: '생각보다 안 떨렸어요… 연습 효과가 있나 봐요.', timestamp: '2025-10-28T11:42:30' },
+            { id: 'lj-28', sender: 'me', type: 'text', message: '그럴 줄 알았어요 👍', timestamp: '2025-10-28T11:43:20' },
+            { id: 'lj-29', sender: 'other', type: 'text', message: '다 끝나고 나니까 이제야 숨 쉬는 느낌이에요.', timestamp: '2025-10-28T11:44:40' },
+            { id: 'lj-30', sender: 'me', type: 'text', message: '오늘은 맛있는 거 드세요. 충분히 그럴 자격 있어요.', timestamp: '2025-10-28T11:46:00' }
         ]
     },
     'park-seojun': {
