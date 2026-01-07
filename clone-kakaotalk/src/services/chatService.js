@@ -11,19 +11,26 @@ const chatStore = {
         messages: [
             { id: 'km-1', sender: 'other', type: 'text', message: '야 오늘 퇴근 후에 뭐해?', timestamp: '2025-10-27T18:01:00' },
             { id: 'km-2', sender: 'me', type: 'text', message: '아직 계획 없는데 왜? 👀', timestamp: '2025-10-27T18:02:10' },
-            { id: 'km-3', sender: 'other', type: 'text', message: '회사 앞에 새로 생긴 라멘집 가볼래? 줄 엄청 길더라.', timestamp: '2025-10-27T18:03:30' },
-            { id: 'km-4', sender: 'me', type: 'text', message: '좋지! 근데 비 오면 줄에서 버티기 힘들 듯 ㅋㅋ', timestamp: '2025-10-27T18:04:10' },
+            { id: 'km-3', sender: 'other', type: 'text', message: '회사 앞에 새로 생긴 라멘집 가볼래?', timestamp: '2025-10-27T18:03:30' },
+            { id: 'km-4', sender: 'me', type: 'text', message: '줄 길다던데 ㅋㅋ', timestamp: '2025-10-27T18:04:10' },
             { id: 'km-5', sender: 'other', type: 'image', imageSrc: 'https://yheun03.github.io/portfolio/src/assets/images/photo-1920.webp', timestamp: '2025-10-27T18:05:20' },
-            { id: 'km-6', sender: 'other', type: 'text', message: '방금 지나가다 찍었는데 사람 진짜 많음...', timestamp: '2025-10-27T18:05:50' },
-            { id: 'km-7', sender: 'me', type: 'text', message: '헐 맛집 각이네 🤤 한 7시쯤 만나서 줄 서볼까?', timestamp: '2025-10-27T18:06:30' },
-            { id: 'km-8', sender: 'other', type: 'file', message: '참고로 메뉴판도 보내줄게.', fileName: 'menu.pdf', filetype: 'pdf', fileUrl: 'https://example.com/menu.pdf', period: '2025-11-01', filesize: '1.2MB', timestamp: '2025-10-27T18:07:00' },
-            { id: 'km-9', sender: 'me', type: 'text', message: '오 친절하시네 ㅋㅋ 난 매운 라멘 먹어볼래.', timestamp: '2025-10-27T18:07:45' },
-            { id: 'km-10', sender: 'other', type: 'text', message: '그럼 나도 같은 거 시켜서 비교해보자.', timestamp: '2025-10-27T18:08:20' },
-            { id: 'km-11', sender: 'me', type: 'text', message: '오케이, 그럼 7시에 역 앞에서 보는 걸로~', timestamp: '2025-10-27T18:09:05' },
-            { id: 'km-12', sender: 'other', type: 'text', message: '늦지 말고 🙄', timestamp: '2025-10-27T18:09:40' },
-            { id: 'km-13', sender: 'me', type: 'text', message: '지난번 30분 늦은 사람한테 그 말 듣기 싫은데요? ㅋㅋ', timestamp: '2025-10-27T18:10:15' },
-            { id: 'km-14', sender: 'other', type: 'text', message: '이번엔 진짜 일찍 갈 거야… 아마도…', timestamp: '2025-10-27T18:11:00' },
-            { id: 'km-15', sender: 'other', type: 'text', message: '아 그리고 끝나고 카페 가서 여행 일정도 같이 짜자!', timestamp: '2025-10-27T18:11:40' }
+            { id: 'km-6', sender: 'other', type: 'text', message: '이 정도면 각이지?', timestamp: '2025-10-27T18:06:00' },
+            { id: 'km-7', sender: 'me', type: 'text', message: 'ㅇㅇ 무조건 맛집', timestamp: '2025-10-27T18:06:40' },
+            { id: 'km-8', sender: 'other', type: 'text', message: '그럼 7시에 역 앞', timestamp: '2025-10-27T18:07:20' },
+            { id: 'km-9', sender: 'me', type: 'text', message: '늦으면 커피 쏜다', timestamp: '2025-10-27T18:08:00' },
+            { id: 'km-10', sender: 'other', type: 'text', message: '왜 항상 그 조건이 나만 불리하냐', timestamp: '2025-10-27T18:09:00' },
+
+            { id: 'km-11', sender: 'other', type: 'text', message: '어제 카페도 괜찮았지?', timestamp: '2025-10-28T10:20:00' },
+            { id: 'km-12', sender: 'me', type: 'text', message: 'ㅇㅇ 다음에 또 가자', timestamp: '2025-10-28T10:21:00' },
+            { id: 'km-13', sender: 'other', type: 'text', message: '주말에 영화 볼래?', timestamp: '2025-10-28T10:22:40' },
+            { id: 'km-14', sender: 'me', type: 'text', message: '시간만 맞으면 콜', timestamp: '2025-10-28T10:24:10' },
+            { id: 'km-15', sender: 'other', type: 'text', message: '그럼 내가 예매할게', timestamp: '2025-10-28T10:25:30' },
+
+            { id: 'km-16', sender: 'me', type: 'text', message: '자리 너무 앞이면 싫음', timestamp: '2025-10-28T10:26:40' },
+            { id: 'km-17', sender: 'other', type: 'text', message: '까다롭네 진짜', timestamp: '2025-10-28T10:27:50' },
+            { id: 'km-18', sender: 'me', type: 'text', message: '알잖아 내 목 건강', timestamp: '2025-10-28T10:28:30' },
+            { id: 'km-19', sender: 'other', type: 'text', message: 'ㅋㅋㅋㅋ 알겠습니다 고객님', timestamp: '2025-10-28T10:29:40' },
+            { id: 'km-20', sender: 'me', type: 'text', message: '굿 👍', timestamp: '2026-01-07T10:30:20' }
         ]
     },
     'lee-jieun': {
@@ -92,12 +99,23 @@ const chatStore = {
         isSilent: false,
         unreadCount: 0,
         messages: [
-            { id: 'cs-1', sender: 'other', type: 'text', message: '주말에 모임 어때요? 거의 한 달 만인 듯 😂', timestamp: '2025-10-26T12:00:00' },
-            { id: 'cs-2', sender: 'me', type: 'text', message: '좋아요! 다들 시간만 맞으면 어디든 상관없음.', timestamp: '2025-10-26T12:05:00' },
-            { id: 'cs-3', sender: 'other', type: 'text', message: '홍대 쪽으로 갈까요? 거기 새로 생긴 파스타집 괜찮다던데.', timestamp: '2025-10-27T09:12:00' },
-            { id: 'cs-4', sender: 'me', type: 'text', message: '존재만으로 이미 맛집 느낌인데? ㅋㅋ', timestamp: '2025-10-27T09:13:40' },
-            { id: 'cs-5', sender: 'other', type: 'text', message: '시간은 5시 어때요? 너무 늦으면 사람 많을 것 같아서.', timestamp: '2025-10-27T09:15:10' },
-            { id: 'cs-6', sender: 'me', type: 'text', message: '나 5시 가능! 나머지 두 명도 여기서 답해달라고 할게.', timestamp: '2025-10-27T09:16:25' }
+            { id: 'cs-1', sender: 'other', type: 'text', message: '주말에 모임 어때요?', timestamp: '2025-10-26T12:00:00' },
+            { id: 'cs-2', sender: 'me', type: 'text', message: '저는 가능!', timestamp: '2025-10-26T12:02:00' },
+            { id: 'cs-3', sender: 'other', type: 'text', message: '홍대 쪽 괜찮다던데', timestamp: '2025-10-26T12:04:00' },
+            { id: 'cs-4', sender: 'me', type: 'text', message: '사람 많을 듯', timestamp: '2025-10-26T12:05:30' },
+            { id: 'cs-5', sender: 'other', type: 'text', message: '5시 어때?', timestamp: '2025-10-26T12:06:40' },
+
+            { id: 'cs-6', sender: 'me', type: 'text', message: '그럼 좀 여유 있겠다', timestamp: '2025-10-26T12:07:30' },
+            { id: 'cs-7', sender: 'other', type: 'text', message: '장소는 내가 예약할게', timestamp: '2025-10-26T12:08:20' },
+            { id: 'cs-8', sender: 'me', type: 'text', message: '굿 👍', timestamp: '2025-10-26T12:09:00' },
+
+            { id: 'cs-9', sender: 'other', type: 'text', message: '예약 완료!', timestamp: '2025-10-27T11:10:00' },
+            { id: 'cs-10', sender: 'me', type: 'text', message: '고생했어요', timestamp: '2025-10-27T11:11:20' },
+
+            { id: 'cs-11', sender: 'other', type: 'text', message: '늦는 사람 없음?', timestamp: '2025-10-28T16:20:00' },
+            { id: 'cs-12', sender: 'me', type: 'text', message: '저는 제시간에 도착', timestamp: '2025-10-28T16:21:10' },
+            { id: 'cs-13', sender: 'other', type: 'text', message: '그럼 먼저 들어가 있을게요', timestamp: '2025-10-28T16:22:30' },
+            { id: 'cs-14', sender: 'me', type: 'text', message: '곧 도착!', timestamp: '2025-10-28T16:24:00' }
         ]
     },
     'jung-haneul': {

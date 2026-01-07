@@ -68,32 +68,38 @@
         computed: {
             formattedLastMessageTime() {
                 if (!this.lastMessageTime) return '';
-                
+
                 const messageTime = new Date(this.lastMessageTime);
+                if (isNaN(messageTime)) return '';
+
                 const now = new Date();
                 const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
                 const messageDate = new Date(messageTime.getFullYear(), messageTime.getMonth(), messageTime.getDate());
-                
-                // 같은 날 (00시가 지나지 않음)
-                if (messageDate.getTime() === today.getTime()) {
-                    return messageTime.toLocaleTimeString('ko-KR', { 
-                        hour: '2-digit', 
+                const diffDays = Math.floor((today.getTime() - messageDate.getTime()) / (1000 * 60 * 60 * 24));
+
+                // 오늘: 시:분 (24시간제)
+                if (diffDays === 0) {
+                    return messageTime.toLocaleTimeString('ko-KR', {
+                        hour: '2-digit',
                         minute: '2-digit',
-                        hour12: false 
+                        hour12: false
                     });
                 }
-                
-                // 같은 해
-                if (messageTime.getFullYear() === now.getFullYear()) {
-                    return `${messageTime.getMonth() + 1}월${messageTime.getDate()}일`;
+
+                // 어제
+                if (diffDays === 1) {
+                    return '어제';
                 }
-                
-                // 다른 해
-                return messageTime.toLocaleDateString('ko-KR', {
-                    year: 'numeric',
-                    month: '2-digit',
-                    day: '2-digit'
-                }).replace(/\./g, '. ').replace(/\s/g, '');
+
+                // 그제 이전: YYYY.MM.DD
+                return messageTime
+                    .toLocaleDateString('ko-KR', {
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit'
+                    })
+                    .replace(/\.\s?/g, '.')
+                    .replace(/\.$/, '');
             }
         },
         methods: {
