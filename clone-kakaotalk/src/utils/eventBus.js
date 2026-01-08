@@ -2,6 +2,7 @@
 class EventBus {
     constructor() {
         this.events = {}
+        this.lastValues = {} // 마지막으로 emit된 값 저장
     }
 
     on(event, callback) {
@@ -9,6 +10,11 @@ class EventBus {
             this.events[event] = []
         }
         this.events[event].push(callback)
+        
+        // 마지막 값이 있으면 즉시 호출
+        if (this.lastValues[event] !== undefined) {
+            callback(this.lastValues[event])
+        }
     }
 
     off(event, callback) {
@@ -22,9 +28,16 @@ class EventBus {
     }
 
     emit(event, data) {
+        // 마지막 값 저장
+        this.lastValues[event] = data
+        
         if (this.events[event]) {
             this.events[event].forEach(callback => callback(data))
         }
+    }
+
+    getLastValue(event) {
+        return this.lastValues[event]
     }
 }
 

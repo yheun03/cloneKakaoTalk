@@ -55,6 +55,7 @@ import Icon24Gallery from '@/assets/icons/24/ic-gallery.svg'
 import Icon24Emoji from '@/assets/icons/24/ic-emoji.svg'
 import Icon24Menu from '@/assets/icons/24/ic-menu.svg'
 import profileService from '@/services/profileService'
+import eventBus from '@/utils/eventBus'
 
 export default {
     name: 'ProfileModal',
@@ -127,24 +128,22 @@ export default {
             this.showProfileEditModal = false
         },
         goToChat() {
-            // 모달에 표시된 userId를 쿼리 파라미터로 전달
+            // 모달에 표시된 userId를 이벤트 버스로 전달 (URL 파라미터 없이)
             const targetUserId = this.userId
-            console.log('[ProfileModal] goToChat - userId:', targetUserId, '현재 경로:', this.$route.path)
             
             // 모달 닫기
             this.$emit('close')
             
-            // 라우터 이동 - 이미 /chat에 있으면 replace 사용
-            const routerAction = this.$route.path === '/chat' ? 'replace' : 'push'
-            console.log('[ProfileModal] 라우터 액션:', routerAction)
+            // 이벤트 버스로 userId 전달 (먼저 emit)
+            eventBus.emit('navigate-to-chat', targetUserId)
             
-            this.$router[routerAction]({ 
-                path: '/chat', 
-                query: { userId: targetUserId } 
-            }).then(() => {
-                console.log('[ProfileModal] 라우터 이동 완료')
-            }).catch((err) => {
-                console.error('[ProfileModal] 라우터 이동 실패:', err)
+            // 라우터 이동 (쿼리 파라미터 없이, 이미 /chat에 있어도 replace로 이동하여 이벤트 처리 보장)
+            this.$nextTick(() => {
+                if (this.$route.path === '/chat') {
+                    this.$router.replace('/chat')
+                } else {
+                    this.$router.push('/chat')
+                }
             })
         }
     }

@@ -66,6 +66,7 @@ import Icon24Emoji from '@/assets/icons/24/ic-emoji.svg'
 import Icon24File from '@/assets/icons/24/ic-file.svg'
 import profileService from '@/services/profileService'
 import chatService from '@/services/chatService'
+import eventBus from '@/utils/eventBus'
 
 const minuteKey = (iso) => {
     const d = new Date(iso);
@@ -156,23 +157,27 @@ export default {
     },
     created() {
         this.syncActiveUserId()
+        // 이벤트 버스로 userId 받기
+        eventBus.on('navigate-to-chat', this.handleNavigateToChat)
     },
     mounted() {
         this.scrollToBottom()
+        // 마운트 후에도 이벤트 버스에서 마지막 userId 확인 (이미 /chat에 있을 때 대비)
+        this.$nextTick(() => {
+            const lastUserId = eventBus.getLastValue('navigate-to-chat')
+            if (lastUserId) {
+                this.currentUserId = lastUserId
+                this.scrollToBottom()
+            }
+        })
+    },
+    beforeUnmount() {
+        eventBus.off('navigate-to-chat', this.handleNavigateToChat)
     },
     watch: {
-        '$route.query.userId': {
-            handler(newUserId) {
-                if (newUserId) {
-                    this.currentUserId = newUserId
-                } else {
-                    this.syncActiveUserId()
-                }
-            },
-            immediate: true
-        },
         $route: {
             handler() {
+                // URL 쿼리 파라미터는 더 이상 사용하지 않지만, 하위 호환성을 위해 유지
                 this.syncActiveUserId()
             },
             deep: true
@@ -180,19 +185,31 @@ export default {
     },
     methods: {
         syncActiveUserId() {
-            // 1차: Vue Router query
+            // URL 쿼리 파라미터는 더 이상 사용하지 않지만, 하위 호환성을 위해 유지
             const query = this.$route?.query || {}
             let id = query.userId || query.userid
 
-            // 2차: URLSearchParams (혹시라도 라우터 쿼리가 비어있는 경우 대비)
+            // URLSearchParams (혹시라도 라우터 쿼리가 비어있는 경우 대비)
             if (!id && typeof window !== 'undefined') {
                 const params = new URLSearchParams(window.location.search || '')
                 id = params.get('userId') || params.get('userid')
             }
 
-            const finalId = id || 'kim-minsu'
-            console.log('[ChatView] syncActiveUserId - query:', query, 'extracted id:', id, 'final id:', finalId)
-            this.currentUserId = finalId
+            // 쿼리 파라미터가 없으면 기본값 사용 (이벤트 버스로 받은 값이 있으면 그걸 사용)
+            if (!id && !this.currentUserId) {
+                this.currentUserId = 'kim-minsu'
+            } else if (id) {
+                this.currentUserId = id
+            }
+        },
+        handleNavigateToChat(userId) {
+            // 이벤트 버스로 받은 userId 설정
+            if (userId) {
+                this.currentUserId = userId
+                this.$nextTick(() => {
+                    this.scrollToBottom()
+                })
+            }
         },
         scrollToBottom() {
             this.$nextTick(() => {
