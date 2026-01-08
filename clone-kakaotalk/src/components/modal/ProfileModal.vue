@@ -127,8 +127,25 @@ export default {
             this.showProfileEditModal = false
         },
         goToChat() {
+            // 모달에 표시된 userId를 쿼리 파라미터로 전달
+            const targetUserId = this.userId
+            console.log('[ProfileModal] goToChat - userId:', targetUserId, '현재 경로:', this.$route.path)
+            
+            // 모달 닫기
             this.$emit('close')
-            this.$router.push('/chat')
+            
+            // 라우터 이동 - 이미 /chat에 있으면 replace 사용
+            const routerAction = this.$route.path === '/chat' ? 'replace' : 'push'
+            console.log('[ProfileModal] 라우터 액션:', routerAction)
+            
+            this.$router[routerAction]({ 
+                path: '/chat', 
+                query: { userId: targetUserId } 
+            }).then(() => {
+                console.log('[ProfileModal] 라우터 이동 완료')
+            }).catch((err) => {
+                console.error('[ProfileModal] 라우터 이동 실패:', err)
+            })
         }
     }
 }

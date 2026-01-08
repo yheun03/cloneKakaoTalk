@@ -29,7 +29,7 @@ const chatStore = {
             { id: 'km-16', sender: 'me', type: 'text', message: '자리 너무 앞이면 싫음', timestamp: '2025-10-28T10:26:40' },
             { id: 'km-17', sender: 'other', type: 'text', message: '까다롭네 진짜', timestamp: '2025-10-28T10:27:50' },
             { id: 'km-18', sender: 'me', type: 'text', message: '알잖아 내 목 건강', timestamp: '2025-10-28T10:28:30' },
-            { id: 'km-19', sender: 'other', type: 'text', message: 'ㅋㅋㅋㅋ 알겠습니다 고객님', timestamp: '2025-10-28T10:29:40' },
+            { id: 'km-19', sender: 'other', type: 'text', message: 'ㅋㅋㅋㅋ 알겠습니다 고객님', timestamp: '2026-01-07T10:29:40' },
             { id: 'km-20', sender: 'me', type: 'text', message: '굿 👍', timestamp: '2026-01-07T10:30:20' }
         ]
     },

@@ -161,6 +161,16 @@ export default {
         this.scrollToBottom()
     },
     watch: {
+        '$route.query.userId': {
+            handler(newUserId) {
+                if (newUserId) {
+                    this.currentUserId = newUserId
+                } else {
+                    this.syncActiveUserId()
+                }
+            },
+            immediate: true
+        },
         $route: {
             handler() {
                 this.syncActiveUserId()
@@ -180,7 +190,9 @@ export default {
                 id = params.get('userId') || params.get('userid')
             }
 
-            this.currentUserId = id || 'kim-minsu'
+            const finalId = id || 'kim-minsu'
+            console.log('[ChatView] syncActiveUserId - query:', query, 'extracted id:', id, 'final id:', finalId)
+            this.currentUserId = finalId
         },
         scrollToBottom() {
             this.$nextTick(() => {
