@@ -55,7 +55,7 @@ import Icon24Gallery from '@/assets/icons/24/ic-gallery.svg'
 import Icon24Emoji from '@/assets/icons/24/ic-emoji.svg'
 import Icon24Menu from '@/assets/icons/24/ic-menu.svg'
 import profileService from '@/services/profileService'
-import eventBus from '@/utils/eventBus'
+import chatNavigation from '@/services/chatNavigation'
 
 export default {
     name: 'ProfileModal',
@@ -128,23 +128,10 @@ export default {
             this.showProfileEditModal = false
         },
         goToChat() {
-            // 모달에 표시된 userId를 이벤트 버스로 전달 (URL 파라미터 없이)
-            const targetUserId = this.userId
-            
             // 모달 닫기
             this.$emit('close')
-            
-            // 이벤트 버스로 userId 전달 (먼저 emit)
-            eventBus.emit('navigate-to-chat', targetUserId)
-            
-            // 라우터 이동 (쿼리 파라미터 없이, 이미 /chat에 있어도 replace로 이동하여 이벤트 처리 보장)
-            this.$nextTick(() => {
-                if (this.$route.path === '/chat') {
-                    this.$router.replace('/chat')
-                } else {
-                    this.$router.push('/chat')
-                }
-            })
+            // 공통 네비게이션 헬퍼 사용
+            chatNavigation.openChat(this.userId)
         }
     }
 }

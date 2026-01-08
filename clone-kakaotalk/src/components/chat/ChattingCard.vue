@@ -20,7 +20,7 @@
     import AppAvatar from '@/components/ui/AppAvatar.vue';
     import Icon12Pin from '@/assets/icons/12/ic-pin.svg';
     import Icon12Silent from '@/assets/icons/12/ic-silent.svg';
-    import eventBus from '@/utils/eventBus';
+    import chatNavigation from '@/services/chatNavigation';
     export default {
         name: 'ChattingCard',
         components: {
@@ -105,17 +105,8 @@
         },
         methods: {
             goToChat() {
-                // 이벤트 버스로 userId 전달 (URL 파라미터 없이)
-                if (this.userId) {
-                    eventBus.emit('navigate-to-chat', this.userId)
-                }
-                
-                // 라우터 이동 (쿼리 파라미터 없이)
-                if (this.$route.path === '/chat') {
-                    this.$router.replace('/chat')
-                } else {
-                    this.$router.push('/chat')
-                }
+                // 공통 네비게이션 헬퍼 사용
+                chatNavigation.openChat(this.userId)
             }
         }
     }
