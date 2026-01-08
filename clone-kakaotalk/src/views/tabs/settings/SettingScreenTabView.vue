@@ -68,7 +68,13 @@ export default {
         return {
             screenMode: '',
             fontSize: 4, // 기본값: 중간 (1-7 범위에서 4)
-            fontOptions: [],
+            fontOptions: [
+                { optionTitle: '기본체', optionValue: 'Default', optionChecked: false },
+                { optionTitle: '나눔고딕코딩', optionValue: 'NanumGothicCoding', optionChecked: false },
+                { optionTitle: '나눔명조코딩', optionValue: 'NanumMyeongjoCoding', optionChecked: false },
+                { optionTitle: '나눔고딕', optionValue: 'NanumGothic', optionChecked: false },
+                { optionTitle: '나눔명조', optionValue: 'NanumMyeongjo', optionChecked: false },
+            ],
             screenMode1,
             screenMode2,
             screenMode3
