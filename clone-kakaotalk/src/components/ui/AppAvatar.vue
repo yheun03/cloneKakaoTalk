@@ -12,9 +12,9 @@
 </template>
 
 <script>
-    import defaultAvatar from '@/assets/images/profileImage/profile.png'
-    import profileService from '@/services/profileService'
-    import eventBus from '@/utils/eventBus'
+import defaultAvatar from '@/assets/images/profileImage/profile.png'
+import profileService from '@/services/profileService'
+import profileModalService from '@/services/profileModalService'
 
     export default {
         name: 'AppAvatar',
@@ -111,7 +111,7 @@
             },
             handleClick() {
                 if (this.clickable && this.effectiveUserId) {
-                    eventBus.emit('open-profile-modal', this.effectiveUserId)
+                    profileModalService.openProfileModal(this.effectiveUserId)
                 }
             }
         }
