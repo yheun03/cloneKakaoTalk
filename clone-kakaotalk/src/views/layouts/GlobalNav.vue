@@ -44,6 +44,8 @@ import Icon32Chat from '@/assets/icons/32/ic-chat.svg'
 import Icon32More from '@/assets/icons/32/ic-more.svg'
 import Icon24Bell from '@/assets/icons/24/ic-bell.svg'
 import Icon24Setting from '@/assets/icons/24/ic-setting.svg'
+import navigationService from '@/services/navigationService'
+import { ROUTES } from '@/constants/routes'
 
 export default {
     name: 'GlobalNav',
@@ -57,30 +59,30 @@ export default {
     },
     computed: {
         isProfileActive() {
-            return this.$route.path === '/'
+            return this.$route.path === ROUTES.PROFILE
         },
         isChatListActive() {
-            return this.$route.path === '/chat-list'
+            return this.$route.path === ROUTES.CHAT_LIST
         },
         isMoreActive() {
-            return this.$route.path === '/more'
+            return this.$route.path === ROUTES.MORE
         },
         isSettingActive() {
-            return this.$route.path === '/setting'
+            return this.$route.path === ROUTES.SETTING
         }
     },
     methods: {
         goToProfile() {
-            this.$router.push('/')
+            navigationService.goToProfile()
         },
         goToChatList() {
-            this.$router.push('/chat-list')
+            navigationService.goToChatList()
         },
         goToMore() {
-            this.$router.push('/more')
+            navigationService.goToMore()
         },
         goToSetting() {
-            this.$router.push('/setting')
+            navigationService.goToSetting()
         }
     }
 }

@@ -1,4 +1,5 @@
 import eventBus from '@/utils/eventBus'
+import { EVENTS } from '@/constants/events'
 
 /**
  * 프로필 모달을 여는 공통 서비스
@@ -11,7 +12,7 @@ function openProfileModal(userId) {
     }
     
     // 이벤트 버스를 통해 프로필 모달 열기
-    eventBus.emit('open-profile-modal', userId)
+    eventBus.emit(EVENTS.OPEN_PROFILE_MODAL, userId)
 }
 
 const profileModalService = {
@@ -19,3 +20,6 @@ const profileModalService = {
 }
 
 export default profileModalService
+
+// Named exports도 제공 (일관성 유지)
+export { openProfileModal }

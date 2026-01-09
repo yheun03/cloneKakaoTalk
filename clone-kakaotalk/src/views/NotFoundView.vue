@@ -7,8 +7,8 @@
 </template>
 
 <script>
-
 import AppButton from '@/components/ui/AppButton.vue'
+import navigationService from '@/services/navigationService'
 
 export default {
     name: 'NotFoundView',
@@ -17,7 +17,7 @@ export default {
     },
     methods: {
         goToHome() {
-            this.$router.push('/')
+            navigationService.goToHome()
         }
     }
 }

@@ -12,6 +12,7 @@
 <script>
 import ProfileModal from '@/components/modal/ProfileModal.vue'
 import eventBus from '@/utils/eventBus'
+import { EVENTS } from '@/constants/events'
 
 export default {
   name: 'App',
@@ -25,10 +26,10 @@ export default {
     }
   },
   mounted() {
-    eventBus.on('open-profile-modal', this.handleOpenProfileModal)
+    eventBus.on(EVENTS.OPEN_PROFILE_MODAL, this.handleOpenProfileModal)
   },
   beforeUnmount() {
-    eventBus.off('open-profile-modal', this.handleOpenProfileModal)
+    eventBus.off(EVENTS.OPEN_PROFILE_MODAL, this.handleOpenProfileModal)
   },
   methods: {
     handleOpenProfileModal(userId) {

@@ -1,5 +1,6 @@
 // src/router/index.js
 import { createRouter, createWebHistory } from 'vue-router'
+import { ROUTES, ROUTE_NAMES } from '@/constants/routes'
 
 // import할 페이지 컴포넌트
 import ChatView from '../views/ChatView.vue'
@@ -12,38 +13,38 @@ import SettingView from '../views/SettingView.vue'
 
 const routes = [
     {
-        path: '/',
-        name: 'Profile',
+        path: ROUTES.PROFILE,
+        name: ROUTE_NAMES.PROFILE,
         component: ProfileView
     },
     {
-        path: '/chat',
-        name: 'Chat',
+        path: ROUTES.CHAT,
+        name: ROUTE_NAMES.CHAT,
         component: ChatView
     },
     {
-        path: '/chat-list',
-        name: 'ChatList',
+        path: ROUTES.CHAT_LIST,
+        name: ROUTE_NAMES.CHAT_LIST,
         component: ChatListView
     },
     {
-        path: '/component',
-        name: 'Component',
+        path: ROUTES.COMPONENT,
+        name: ROUTE_NAMES.COMPONENT,
         component: ComponentView
     },
     {
-        path: '/more',
-        name: 'More',
+        path: ROUTES.MORE,
+        name: ROUTE_NAMES.MORE,
         component: MoreView
     },
     {
-        path: '/setting',
-        name: 'Setting',
+        path: ROUTES.SETTING,
+        name: ROUTE_NAMES.SETTING,
         component: SettingView
     },
     {
-        path: '/:pathMatch(.*)*',
-        name: 'NotFound',
+        path: ROUTES.NOT_FOUND,
+        name: ROUTE_NAMES.NOT_FOUND,
         component: NotFoundView
     }
 ]

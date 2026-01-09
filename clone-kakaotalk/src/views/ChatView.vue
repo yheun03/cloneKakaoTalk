@@ -67,6 +67,7 @@ import Icon24File from '@/assets/icons/24/ic-file.svg'
 import profileService from '@/services/profileService'
 import chatService from '@/services/chatService'
 import eventBus from '@/utils/eventBus'
+import { EVENTS } from '@/constants/events'
 
 const minuteKey = (iso) => {
     const d = new Date(iso);
@@ -158,13 +159,13 @@ export default {
     created() {
         this.syncActiveUserId()
         // 이벤트 버스로 userId 받기
-        eventBus.on('navigate-to-chat', this.handleNavigateToChat)
+        eventBus.on(EVENTS.NAVIGATE_TO_CHAT, this.handleNavigateToChat)
     },
     mounted() {
         this.scrollToBottom()
         // 마운트 후에도 이벤트 버스에서 마지막 userId 확인 (이미 /chat에 있을 때 대비)
         this.$nextTick(() => {
-            const lastUserId = eventBus.getLastValue('navigate-to-chat')
+            const lastUserId = eventBus.getLastValue(EVENTS.NAVIGATE_TO_CHAT)
             if (lastUserId) {
                 this.currentUserId = lastUserId
                 this.scrollToBottom()
@@ -172,7 +173,7 @@ export default {
         })
     },
     beforeUnmount() {
-        eventBus.off('navigate-to-chat', this.handleNavigateToChat)
+        eventBus.off(EVENTS.NAVIGATE_TO_CHAT, this.handleNavigateToChat)
     },
     watch: {
         $route: {
